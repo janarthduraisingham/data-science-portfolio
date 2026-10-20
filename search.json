@@ -4,39 +4,419 @@
     "href": "index.html",
     "title": "Data Science Portfolio",
     "section": "",
-    "text": "Overview\nThis is a selection of my Data Science projects.",
+    "text": "Overview\nThank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Projects are covered in detail in their respective chapters.",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "intro.html",
-    "href": "intro.html",
-    "title": "1  Introduction",
-    "section": "",
-    "text": "This is a book created from markdown and executable code.\nSee Knuth (1984) for additional discussion of literate programming.\n\n\n\n\nKnuth, Donald E. 1984. “Literate Programming.” Comput. J. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "index.html#gitignore",
+    "href": "index.html#gitignore",
+    "title": "Data Science Portfolio",
+    "section": ".gitignore",
+    "text": ".gitignore",
     "crumbs": [
-      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction</span>"
+      "Overview"
     ]
   },
   {
-    "objectID": "summary.html",
-    "href": "summary.html",
-    "title": "2  Summary",
-    "section": "",
-    "text": "In summary, this book has no content whatsoever.",
+    "objectID": "index.html#githooks",
+    "href": "index.html#githooks",
+    "title": "Data Science Portfolio",
+    "section": "githooks/",
+    "text": "githooks/",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "Overview"
     ]
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Knuth, Donald E. 1984. “Literate Programming.” Comput.\nJ. (USA) 27 (2): 97–111. https://doi.org/10.1093/comjnl/27.2.97.",
+    "objectID": "index.html#venv-uv-renv",
+    "href": "index.html#venv-uv-renv",
+    "title": "Data Science Portfolio",
+    "section": ".venv (uv) & renv",
+    "text": ".venv (uv) & renv",
     "crumbs": [
-      "References"
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Data Science Portfolio",
+    "section": "LICENSE",
+    "text": "LICENSE",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#github",
+    "href": "index.html#github",
+    "title": "Data Science Portfolio",
+    "section": ".github/",
+    "text": ".github/",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html",
+    "href": "mindthegap.html",
+    "title": "mindthegap",
+    "section": "",
+    "text": "Overview",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#analytical-methods",
+    "href": "mindthegap.html#analytical-methods",
+    "title": "mindthegap",
+    "section": "Analytical methods",
+    "text": "Analytical methods",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#business-problem",
+    "href": "mindthegap.html#business-problem",
+    "title": "mindthegap",
+    "section": "Business Problem",
+    "text": "Business Problem",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#scoping-and-planning",
+    "href": "mindthegap.html#scoping-and-planning",
+    "title": "mindthegap",
+    "section": "Scoping and planning",
+    "text": "Scoping and planning",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#technical-choices",
+    "href": "mindthegap.html#technical-choices",
+    "title": "mindthegap",
+    "section": "Technical choices",
+    "text": "Technical choices",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#validation",
+    "href": "mindthegap.html#validation",
+    "title": "mindthegap",
+    "section": "Validation",
+    "text": "Validation",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#impact",
+    "href": "mindthegap.html#impact",
+    "title": "mindthegap",
+    "section": "Impact",
+    "text": "Impact",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#architecture",
+    "href": "mindthegap.html#architecture",
+    "title": "mindthegap",
+    "section": "Architecture",
+    "text": "Architecture",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#design-choices",
+    "href": "mindthegap.html#design-choices",
+    "title": "mindthegap",
+    "section": "Design choices",
+    "text": "Design choices",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html",
+    "href": "capacity-network-design.html",
+    "title": "Capacity Network Design",
+    "section": "",
+    "text": "Overview\nGreedy algorithm",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#analytical-methods",
+    "href": "capacity-network-design.html#analytical-methods",
+    "title": "Capacity Network Design",
+    "section": "Analytical methods",
+    "text": "Analytical methods",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#business-problem",
+    "href": "capacity-network-design.html#business-problem",
+    "title": "Capacity Network Design",
+    "section": "Business Problem",
+    "text": "Business Problem",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#scoping-and-planning",
+    "href": "capacity-network-design.html#scoping-and-planning",
+    "title": "Capacity Network Design",
+    "section": "Scoping and planning",
+    "text": "Scoping and planning",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#technical-choices",
+    "href": "capacity-network-design.html#technical-choices",
+    "title": "Capacity Network Design",
+    "section": "Technical choices",
+    "text": "Technical choices",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#validation",
+    "href": "capacity-network-design.html#validation",
+    "title": "Capacity Network Design",
+    "section": "Validation",
+    "text": "Validation",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#impact",
+    "href": "capacity-network-design.html#impact",
+    "title": "Capacity Network Design",
+    "section": "Impact",
+    "text": "Impact",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#architecture",
+    "href": "capacity-network-design.html#architecture",
+    "title": "Capacity Network Design",
+    "section": "Architecture",
+    "text": "Architecture",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#design-choices",
+    "href": "capacity-network-design.html#design-choices",
+    "title": "Capacity Network Design",
+    "section": "Design choices",
+    "text": "Design choices",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html",
+    "href": "hypothesis-tests-101.html",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "",
+    "text": "Overview\ndyanamic visualisations Shiny app",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#analytical-methods",
+    "href": "hypothesis-tests-101.html#analytical-methods",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Analytical methods",
+    "text": "Analytical methods",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#business-problem",
+    "href": "hypothesis-tests-101.html#business-problem",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Business Problem",
+    "text": "Business Problem",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#scoping-and-planning",
+    "href": "hypothesis-tests-101.html#scoping-and-planning",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Scoping and planning",
+    "text": "Scoping and planning",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#technical-choices",
+    "href": "hypothesis-tests-101.html#technical-choices",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Technical choices",
+    "text": "Technical choices",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#validation",
+    "href": "hypothesis-tests-101.html#validation",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Validation",
+    "text": "Validation",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#impact",
+    "href": "hypothesis-tests-101.html#impact",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Impact",
+    "text": "Impact",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#architecture",
+    "href": "hypothesis-tests-101.html#architecture",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Architecture",
+    "text": "Architecture",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "hypothesis-tests-101.html#design-choices",
+    "href": "hypothesis-tests-101.html#design-choices",
+    "title": "Intuitive Hypothesis Tests",
+    "section": "Design choices",
+    "text": "Design choices",
+    "crumbs": [
+      "Intuitive Hypothesis Tests"
+    ]
+  },
+  {
+    "objectID": "fpl.html",
+    "href": "fpl.html",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "",
+    "text": "Overview",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#analytical-methods",
+    "href": "fpl.html#analytical-methods",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Analytical methods",
+    "text": "Analytical methods",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#business-problem",
+    "href": "fpl.html#business-problem",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Business Problem",
+    "text": "Business Problem",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#scoping-and-planning",
+    "href": "fpl.html#scoping-and-planning",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Scoping and planning",
+    "text": "Scoping and planning",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#technical-choices",
+    "href": "fpl.html#technical-choices",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Technical choices",
+    "text": "Technical choices",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#validation",
+    "href": "fpl.html#validation",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Validation",
+    "text": "Validation",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#impact",
+    "href": "fpl.html#impact",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Impact",
+    "text": "Impact",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#architecture",
+    "href": "fpl.html#architecture",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Architecture",
+    "text": "Architecture",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
+    ]
+  },
+  {
+    "objectID": "fpl.html#design-choices",
+    "href": "fpl.html#design-choices",
+    "title": "Fantasy Premier League (Personal)",
+    "section": "Design choices",
+    "text": "Design choices",
+    "crumbs": [
+      "Fantasy Premier League (Personal)"
     ]
   }
 ]
