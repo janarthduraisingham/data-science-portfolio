@@ -4,17 +4,7 @@
     "href": "index.html",
     "title": "Data Science Portfolio",
     "section": "",
-    "text": "Overview\nThank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Projects are covered in detail in their respective chapters.",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#gitignore",
-    "href": "index.html#gitignore",
-    "title": "Data Science Portfolio",
-    "section": ".gitignore",
-    "text": ".gitignore",
+    "text": "Overview\nThank you for visiting my portfolio of selected Data Science projects. To avoid repetition, principles and components common to several or all of my repositories (repos) are detailed below. Projects are covered in individual detail in their respective chapters.",
     "crumbs": [
       "Overview"
     ]
@@ -24,17 +14,7 @@
     "href": "index.html#githooks",
     "title": "Data Science Portfolio",
     "section": "githooks/",
-    "text": "githooks/",
-    "crumbs": [
-      "Overview"
-    ]
-  },
-  {
-    "objectID": "index.html#venv-uv-renv",
-    "href": "index.html#venv-uv-renv",
-    "title": "Data Science Portfolio",
-    "section": ".venv (uv) & renv",
-    "text": ".venv (uv) & renv",
+    "text": "githooks/\nI use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not excluded by the .gitignore.",
     "crumbs": [
       "Overview"
     ]
@@ -44,7 +24,7 @@
     "href": "index.html#license",
     "title": "Data Science Portfolio",
     "section": "LICENSE",
-    "text": "LICENSE",
+    "text": "LICENSE\nMy public repos include an MIT licence so that they can be used by others.",
     "crumbs": [
       "Overview"
     ]
@@ -54,7 +34,7 @@
     "href": "index.html#github",
     "title": "Data Science Portfolio",
     "section": ".github/",
-    "text": ".github/",
+    "text": ".github/\nMy projects with Github Pages deployments include a Github Action to build and deploy every time I merge a branch into main.",
     "crumbs": [
       "Overview"
     ]
@@ -94,17 +74,7 @@
     "href": "mindthegap.html#scoping-and-planning",
     "title": "mindthegap",
     "section": "Scoping and planning",
-    "text": "Scoping and planning",
-    "crumbs": [
-      "mindthegap"
-    ]
-  },
-  {
-    "objectID": "mindthegap.html#technical-choices",
-    "href": "mindthegap.html#technical-choices",
-    "title": "mindthegap",
-    "section": "Technical choices",
-    "text": "Technical choices",
+    "text": "Scoping and planning\nlimitations ## Technical choices",
     "crumbs": [
       "mindthegap"
     ]
