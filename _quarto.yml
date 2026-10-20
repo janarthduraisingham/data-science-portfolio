@@ -4,7 +4,7 @@ project:
 book:
   title: "Data Science Portfolio"
   author: "Janarth Duraisingham"
-  date: "20/10/2026"
+  #date: "20/10/2026"
   chapters:
     - index.qmd
     - mindthegap.qmd
