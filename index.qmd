@@ -2,18 +2,18 @@
 
 Thank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Otherwise, please see the numbered chapters.
 
-## Data Security
+# Data Security
 
-### .gitignore
+## .gitignore
 
-### githooks/
+## githooks/
 
-## Reproducibility
+# Reproducibility
 
 ## .venv/ (uv)
 
-## CI/CD
-
-### .github/
-
 ## LICENSE
+
+# CI/CD
+
+## .github/
