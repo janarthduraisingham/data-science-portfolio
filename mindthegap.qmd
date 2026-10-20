@@ -7,7 +7,7 @@
 ## Business Problem
 
 ## Scoping and planning
-
+limitations
 ## Technical choices
 
 ## Validation
@@ -21,3 +21,7 @@
 ## Design choices
 
 # Output
+
+# relevance to role
+
+# what I learnt /would improve

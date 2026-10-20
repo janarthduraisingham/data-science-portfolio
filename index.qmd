@@ -1,6 +1,6 @@
 # Overview {.unnumbered}
 
-Thank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Projects are covered in detail in their respective chapters.
+Thank you for visiting my portfolio of selected Data Science projects. To avoid repetition, components common to several or all of my projects are detailed below. Projects are covered in individual detail in their respective chapters.
 
 # Data Security
 
