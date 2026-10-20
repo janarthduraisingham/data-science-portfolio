@@ -1,6 +1,6 @@
 # Overview {.unnumbered}
 
-Thank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Otherwise, please see the numbered chapters.
+Thank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Projects are covered in detail in their respective chapters.
 
 # Data Security
 
@@ -10,7 +10,7 @@ Thank you for visiting my Quarto book of selected Data Science projects. Compone
 
 # Reproducibility
 
-## .venv/ (uv)
+## .venv (uv) & renv
 
 ## LICENSE
 

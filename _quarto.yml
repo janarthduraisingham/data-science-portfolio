@@ -10,6 +10,7 @@ book:
     - mindthegap.qmd
     - capacity-network-design.qmd
     - hypothesis-tests-101.qmd
+    - fpl.qmd
 
 #bibliography: references.bib
 

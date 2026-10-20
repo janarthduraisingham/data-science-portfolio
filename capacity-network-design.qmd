@@ -1,3 +1,25 @@
-# Capacity Network Design
+# Capacity Network Design {.unnumbered}
 
 Greedy algorithm
+
+# Overview
+
+## Analytical methods
+
+## Business Problem
+
+## Scoping and planning
+
+## Technical choices
+
+## Validation
+
+## Impact  
+
+# Project code
+
+## Architecture
+
+## Design choices
+
+# Output
