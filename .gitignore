@@ -240,5 +240,8 @@ data/*
 
 # Other
 _environment
+
+# Quarto
 /.quarto/
 **/*.quarto_ipynb
+_book/
