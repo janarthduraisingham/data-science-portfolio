@@ -1,0 +1,23 @@
+# mindthegap {.unnumbered}
+
+# Overview
+
+## Analytical methods
+
+## Business Problem
+
+## Scoping and planning
+
+## Technical choices
+
+## Validation
+
+## Impact  
+
+# Project code
+
+## Architecture
+
+## Design choices
+
+# Output

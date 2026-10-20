@@ -1,3 +1,19 @@
 # Overview {.unnumbered}
 
-This is a selection of my Data Science projects.
+Thank you for visiting my Quarto book of selected Data Science projects. Components common to several or all of my projects are detailed below. Projects are covered in detail in their respective chapters.
+
+# Data Security
+
+## .gitignore
+
+## githooks/
+
+# Reproducibility
+
+## .venv (uv) & renv
+
+## LICENSE
+
+# CI/CD
+
+## .github/

@@ -3,15 +3,16 @@ project:
 
 book:
   title: "Data Science Portfolio"
-  author: "Norah Jones"
-  date: "20/10/2026"
+  author: "Janarth Duraisingham"
+  #date: "20/10/2026"
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - mindthegap.qmd
+    - capacity-network-design.qmd
+    - hypothesis-tests-101.qmd
+    - fpl.qmd
 
-bibliography: references.bib
+#bibliography: references.bib
 
 format:
   html:
