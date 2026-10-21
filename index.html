@@ -156,10 +156,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#data-security" id="toc-data-security" class="nav-link" data-scroll-target="#data-security">Data Security</a>
   <ul class="collapse">
+  <li><a href="#gitignore" id="toc-gitignore" class="nav-link" data-scroll-target="#gitignore">.gitignore</a></li>
   <li><a href="#githooks" id="toc-githooks" class="nav-link" data-scroll-target="#githooks">githooks/</a></li>
   </ul></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a>
   <ul class="collapse">
+  <li><a href="#venv-uv-renv" id="toc-venv-uv-renv" class="nav-link" data-scroll-target="#venv-uv-renv">.venv (uv) &amp; renv</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">LICENSE</a></li>
   </ul></li>
   <li><a href="#cicd" id="toc-cicd" class="nav-link" data-scroll-target="#cicd">CI/CD</a>
@@ -203,7 +205,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="data-security" class="level1">
 <h1>Data Security</h1>
-<p>Components in my projects relating to principles of Data Security exist to ensure sensitive, personal, or otherwise voluminous data does not get committed or pushed to the remote repo. ## .gitignore I used .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than regex expressions.</p>
+<p>Components in my projects relating to principles of Data Security exist to ensure sensitive, personal, or otherwise voluminous data does not get committed or pushed to the remote repo.</p>
+<section id="gitignore" class="level2">
+<h2 class="anchored" data-anchor-id="gitignore">.gitignore</h2>
+<p>I used .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than regex expressions.</p>
+</section>
 <section id="githooks" class="level2">
 <h2 class="anchored" data-anchor-id="githooks">githooks/</h2>
 <p>I use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not excluded by the .gitignore.</p>
@@ -211,7 +217,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="reproducibility" class="level1">
 <h1>Reproducibility</h1>
-<p>Components in my projects relating to reproducibility exist to best enable people (including my future self) to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines ## .venv (uv) &amp; renv To ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.</p>
+<p>Components in my projects relating to reproducibility exist to best enable people (including my future self) to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines.</p>
+<section id="venv-uv-renv" class="level2">
+<h2 class="anchored" data-anchor-id="venv-uv-renv">.venv (uv) &amp; renv</h2>
+<p>To ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.</p>
+</section>
 <section id="license" class="level2">
 <h2 class="anchored" data-anchor-id="license">LICENSE</h2>
 <p>My public repos include an MIT licence so that they can be used by others.</p>
