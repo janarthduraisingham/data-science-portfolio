@@ -4,13 +4,14 @@ An interactive Shiny app with dynamic visualisations to convey the intuition beh
 
 # Overview
 
-## Analytical methods
+## Themes / Analytical methods
 
 _R, Shiny, reactivity, widgets, presenting complex technical concepts accessibly, presenting to different audiences simultaneously_
 
 ## Business Problem
 
 I'm passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal "Lunch and Learn" talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:
+
 * unlocked the intuition behind hypothesis testing, that non-technical people didn't know they already had
 * for people who were familiar with hypothesis testing in a syntactical/"textbook" way, provide and showcase a sandbox of mechanics that they could play with indepedently, to make the principles "click"
 
@@ -52,7 +53,7 @@ Public Shiny app: https://janarthduraisingham.shinyapps.io/hamming-mutation-clas
 
 I recognise that the Senior Data Scientist role would involve engaging, influencing, and taking an interest in the development of a range of groups of people, including clinicians, senior decision-makers, the public, and junior analysts. As such, it's important to be able to convey complex and technical concepts in different ways to different people, sometimes in the same room at the same time. I'm on my own journey of learning and I love sharing what I learn and what clicks for me, which is why I believe my passion for teaching and engaging would be well-placed in the role.
 
-# what I learnt /would improve
+# what I learnt / would improve
 What went well:
 * The everyday/qualitative examples were effective in building people's confidence and engagement early on.
 * The public app meant that my work could benefit people after the Lunch and Learn had finished, and potentially could be used for attendees to teach other people.
