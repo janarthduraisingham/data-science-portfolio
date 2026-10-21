@@ -4,7 +4,7 @@ Greedy algorithm
 
 # Overview
 
-## Analytical methods
+## Themes / Analytical methods
 
 ## Business Problem
 

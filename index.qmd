@@ -4,6 +4,7 @@ Thank you for visiting my portfolio of selected Data Science projects. To avoid 
 
 # Data Security
 Components in my projects relating to principles of Data Security exist to ensure sensitive, personal, or otherwise voluminous data does not get committed or pushed to the remote repo.
+
 ## .gitignore
 I used .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than regex expressions.
 
@@ -11,7 +12,8 @@ I used .gitignores tailored to the tech stack of the project (R, Python, Quarto 
 I use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not excluded by the .gitignore.
 
 # Reproducibility
-Components in my projects relating to reproducibility exist to best enable people (including my future self) to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines
+Components in my projects relating to reproducibility exist to best enable people (including my future self) to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines.
+
 ## .venv (uv) & renv
 To ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.
 
