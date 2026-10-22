@@ -144,7 +144,7 @@
     "href": "capacity-network-design.html",
     "title": "Capacity Network Design",
     "section": "",
-    "text": "Overview\nGreedy algorithm",
+    "text": "Overview\nA greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -154,7 +154,7 @@
     "href": "capacity-network-design.html#themes-analytical-methods",
     "title": "Capacity Network Design",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods",
+    "text": "Themes / Analytical methods\nR, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -164,7 +164,7 @@
     "href": "capacity-network-design.html#business-problem",
     "title": "Capacity Network Design",
     "section": "Business Problem",
-    "text": "Business Problem",
+    "text": "Business Problem\n\nProblem statement\nThe organisation’s current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network looked like if we rebuilt it from scratch in the optimal way?\n\n\nAcademic Aim\nA numerical method by way of a greedy algorithm that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically so as to maximise the likelihood of meeting those objectives.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -174,7 +174,7 @@
     "href": "capacity-network-design.html#scoping-and-planning",
     "title": "Capacity Network Design",
     "section": "Scoping and planning",
-    "text": "Scoping and planning",
+    "text": "Scoping and planning\n\nI decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.\nI recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -184,7 +184,7 @@
     "href": "capacity-network-design.html#technical-choices",
     "title": "Capacity Network Design",
     "section": "Technical choices",
-    "text": "Technical choices",
+    "text": "Technical choices\n\nI recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of “monetised” or otherwise quantified organisational objectives\nI decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary “objective” optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.\nThe computational approach with the weighted objective function also allowed me to\n\ndemonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers\ncompute and compare different scenarios side by side\n\nAs a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -194,7 +194,7 @@
     "href": "capacity-network-design.html#validation",
     "title": "Capacity Network Design",
     "section": "Validation",
-    "text": "Validation",
+    "text": "Validation\nhypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -204,27 +204,37 @@
     "href": "capacity-network-design.html#impact",
     "title": "Capacity Network Design",
     "section": "Impact",
-    "text": "Impact",
+    "text": "Impact\nunderstood tradeoff and need for prioritisation.",
     "crumbs": [
       "Capacity Network Design"
     ]
   },
   {
-    "objectID": "capacity-network-design.html#architecture",
-    "href": "capacity-network-design.html#architecture",
+    "objectID": "capacity-network-design.html#constructing-a-proof-of-concept-poc",
+    "href": "capacity-network-design.html#constructing-a-proof-of-concept-poc",
     "title": "Capacity Network Design",
-    "section": "Architecture",
-    "text": "Architecture",
+    "section": "Constructing a Proof of Concept (POC)",
+    "text": "Constructing a Proof of Concept (POC)\n\nToy modelComposing an Objective functionDemonstrate the reduction of the problem\n\n\n\n\n\nConstructing a over-simplified example\n\n\n\n\n\n\n\nIntroducing the concept of an Objective function\n\n\n\n\n\n\n\nTranslating priorities into parameters",
     "crumbs": [
       "Capacity Network Design"
     ]
   },
   {
-    "objectID": "capacity-network-design.html#design-choices",
-    "href": "capacity-network-design.html#design-choices",
+    "objectID": "capacity-network-design.html#demonstrating-the-poc",
+    "href": "capacity-network-design.html#demonstrating-the-poc",
     "title": "Capacity Network Design",
-    "section": "Design choices",
-    "text": "Design choices",
+    "section": "Demonstrating the POC",
+    "text": "Demonstrating the POC\n\nShiny appUIServer\n\n\n\n\n\nA section of the parameter input section of the POC Shiny app\n\n\n\n\n\n\n\nExcerpt from Shiny app interface\n\n\n\n\n\n\n\nExcerpt from Shiny app server",
+    "crumbs": [
+      "Capacity Network Design"
+    ]
+  },
+  {
+    "objectID": "capacity-network-design.html#greedy-algorithm-for-slot-allocation",
+    "href": "capacity-network-design.html#greedy-algorithm-for-slot-allocation",
+    "title": "Capacity Network Design",
+    "section": "Greedy Algorithm for slot allocation",
+    "text": "Greedy Algorithm for slot allocation\n\nPseudocode\n\n\n\nSimplified Pseudocode for Greedy algorithm\n\n\n\n\nCode excerpts\n\nParametersCensus data and geographiesTransform raw dataTransform raw data contd.Objective functionExecute locally optimum stepVisualise\n\n\n\n\n\nSet parameters for algorithm\n\n\n\n\n\n\n\nLoad and pre-process population data and constituency boundaries\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCopmute objective function (much of which is collection targets per blood group)\n\n\n\n\n\n\n\nAssign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted\n\n\n\n\n\n\n\nRepresent optimal slot allocation as choropleth leaflet\n\n\n\n\n\n\n\noutputs\nBelow are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).\n\n£0/km (free/unconstrained)£1/km£10/km£100/km£1000/km\n\n\n\n\n\nWhen the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.\n\n\n\n\n\n\n\n\n\n\nAs the transport cost becomes constraining, the distribution dissipates.\n\n\n\n\n\n\n\nAs the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol",
     "crumbs": [
       "Capacity Network Design"
     ]

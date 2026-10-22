@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6bea399d8984f6e3635e57a25d6b63a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7b41b65cdd4b030162f185184962183e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -156,18 +156,29 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#themes-analytical-methods" id="toc-themes-analytical-methods" class="nav-link" data-scroll-target="#themes-analytical-methods">Themes / Analytical methods</a></li>
-  <li><a href="#business-problem" id="toc-business-problem" class="nav-link" data-scroll-target="#business-problem">Business Problem</a></li>
+  <li><a href="#business-problem" id="toc-business-problem" class="nav-link" data-scroll-target="#business-problem">Business Problem</a>
+  <ul class="collapse">
+  <li><a href="#problem-statement" id="toc-problem-statement" class="nav-link" data-scroll-target="#problem-statement">Problem statement</a></li>
+  <li><a href="#academic-aim" id="toc-academic-aim" class="nav-link" data-scroll-target="#academic-aim">Academic Aim</a></li>
+  </ul></li>
   <li><a href="#scoping-and-planning" id="toc-scoping-and-planning" class="nav-link" data-scroll-target="#scoping-and-planning">Scoping and planning</a></li>
   <li><a href="#technical-choices" id="toc-technical-choices" class="nav-link" data-scroll-target="#technical-choices">Technical choices</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
   <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact">Impact</a></li>
   </ul></li>
-  <li><a href="#project-code" id="toc-project-code" class="nav-link" data-scroll-target="#project-code">Project code</a>
+  <li><a href="#project-code-output" id="toc-project-code-output" class="nav-link" data-scroll-target="#project-code-output">Project code &amp; Output</a>
   <ul class="collapse">
-  <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
-  <li><a href="#design-choices" id="toc-design-choices" class="nav-link" data-scroll-target="#design-choices">Design choices</a></li>
+  <li><a href="#constructing-a-proof-of-concept-poc" id="toc-constructing-a-proof-of-concept-poc" class="nav-link" data-scroll-target="#constructing-a-proof-of-concept-poc">Constructing a Proof of Concept (POC)</a></li>
+  <li><a href="#demonstrating-the-poc" id="toc-demonstrating-the-poc" class="nav-link" data-scroll-target="#demonstrating-the-poc">Demonstrating the POC</a></li>
+  <li><a href="#greedy-algorithm-for-slot-allocation" id="toc-greedy-algorithm-for-slot-allocation" class="nav-link" data-scroll-target="#greedy-algorithm-for-slot-allocation">Greedy Algorithm for slot allocation</a>
+  <ul class="collapse">
+  <li><a href="#pseudocode" id="toc-pseudocode" class="nav-link" data-scroll-target="#pseudocode">Pseudocode</a></li>
+  <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
+  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">outputs</a></li>
   </ul></li>
-  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  </ul></li>
+  <li><a href="#relevance-to-the-senior-data-scientist-role" id="toc-relevance-to-the-senior-data-scientist-role" class="nav-link" data-scroll-target="#relevance-to-the-senior-data-scientist-role">Relevance to the Senior Data Scientist role</a></li>
+  <li><a href="#what-i-learnt-would-improve" id="toc-what-i-learnt-would-improve" class="nav-link" data-scroll-target="#what-i-learnt-would-improve">What I learnt / would improve</a></li>
   </ul>
 </nav>
     </div>
@@ -193,39 +204,244 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Greedy algorithm</p>
+<p>A greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.</p>
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <section id="themes-analytical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="themes-analytical-methods">Themes / Analytical methods</h2>
+<p><em>R, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers</em></p>
 </section>
 <section id="business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
+<section id="problem-statement" class="level3">
+<h3 class="anchored" data-anchor-id="problem-statement">Problem statement</h3>
+<p>The organisation’s current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e.&nbsp;people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network looked like if we rebuilt it from scratch in the optimal way?</p>
+</section>
+<section id="academic-aim" class="level3">
+<h3 class="anchored" data-anchor-id="academic-aim">Academic Aim</h3>
+<p>A numerical method by way of a greedy algorithm that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically so as to maximise the likelihood of meeting those objectives.</p>
+</section>
 </section>
 <section id="scoping-and-planning" class="level2">
 <h2 class="anchored" data-anchor-id="scoping-and-planning">Scoping and planning</h2>
+<ul>
+<li>I decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.</li>
+<li>I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g.&nbsp;collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites</li>
+</ul>
 </section>
 <section id="technical-choices" class="level2">
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
+<ul>
+<li>I recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of “monetised” or otherwise quantified organisational objectives</li>
+<li>I decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary “objective” optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.</li>
+<li>The computational approach with the weighted objective function also allowed me to
+<ul>
+<li>demonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers</li>
+<li>compute and compare different scenarios side by side</li>
+</ul></li>
+<li>As a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives</li>
+</ul>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
+<p>hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.</p>
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
+<p>understood tradeoff and need for prioritisation.</p>
 </section>
 </section>
-<section id="project-code" class="level1">
-<h1>Project code</h1>
-<section id="architecture" class="level2">
-<h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<section id="project-code-output" class="level1">
+<h1>Project code &amp; Output</h1>
+<p>In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.</p>
+<p>The codebase of the project consists of: * a POC Shiny app to demonstrate the greedy algorithm in this context * an R script with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.</p>
+<section id="constructing-a-proof-of-concept-poc" class="level2">
+<h2 class="anchored" data-anchor-id="constructing-a-proof-of-concept-poc">Constructing a Proof of Concept (POC)</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Toy model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Composing an Objective function</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Demonstrate the reduction of the problem</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/toy_model_1.png" class="img-fluid figure-img"></p>
+<figcaption>Constructing a over-simplified example</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/toy_model_2.png" class="img-fluid figure-img"></p>
+<figcaption>Introducing the concept of an Objective function</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/toy_model_3.png" class="img-fluid figure-img"></p>
+<figcaption>Translating priorities into parameters</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="design-choices" class="level2">
-<h2 class="anchored" data-anchor-id="design-choices">Design choices</h2>
+<section id="demonstrating-the-poc" class="level2">
+<h2 class="anchored" data-anchor-id="demonstrating-the-poc">Demonstrating the POC</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Shiny app</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">UI</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Server</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/poc.png" class="img-fluid figure-img"></p>
+<figcaption>A section of the parameter input section of the POC Shiny app</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/poc_R_1.png" class="img-fluid figure-img"></p>
+<figcaption>Excerpt from Shiny app interface</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/poc_R_2.png" class="img-fluid figure-img"></p>
+<figcaption>Excerpt from Shiny app server</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="greedy-algorithm-for-slot-allocation" class="level2">
+<h2 class="anchored" data-anchor-id="greedy-algorithm-for-slot-allocation">Greedy Algorithm for slot allocation</h2>
+<section id="pseudocode" class="level3">
+<h3 class="anchored" data-anchor-id="pseudocode">Pseudocode</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algorithm_pseudocode.png" class="img-fluid figure-img"></p>
+<figcaption>Simplified Pseudocode for Greedy algorithm</figcaption>
+</figure>
+</div>
+</section>
+<section id="code-excerpts" class="level3">
+<h3 class="anchored" data-anchor-id="code-excerpts">Code excerpts</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Parameters</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Census data and geographies</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Transform raw data</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">Transform raw data contd.</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false" href="">Objective function</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-6-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-6" role="tab" aria-controls="tabset-3-6" aria-selected="false" href="">Execute locally optimum step</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-7-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-7" role="tab" aria-controls="tabset-3-7" aria-selected="false" href="">Visualise</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_1.png" class="img-fluid figure-img"></p>
+<figcaption>Set parameters for algorithm</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_2.png" class="img-fluid figure-img"></p>
+<figcaption>Load and pre-process population data and constituency boundaries</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_3.png" class="img-fluid figure-img"></p>
+<figcaption>Compute constituency-level variables that algorithm will use</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_4.png" class="img-fluid figure-img"></p>
+<figcaption>Compute constituency-level variables that algorithm will use</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_5.png" class="img-fluid figure-img"></p>
+<figcaption>Copmute objective function (much of which is collection targets per blood group)</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-6" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-6-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_6.png" class="img-fluid figure-img"></p>
+<figcaption>Assign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-3-7" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-7-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algo_R_7.png" class="img-fluid figure-img"></p>
+<figcaption>Represent optimal slot allocation as choropleth leaflet</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="outputs" class="level3">
+<h3 class="anchored" data-anchor-id="outputs">outputs</h3>
+<p>Below are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">£0/km (free/unconstrained)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">£1/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">£10/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">£100/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false" href="">£1000/km</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algorithm_run_1.png" class="img-fluid figure-img"></p>
+<figcaption>When the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<p><img src="images/capacity_network_design/algorithm_run_2.png" class="img-fluid"></p>
+</div>
+<div id="tabset-4-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algorithm_run_3.png" class="img-fluid figure-img"></p>
+<figcaption>As the transport cost becomes constraining, the distribution dissipates.</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-4-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-4-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/capacity_network_design/algorithm_run_4.png" class="img-fluid figure-img"></p>
+<figcaption>As the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-4-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-5-tab">
+<p><img src="images/capacity_network_design/algorithm_run_5.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
 </section>
 </section>
-<section id="output" class="level1">
-<h1>Output</h1>
+</section>
+<section id="relevance-to-the-senior-data-scientist-role" class="level1">
+<h1>Relevance to the Senior Data Scientist role</h1>
+<p>MCDA</p>
+</section>
+<section id="what-i-learnt-would-improve" class="level1">
+<h1>What I learnt / would improve</h1>
+<p>take a stance and push it. I presented an example sensible configuration - go further and present reasonable bounds for each relative weight. promote movement next step rather than analysis paralysis on udnerstanding that the prioritisation matters.</p>
 
 
 </section>
