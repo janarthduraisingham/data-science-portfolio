@@ -1,25 +1,139 @@
 # Capacity Network Design {.unnumbered}
 
-Greedy algorithm
+A greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.
 
 # Overview
 
 ## Themes / Analytical methods
 
+_R, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers_
+
 ## Business Problem
+
+### Problem statement
+The organisation's current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network looked like if we rebuilt it from scratch in the optimal way?
+
+### Academic Aim
+A numerical method by way of a greedy algorithm that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically so as to maximise the likelihood of meeting those objectives.
 
 ## Scoping and planning
 
+* I decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.
+* I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites
+
+
 ## Technical choices
+
+* I recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of "monetised" or otherwise quantified organisational objectives
+* I decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary "objective" optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.
+* The computational approach with the weighted objective function also allowed me to
+  * demonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers
+  * compute and compare different scenarios side by side
+* As a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives
 
 ## Validation
 
+hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.
+
 ## Impact  
 
-# Project code
+understood tradeoff and need for prioritisation.
 
-## Architecture
+# Project code & Output
 
-## Design choices
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
 
-# Output
+The codebase of the project consists of:
+* a POC Shiny app to demonstrate the greedy algorithm in this context
+* an R script with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.
+
+## Constructing a Proof of Concept (POC)
+::: {.panel-tabset}
+
+### Toy model
+![Constructing a over-simplified example](images/capacity_network_design/toy_model_1.png)
+
+### Composing an Objective function
+![Introducing the concept of an Objective function](images/capacity_network_design/toy_model_2.png)
+
+### Demonstrate the reduction of the problem
+![Translating priorities into parameters](images/capacity_network_design/toy_model_3.png)
+
+:::
+
+## Demonstrating the POC
+
+::: {.panel-tabset}
+
+### Shiny app
+![A section of the parameter input section of the POC Shiny app](images/capacity_network_design/poc.png)
+
+### UI
+![Excerpt from Shiny app interface](images/capacity_network_design/poc_R_1.png)
+
+### Server
+![Excerpt from Shiny app server](images/capacity_network_design/poc_R_2.png)
+
+:::
+
+## Greedy Algorithm for slot allocation
+
+### Pseudocode
+
+![Simplified Pseudocode for Greedy algorithm](images/capacity_network_design/algorithm_pseudocode.png)
+
+### Code excerpts
+
+::: {.panel-tabset}
+
+#### Parameters
+![Set parameters for algorithm](images/capacity_network_design/algo_R_1.png)
+
+#### Census data and geographies
+![Load and pre-process population data and constituency boundaries](images/capacity_network_design/algo_R_2.png)
+
+#### Transform raw data
+![Compute constituency-level variables that algorithm will use](images/capacity_network_design/algo_R_3.png)
+
+#### Transform raw data contd.
+![Compute constituency-level variables that algorithm will use](images/capacity_network_design/algo_R_4.png)
+
+#### Objective function
+![Copmute objective function (much of which is collection targets per blood group)](images/capacity_network_design/algo_R_5.png)
+
+#### Execute locally optimum step
+![Assign slots to the chosen constituency, and remove a proportion of the nearby population as "served"/exhausted](images/capacity_network_design/algo_R_6.png)
+
+#### Visualise
+![Represent optimal slot allocation as choropleth leaflet](images/capacity_network_design/algo_R_7.png)
+:::
+
+### outputs
+
+Below are a series of optimal allocation choropleth outputs from holding all parameters constant except "cost to transport blood to Manufacturing Centre, per kilometre". This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).
+
+::: {.panel-tabset}
+
+### £0/km (free/unconstrained)
+![When the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.](images/capacity_network_design/algorithm_run_1.png)
+
+### £1/km 
+![](images/capacity_network_design/algorithm_run_2.png)
+
+### £10/km
+![As the transport cost becomes constraining, the distribution dissipates. ](images/capacity_network_design/algorithm_run_3.png)
+
+### £100/km
+![As the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol](images/capacity_network_design/algorithm_run_4.png)
+
+### £1000/km
+![](images/capacity_network_design/algorithm_run_5.png)
+
+:::
+
+# Relevance to the Senior Data Scientist role
+
+MCDA
+
+# What I learnt / would improve
+take a stance and push it. I presented an example sensible configuration - go further and present reasonable bounds for each relative weight. promote movement next step rather than analysis paralysis on udnerstanding that the prioritisation matters.
