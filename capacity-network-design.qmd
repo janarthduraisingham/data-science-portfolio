@@ -30,6 +30,7 @@ A numerical method by way of a greedy algorithm that, given a set of organisatio
   * demonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers
   * compute and compare different scenarios side by side
 * As a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives
+
 ## Validation
 
 hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.
@@ -135,4 +136,4 @@ Below are a series of optimal allocation choropleth outputs from holding all par
 MCDA
 
 # What I learnt / would improve
-take a stance and push it
+take a stance and push it. I presented an example sensible configuration - go further and present reasonable bounds for each relative weight. promote movement next step rather than analysis paralysis on udnerstanding that the prioritisation matters.
