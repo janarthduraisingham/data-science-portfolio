@@ -1,6 +1,6 @@
 # Capacity Network Design {.unnumbered}
 
-A greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments should be distributed geographically.
+A greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.
 
 # Overview
 
@@ -46,38 +46,89 @@ The codebase of the project consists of:
 * a POC Shiny app to demonstrate the greedy algorithm in this context
 * an R script with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.
 
-### Constructing a Proof of Concept (POC)
+## Constructing a Proof of Concept (POC)
 ::: {.panel-tabset}
 
-#### Toy model
+### Toy model
 ![Constructing a over-simplified example](images/capacity_network_design/toy_model_1.png)
 
-#### Composing an Objective function
+### Composing an Objective function
 ![Introducing the concept of an Objective function](images/capacity_network_design/toy_model_2.png)
 
-#### Demonstrate the reduction of the problem
+### Demonstrate the reduction of the problem
 ![Translating priorities into parameters](images/capacity_network_design/toy_model_3.png)
 
 :::
 
-### Demonstrating the POC
+## Demonstrating the POC
 
 ::: {.panel-tabset}
 
-#### Shiny app
+### Shiny app
 ![A section of the parameter input section of the POC Shiny app](images/capacity_network_design/poc.png)
 
-#### UI
+### UI
 ![Excerpt from Shiny app interface](images/capacity_network_design/poc_R_1.png)
 
-#### Server
+### Server
 ![Excerpt from Shiny app server](images/capacity_network_design/poc_R_2.png)
 
 :::
 
-## Greedy Algorithm
+## Greedy Algorithm for slot allocation
 
+### Pseudocode
 
+![Simplified Pseudocode for Greedy algorithm](images/capacity_network_design/algorithm_pseudocode.png)
+
+### Code excerpts
+
+::: {.panel-tabset}
+
+#### Parameters
+![Set parameters for algorithm](images/capacity_network_design/algo_R_1.png)
+
+#### Census data and geographies
+![Load and pre-process population data and constituency boundaries](images/capacity_network_design/algo_R_2.png)
+
+#### Transform raw data
+![Compute constituency-level variables that algorithm will use](images/capacity_network_design/algo_R_3.png)
+
+#### Transform raw data contd.
+![Compute constituency-level variables that algorithm will use](images/capacity_network_design/algo_R_4.png)
+
+#### Objective function
+![Copmute objective function (much of which is collection targets per blood group)](images/capacity_network_design/algo_R_5.png)
+
+#### Execute locally optimum step
+![Assign slots to the chosen constituency, and remove a proportion of the nearby population as "served"/exhausted](images/capacity_network_design/algo_R_6.png)
+
+#### Visualise
+![Represent optimal slot allocation as choropleth leaflet](images/capacity_network_design/algo_R_7.png)
+:::
+
+### outputs
+
+Below are a series of optimal allocation choropleth outputs from holding all parameters constant except "cost to transport blood to Manufacturing Centre, per kilometre". This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).
+
+::: {.panel-tabset}
+
+### £0/km (free/unconstrained)
+![When the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.](images/capacity_network_design/algorithm_run_1.png)
+
+### £1/km 
+![](images/capacity_network_design/algorithm_run_2.png)
+
+### £10/km
+![As the transport cost becomes constraining, the distribution dissipates. ](images/capacity_network_design/algorithm_run_3.png)
+
+### £100/km
+![As the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol](images/capacity_network_design/algorithm_run_4.png)
+
+### £1000/km
+![](images/capacity_network_design/algorithm_run_5.png)
+
+:::
 
 # Relevance to the Senior Data Scientist role
 
