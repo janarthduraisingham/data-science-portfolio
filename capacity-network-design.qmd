@@ -23,3 +23,7 @@ Greedy algorithm
 ## Design choices
 
 # Output
+
+# Relevance to the Senior Data Scientist role
+
+# What I learnt / would improve

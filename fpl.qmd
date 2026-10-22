@@ -1,8 +1,8 @@
 # Fantasy Premier League [Personal, WIP] {.unnumbered}
 
-# Overview
-
 A quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics and the FPL API and no football knowledge.
+
+# Overview
 
 ## Themes / Analytical methods
 
