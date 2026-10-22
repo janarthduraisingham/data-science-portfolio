@@ -26,20 +26,62 @@ A numerical method by way of a greedy algorithm that, given a set of organisatio
 
 * I recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of "monetised" or otherwise quantified organisational objectives
 * I decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary "objective" optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.
-* The computational approach with the weighted objective function also allowed me to demonstrate how tweaking or varying the weighted shifted the optimum in the direction of different extremes.
-
+* The computational approach with the weighted objective function also allowed me to
+  * demonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers
+  * compute and compare different scenarios side by side
+* As a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives
 ## Validation
+
+hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.
 
 ## Impact  
 
-# Project code
+understood tradeoff and need for prioritisation.
 
-## Architecture
+# Project code & Output
 
-## Design choices
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
 
-# Output
+The codebase of the project consists of:
+* a POC Shiny app to demonstrate the greedy algorithm in this context
+* an R script with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.
+
+### Constructing a Proof of Concept (POC)
+::: {.panel-tabset}
+
+#### Toy model
+![Constructing a over-simplified example](images/capacity_network_design/toy_model_1.png)
+
+#### Composing an Objective function
+![Introducing the concept of an Objective function](images/capacity_network_design/toy_model_2.png)
+
+#### Demonstrate the reduction of the problem
+![Translating priorities into parameters](images/capacity_network_design/toy_model_3.png)
+
+:::
+
+### Demonstrating the POC
+
+::: {.panel-tabset}
+
+#### Shiny app
+![A section of the parameter input section of the POC Shiny app](images/capacity_network_design/poc.png)
+
+#### UI
+![Excerpt from Shiny app interface](images/capacity_network_design/poc_R_1.png)
+
+#### Server
+![Excerpt from Shiny app server](images/capacity_network_design/poc_R_2.png)
+
+:::
+
+## Greedy Algorithm
+
+
 
 # Relevance to the Senior Data Scientist role
 
+MCDA
+
 # What I learnt / would improve
+take a stance and push it
