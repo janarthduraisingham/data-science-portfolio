@@ -47,7 +47,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-bf27225e3a48a9273f3daa8f8e829971.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-fd0503e23dce65854c81c5baaade3bdf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-6bea399d8984f6e3635e57a25d6b63a9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -140,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./fpl.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Fantasy Premier League (Personal)</span></a>
+ <span class="menu-text">Fantasy Premier League [Personal, WIP]</span></a>
   </div>
 </li>
     </ul>
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
 <p>I’m passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal “Lunch and Learn” talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:</p>
 <ul>
 <li>unlocked the intuition behind hypothesis testing, that non-technical people didn’t know they already had</li>
-<li>for people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with indepedently, to make the principles “click”</li>
+<li>for people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with independently, to make the principles “click”</li>
 </ul>
 </section>
 <section id="scoping-and-planning" class="level2">
@@ -218,17 +218,17 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
 <p>Based on my Scoping and Planning reflections:</p>
 <ul>
-<li>I decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time</li>
-<li>I decided to start my presentation with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life e.g.&nbsp;Wondering whether you’ve been incorrectly served a Diet Coke (Alternative hypothesis) means you had an expectation of a certain taste from a regular Coke (Null hypothesis), and the taste is so different to that expectation (test statistic) that it feels too unlikely (p value) that it is a regular Coke. This also provided a good opportunity to make technical terms stick, and showing that people already understand the concept even if they didn’t know the jargon.</li>
-<li>I transitioned from qualitative examples to the classic example of a series of fair coin tosses. Next, to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely, based on an independent probability of mutation (the bias of the coin). This provided a seamless but significant transition from the qualitative Coke example to a good setting for a quantitative treatment of the subject matter: If there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string - if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation my organisation is concerned with.</li>
-<li>From here, I continued in an incremental fashion to keep people confident and engaged:
+<li><p>I decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time</p></li>
+<li><p>I decided to start my presentation with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life e.g.&nbsp;Wondering whether you’ve been incorrectly served a Diet Coke (Alternative hypothesis) means you had an expectation of a certain taste from a regular Coke (Null hypothesis), and the taste is so different to that expectation (test statistic) that it feels too unlikely (p value) that it is a regular Coke. This also provided a good opportunity to make technical terms stick, and showing that people already understand the concept even if they didn’t know the jargon.</p></li>
+<li><p>I transitioned from qualitative examples to the classic example of a series of fair coin tosses. Next, to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely, based on an independent probability of mutation (the bias of the coin). This provided a seamless but significant transition from the qualitative Coke example to a good setting for a quantitative treatment of the subject matter: If there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string - if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation that my organisation is concerned with.</p></li>
+<li><p>From here, I continued in an incremental fashion to keep people confident and engaged:</p>
 <ul>
 <li>Using a dynamic graph, I talked through the Probabilty Mass Function (PMF) for the Hamming Distance, and demonstrating how it smoothly and intuitively changed as you vary the length of the string (n) and the independent probability of mutation (p).</li>
 <li>From here it was simple to explain that we add the bars to get the cumulative PMF.</li>
 <li>The next graph added an (arbitrary) line at the 95% mark to define “extreme” outcomes in that that pobserving an outcome at least as extreme was only 5% if they Null were true.</li>
 </ul></li>
-<li>I explained that the app was publicly available and provided the URL and suggested playing around by varying (n, p) and observing the “wave” that moved and changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while suggesting further avenues to explore for the keener attendees.</li>
-<li>From experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I did wonder whether the discreteness PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but actually I concluded that not needing to go into probability density was an advantage.</li>
+<li><p>I explained that the app was publicly available and provided the URL and suggested playing around by varying (n, p) and observing the “wave” that moved and changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while suggesting further avenues to explore for the keener attendees.</p></li>
+<li><p>From experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I did wonder whether the discreteness PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but actually I concluded that not needing to go into probability density was an advantage.</p></li>
 </ul>
 </section>
 <section id="validation-and-impact" class="level2">
@@ -246,13 +246,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="relevance-to-the-senior-data-scientist-role" class="level1">
 <h1>Relevance to the Senior Data Scientist role</h1>
-<p>I recognise that the Senior Data Scientist role would involve engaging, influencing, and taking an interest in the development of a range of groups of people, including clinicians, senior decision-makers, the public, and junior analysts. As such, it’s important to be able to convey complex and technical concepts in different ways to different people, sometimes in the same room at the same time. I’m on my own journey of learning and I love sharing what I learn and what clicks for me, which is why I believe my passion for teaching and engaging would be well-placed in the role.</p>
+<p>I recognise that the Senior Data Scientist role would involve engaging, influencing, and taking an interest in the development of a range of groups of people, including clinicians, senior decision-makers, the public, and junior analysts. As such, it’s important to be able to convey complex and technical concepts in different ways to different people, sometimes in the same room at the same time. I’m on my own journey of learning and I love sharing what I learn and what clicks for me, which is why my passion for teaching and engaging would be well-placed in the role.</p>
 </section>
 <section id="what-i-learnt-would-improve" class="level1">
 <h1>what I learnt / would improve</h1>
 <p>What went well: * The everyday/qualitative examples were effective in building people’s confidence and engagement early on. * The public app meant that my work could benefit people after the Lunch and Learn had finished, and potentially could be used for attendees to teach other people. * The feedback I got indicated that people appreciated having the space to learn about technical concepts, even if they weren’t in classically technical roles.</p>
 <p>What I would improve:</p>
-<p>I tried hard from the start to make sure I was designing a product and delivering a presentation that benefitted everyone, regardless of their technical background. In hindsight, my suspicion is that people on both extremes of the spectrum i.e.&nbsp;people who had absolutely no technical background, and people who were already experts in statistics, would not have benefitted much. Next time, I’d spend time forming an idea of the bounds of that spectrum that the product/presentation I would aim to benefit i.e.&nbsp;this should be useful to people who have a basic understanding of simple probability, all the way up to people who don’t yet understand that the significance level is not “the probability that the null is correct”. I could then signpost primer resources for interested non-technical prospective attendees prior the the Lunch and Learn, and perhaps involve interested expert prospective attendees in the development of the product.</p>
+<p>I tried hard from the start to make sure I was designing a product and delivering a presentation that benefitted everyone, regardless of their technical background. In hindsight, my suspicion is that people on both extremes of the spectrum i.e.&nbsp;people who had absolutely no technical background, and people who were already experts in statistics, would not have benefitted much. Next time, I’d spend time forming an idea of the bounds of that spectrum that I would aim for the product/presentation to benefit i.e.&nbsp;my product should be useful to people who have a basic understanding of simple probability all the way up to people who don’t yet understand that the p value is not “the probability that the null is correct”. I could then signpost primer resources for interested non-technical prospective attendees prior the the Lunch and Learn, and perhaps involve interested expert prospective attendees in the development of the product. That way, I’d be best able to deliver value for all groups of people, in the way the need it.</p>
 
 
 </section>
@@ -665,8 +665,8 @@ ul.task-list li input[type="checkbox"] {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./fpl.html" class="pagination-link" aria-label="Fantasy Premier League (Personal)">
-        <span class="nav-page-text">Fantasy Premier League (Personal)</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./fpl.html" class="pagination-link" aria-label="Fantasy Premier League [Personal, WIP]">
+        <span class="nav-page-text">Fantasy Premier League [Personal, WIP]</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

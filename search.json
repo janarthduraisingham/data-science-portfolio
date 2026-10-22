@@ -254,7 +254,7 @@
     "href": "hypothesis-tests-101.html#business-problem",
     "title": "Intuitive Hypothesis Tests",
     "section": "Business Problem",
-    "text": "Business Problem\nI’m passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal “Lunch and Learn” talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:\n\nunlocked the intuition behind hypothesis testing, that non-technical people didn’t know they already had\nfor people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with indepedently, to make the principles “click”",
+    "text": "Business Problem\nI’m passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal “Lunch and Learn” talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:\n\nunlocked the intuition behind hypothesis testing, that non-technical people didn’t know they already had\nfor people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with independently, to make the principles “click”",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -274,7 +274,7 @@
     "href": "hypothesis-tests-101.html#technical-choices",
     "title": "Intuitive Hypothesis Tests",
     "section": "Technical choices",
-    "text": "Technical choices\nBased on my Scoping and Planning reflections:\n\nI decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time\nI decided to start my presentation with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life e.g. Wondering whether you’ve been incorrectly served a Diet Coke (Alternative hypothesis) means you had an expectation of a certain taste from a regular Coke (Null hypothesis), and the taste is so different to that expectation (test statistic) that it feels too unlikely (p value) that it is a regular Coke. This also provided a good opportunity to make technical terms stick, and showing that people already understand the concept even if they didn’t know the jargon.\nI transitioned from qualitative examples to the classic example of a series of fair coin tosses. Next, to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely, based on an independent probability of mutation (the bias of the coin). This provided a seamless but significant transition from the qualitative Coke example to a good setting for a quantitative treatment of the subject matter: If there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string - if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation my organisation is concerned with.\nFrom here, I continued in an incremental fashion to keep people confident and engaged:\n\nUsing a dynamic graph, I talked through the Probabilty Mass Function (PMF) for the Hamming Distance, and demonstrating how it smoothly and intuitively changed as you vary the length of the string (n) and the independent probability of mutation (p).\nFrom here it was simple to explain that we add the bars to get the cumulative PMF.\nThe next graph added an (arbitrary) line at the 95% mark to define “extreme” outcomes in that that pobserving an outcome at least as extreme was only 5% if they Null were true.\n\nI explained that the app was publicly available and provided the URL and suggested playing around by varying (n, p) and observing the “wave” that moved and changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while suggesting further avenues to explore for the keener attendees.\nFrom experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I did wonder whether the discreteness PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but actually I concluded that not needing to go into probability density was an advantage.",
+    "text": "Technical choices\nBased on my Scoping and Planning reflections:\n\nI decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time\nI decided to start my presentation with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life e.g. Wondering whether you’ve been incorrectly served a Diet Coke (Alternative hypothesis) means you had an expectation of a certain taste from a regular Coke (Null hypothesis), and the taste is so different to that expectation (test statistic) that it feels too unlikely (p value) that it is a regular Coke. This also provided a good opportunity to make technical terms stick, and showing that people already understand the concept even if they didn’t know the jargon.\nI transitioned from qualitative examples to the classic example of a series of fair coin tosses. Next, to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely, based on an independent probability of mutation (the bias of the coin). This provided a seamless but significant transition from the qualitative Coke example to a good setting for a quantitative treatment of the subject matter: If there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string - if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation that my organisation is concerned with.\nFrom here, I continued in an incremental fashion to keep people confident and engaged:\n\nUsing a dynamic graph, I talked through the Probabilty Mass Function (PMF) for the Hamming Distance, and demonstrating how it smoothly and intuitively changed as you vary the length of the string (n) and the independent probability of mutation (p).\nFrom here it was simple to explain that we add the bars to get the cumulative PMF.\nThe next graph added an (arbitrary) line at the 95% mark to define “extreme” outcomes in that that pobserving an outcome at least as extreme was only 5% if they Null were true.\n\nI explained that the app was publicly available and provided the URL and suggested playing around by varying (n, p) and observing the “wave” that moved and changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while suggesting further avenues to explore for the keener attendees.\nFrom experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I did wonder whether the discreteness PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but actually I concluded that not needing to go into probability density was an advantage.",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -292,91 +292,71 @@
   {
     "objectID": "fpl.html",
     "href": "fpl.html",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "",
-    "text": "Overview",
+    "text": "Overview\nA quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics and the FPL API and no football knowledge.",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
     "objectID": "fpl.html#themes-analytical-methods",
     "href": "fpl.html#themes-analytical-methods",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods",
+    "text": "Themes / Analytical methods\nEffective and deliberate scoping and planning, project management “discipline”, Python, Quarto, API endpoints, time series analysis, designing heuristic metrics",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
     "objectID": "fpl.html#business-problem",
     "href": "fpl.html#business-problem",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Business Problem",
-    "text": "Business Problem",
+    "text": "Business Problem\nDuring data science or operational work, particularly more complex or unstructured work, I often notice the temptation or inclination to consider applying manual overrides to my methodology or scope - perhaps to account for an edge case or an extra variable that becomes apparent later. While this comes from a place of quality or rigour, and can be the best thing to do if done properly/iteratively, I recognise that actually if the override/overlay/correction that occurs to me is truly value-adding, then that means my original scoping and planning could have been better i.e. scoping and planning should at the outset aim to sufficiently but minimally capture all that is necessary and useful in designing a good solution to a problem.\nThis project occurred to me as a useful exercise in discipline of devising a strategy to solve a problem (scoring as many points as possible in FPL) knowing that my domain knowledge is significantly limited, choosing a boundary of information to be “in scope” as a heuristic solution to that limitation, and then not intervening or overriding when I inevitably encounter information out of the scope. I envisaged, and experiencing, a huge amount of advice and suggestions from friends who do have a “football IQ”, and the idea is for me to have spent enough time prior to Gameweek 1 planning a strategy I am happy with and confident in, with the information I choose to use, so that I don’t then throughout the season succumb to the temptation to bolt on extra bits of strategy as I go along. How many points I score is actually do is in many ways less important to me than how well I managed the scope creep.",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
     "objectID": "fpl.html#scoping-and-planning",
     "href": "fpl.html#scoping-and-planning",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Scoping and planning",
-    "text": "Scoping and planning",
+    "text": "Scoping and planning\nThe chapter of my Quarto book linked below explores the scope I set out for myself before looking at any data or choosing any players. The chapter is structured by way of tenuous football references.\nhttps://janarthduraisingham.github.io/fpl/intro.html",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
     "objectID": "fpl.html#technical-choices",
     "href": "fpl.html#technical-choices",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Technical choices",
-    "text": "Technical choices",
+    "text": "Technical choices\n\nApproaching the problem\nI recognised that the problem could be reduced into two different, but interacting, sub-problems:\n\nBefore Gameweek 1, I need to choose an initial squad that is likely to score well\nEach week, I need to use my transfers to sell players who are likely to score badly and buy players who are likely to score well\n\n\n\nStatistical methodology\nWhile the two sub-problems sound similar, I recognised that I would have significantly different data on which to solve them. I can make weekly transfers using data that was realised the prior weekend, but I had to choose my initial squad based on prior season data relating to months or years ago.\n\nI decided to select my initial squad based on the last two (aggregated) seasons of data\n\nTo leave myself with capital to make informed transfers on more current data later in the season, I would prioritise a cheap squad with a high historical points to current price ratio.\nMore details here: https://janarthduraisingham.github.io/fpl/gw1.html\n\nI decided to select weekly transfers based on recent current season data\n\nI used a heuristic mix of a 4 week Simple Moving Average, and an Exponentially-Weighted Moving Average Crossover to rank and select candidiates to transfer in and out.\nMore details here, including technical discussion and step-by-step computation: https://janarthduraisingham.github.io/fpl/gw7.html",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
     "objectID": "fpl.html#validation",
     "href": "fpl.html#validation",
-    "title": "Fantasy Premier League (Personal)",
+    "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Validation",
-    "text": "Validation",
+    "text": "Validation\nWith 37 transfers over the season and 15 players in the squad, the average number of players holding any one position is less than 3. I recognised that this meant that if choose my initial squad badly, that puts a lot of pressure on the weekly transfers to make up the forgone value and add their own value. For this reason I didn’t want my measure of performance to reflect a combination of my performance of picking a good squad on old data (which was likely to be a worse predictor) and of my performance of making good decisions based on my transfers strategy.\nFor this reason I decided my main metric of evaluation would be to compare my final points at the end of the season with the points my initial squad would have scored, had I made no transfers over the season. In this way, I’m able to deliberately and specifically evaluate how well my strategy identified good transfers, regardless of how well my initial squad was chosen.\nMore details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   },
   {
-    "objectID": "fpl.html#impact",
-    "href": "fpl.html#impact",
-    "title": "Fantasy Premier League (Personal)",
-    "section": "Impact",
-    "text": "Impact",
+    "objectID": "fpl.html#what-i-learnt-would-improve-relevance-to-senior-data-scientist-role",
+    "href": "fpl.html#what-i-learnt-would-improve-relevance-to-senior-data-scientist-role",
+    "title": "Fantasy Premier League [Personal, WIP]",
+    "section": "What I learnt / would improve & Relevance to Senior Data Scientist role",
+    "text": "What I learnt / would improve & Relevance to Senior Data Scientist role\nThis a valuable and rare exercise in that it’s otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I’ve gone into this knowing that with the scope of my strategy, there’s probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably “Captain Haaland”. Processing and acknowledging that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.\nIt also highlights the importance of including a range of stakeholders upstream and early on, when, as is usual, a low ceiling of performance is not acceptable. Ultimately, practising data science as a non-clinician means projects are likely to include a never-ending horizon of possible depth to explore. A key part of scoping and planning is deciding on a modelling/analytical scope, drawing on perspectives and experiences from a diverse range of colleague and stakeholders to fully explore that scope, and then respect it without succumbing to scope creep.",
     "crumbs": [
-      "Fantasy Premier League (Personal)"
-    ]
-  },
-  {
-    "objectID": "fpl.html#architecture",
-    "href": "fpl.html#architecture",
-    "title": "Fantasy Premier League (Personal)",
-    "section": "Architecture",
-    "text": "Architecture",
-    "crumbs": [
-      "Fantasy Premier League (Personal)"
-    ]
-  },
-  {
-    "objectID": "fpl.html#design-choices",
-    "href": "fpl.html#design-choices",
-    "title": "Fantasy Premier League (Personal)",
-    "section": "Design choices",
-    "text": "Design choices",
-    "crumbs": [
-      "Fantasy Premier League (Personal)"
+      "Fantasy Premier League [Personal, WIP]"
     ]
   }
 ]
