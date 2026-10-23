@@ -108,7 +108,7 @@ The codebase of the project consists of:
 ![Represent optimal slot allocation as choropleth leaflet](images/capacity_network_design/algo_R_7.png)
 :::
 
-### outputs
+### Outputs
 
 Below are a series of optimal allocation choropleth outputs from holding all parameters constant except "cost to transport blood to Manufacturing Centre, per kilometre". This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).
 

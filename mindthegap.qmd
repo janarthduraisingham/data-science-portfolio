@@ -2,14 +2,63 @@
 
 An R package for Agent Based Modelling of whole blood donors donating at stochastic intervals.
 
+A Monte Carlo method is used to simulate the time between donors’ successive blood donations,
+with a view to quantify and understand the effects of reducing the minimum allowed
+interval between donations. The time to a donor’s next donation is modelled as a function
+of the donor’s preferred interval, the blood donation organisation’s (NHSBT) minimum allowed interval,
+and blood iron health at time of appointment. Hierarchical sampling structures are used
+to model donor behaviour at the population level and at the individual level. The initial
+value problem associated with a system of coupled differential equations is used to model
+iron replenishment in the body. Selected sampling distributions for donor outcomes are used
+to quantify the trade-off between enhanced blood supply and increased health risks, mediated
+by the minimum allowed interval. Reducing the minimum allowed interval yields more
+donations, but also a more than commensurate deterioration of donor iron health. Ferritin
+level at time of appointment proves a more effective marker for body iron health than the
+currently used haemoglobin level, which suffers from a lag in indicating body iron health due
+to immediate and continuous replenishment from ferritin stores. In particular, menstruating
+donors present significant additional challenge in faithfully capturing body iron dynamics.
+
 # Overview
 
 ## Themes / Analytical methods
 
+_R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods,  Shiny app, composite metric, Multi-Criterion Decision Analysis_
+
 ## Business Problem
 
+On reducing the minimum allowed interval between successive blood donations, does any
+increase in blood supply significantly outweigh any deterioration of body iron health in
+donors?
+
 ## Scoping and planning
-limitations
+
+After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of:
+* The minimum interval
+* The donor’s individual preferred interval between donations
+* The time required for the donor’s blood iron levels to replenish sufficiently to pass the
+Hb test
+
+A reduction in the minimum interval is expected to increase the total number of donations
+from donors over a fixed period of time, accompanied by an increase in the frequency and
+severity of adverse effects on donors’ body iron health. The model should allow the practitioner
+to vary, as an input parameter, the minimum allowed donation interval, and should
+return a quantified set of donor outcomes, pertaining to blood supply and donor body iron
+health.
+
+Model methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff
+between blood supply and donor body iron health. Simultaneously, model outputs should
+be accessible and practical enough to lend themselves to a solving a cost-benefit analysis
+rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention
+or policy.
+
+## Assumptions
+
+Key assumptions related to:
+
+* A sequential process flow for a donor choosing to donate blood
+
+## Limitations
+
 ## Technical choices
 
 ## Validation
@@ -17,10 +66,33 @@ limitations
 ## Impact  
 
 # Project code
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
 
 ## Architecture
 
+::: {.panel-tabset}
+
+### Repo architecture
+
+### Package namespace
+
+### testthat
+
+:::
+
 ## Design choices
+
+## Pseudocode
+
+::: {.panel-tabset}
+
+:::
+
+## Code excerpts
+
+::: {.panel-tabset}
+
+:::
 
 # Output
 
