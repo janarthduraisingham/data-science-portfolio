@@ -1,6 +1,6 @@
 # mindthegap {.unnumbered}
 
-An R package for Agent Based Modelling of whole blood donors donating at stochastic intervals.
+An R package for Agent Based Modelling (ABM) of whole blood donors donating at stochastic intervals.
 
 A Monte Carlo method is used to simulate the time between donors’ successive blood donations,
 with a view to quantify and understand the effects of reducing the minimum allowed
@@ -25,6 +25,10 @@ donors present significant additional challenge in faithfully capturing body iro
 _R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods,  Shiny app, composite metric, Multi-Criterion Decision Analysis_
 
 ## Business Problem
+
+European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to reduce the mini,um interval?
+
+### Academic aim
 
 On reducing the minimum allowed interval between successive blood donations, does any
 increase in blood supply significantly outweigh any deterioration of body iron health in
@@ -53,13 +57,21 @@ or policy.
 
 ## Assumptions
 
-Key assumptions related to:
+Key assumptions relate to:
 
-* A sequential process flow for a donor choosing to donate blood
+* A sequential process flow for a donor choosing to donate blood through to the physical donation
+* Distributional assumptions governing how long after their last donation a donor will choose to donate
+* The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test
 
 ## Limitations
 
 ## Technical choices
+
+* I recognised the suitability of ABM, given the idiosyncratic and behavioural nature of donors choosing to donate.  
+* I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.
+* I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor's donation activity.
+* I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)
+* I included observables relating to "wasted slots" and donor burnout, for scope to extend the composite metric
 
 ## Validation
 
@@ -97,5 +109,7 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 # Output
 
 # relevance to role
+solving unstructured problems by combinig different technique.
+
 
 # what I learnt /would improve
