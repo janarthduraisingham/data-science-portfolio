@@ -1,5 +1,7 @@
 # mindthegap {.unnumbered}
 
+An R package for Agent Based Modelling of whole blood donors donating at stochastic intervals.
+
 # Overview
 
 ## Themes / Analytical methods
