@@ -64,7 +64,7 @@
     "href": "mindthegap.html",
     "title": "mindthegap",
     "section": "",
-    "text": "Overview",
+    "text": "Overview\nAn R package for Agent Based Modelling (ABM) of whole blood donors donating at stochastic intervals.",
     "crumbs": [
       "mindthegap"
     ]
@@ -74,7 +74,7 @@
     "href": "mindthegap.html#themes-analytical-methods",
     "title": "mindthegap",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods",
+    "text": "Themes / Analytical methods\nR package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods, Shiny app, composite metric, Multi-Criterion Decision Analysis",
     "crumbs": [
       "mindthegap"
     ]
@@ -84,7 +84,7 @@
     "href": "mindthegap.html#business-problem",
     "title": "mindthegap",
     "section": "Business Problem",
-    "text": "Business Problem",
+    "text": "Business Problem\nEuropean law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?\n\nAcademic aim\nOn reducing the minimum allowed interval between successive blood donations, does any increase in blood supply significantly outweigh any deterioration of body iron health in donors?",
     "crumbs": [
       "mindthegap"
     ]
@@ -94,7 +94,37 @@
     "href": "mindthegap.html#scoping-and-planning",
     "title": "mindthegap",
     "section": "Scoping and planning",
-    "text": "Scoping and planning\nlimitations ## Technical choices",
+    "text": "Scoping and planning\n\n\n\nExtract from a presentation on the project\n\n\nAfter interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of: * The minimum interval * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the Hb test\nA reduction in the minimum interval is expected to increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. The model should allow the practitioner to vary, as an input parameter, the minimum allowed donation interval, and should return a quantified set of donor outcomes, pertaining to blood supply and donor body iron health.\nModel methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff between blood supply and donor body iron health. Simultaneously, model outputs should be accessible and practical enough to lend themselves to a solving a cost-benefit analysis rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention or policy.",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#assumptions",
+    "href": "mindthegap.html#assumptions",
+    "title": "mindthegap",
+    "section": "Assumptions",
+    "text": "Assumptions\nKey assumptions relate to:\n\nA sequential process flow for a donor choosing to donate blood through to the physical donation\nDistributional assumptions governing how long after their last donation a donor will choose to donate\nThe dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#limitations",
+    "href": "mindthegap.html#limitations",
+    "title": "mindthegap",
+    "section": "Limitations",
+    "text": "Limitations",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#technical-choices",
+    "href": "mindthegap.html#technical-choices",
+    "title": "mindthegap",
+    "section": "Technical choices",
+    "text": "Technical choices\n\nI recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables.\n\n\n\nAgent Based Model overview\n\n\n\nOverview of ABM paradigm\n\n\n\n\nABM example\n\n\n\nExample application of ABM\n\n\n\n\nExample parameters and variables\n\n\n\nExtract from presentation on project\n\n\n\n\n\nI decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.\nI used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor’s donation activity.\nI used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)\nI included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric",
     "crumbs": [
       "mindthegap"
     ]
@@ -124,17 +154,37 @@
     "href": "mindthegap.html#architecture",
     "title": "mindthegap",
     "section": "Architecture",
-    "text": "Architecture",
+    "text": "Architecture\n\nPackage directory treePackage namespacetestthat\n\n\n\n\n\nDirectory for mindthegap package\n\n\n\n\n\n\n\npublic methods for the Donor class\n\n\n\n\n\n\n\nTests for Donor class public methods",
     "crumbs": [
       "mindthegap"
     ]
   },
   {
-    "objectID": "mindthegap.html#design-choices",
-    "href": "mindthegap.html#design-choices",
+    "objectID": "mindthegap.html#pseudocode",
+    "href": "mindthegap.html#pseudocode",
     "title": "mindthegap",
-    "section": "Design choices",
-    "text": "Design choices",
+    "section": "Pseudocode",
+    "text": "Pseudocode\n\nMathematical formulation of modelAlgorithm for modelled process flow\n\n\n\n\n\nMathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate\n\n\n\n\n   ### Composite metric for scenario comparison",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#code-excerpts",
+    "href": "mindthegap.html#code-excerpts",
+    "title": "mindthegap",
+    "section": "Code excerpts",
+    "text": "Code excerpts\n\nThe Donor R6 ClassExample public methodstestthat tests\n\n\n \n\n\n \n\n\n\n\n\nContrive a donor history that means the donor’s next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.\n\n\n\n\n\nContrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor’s normal value",
+    "crumbs": [
+      "mindthegap"
+    ]
+  },
+  {
+    "objectID": "mindthegap.html#system-dynamics-for-modelling-iron-replenishment",
+    "href": "mindthegap.html#system-dynamics-for-modelling-iron-replenishment",
+    "title": "mindthegap",
+    "section": "System Dynamics for modelling iron replenishment",
+    "text": "System Dynamics for modelling iron replenishment\n\n\n\nCoupled ordinary differential equations representing the stock and flow model for iron dynamics in the body",
     "crumbs": [
       "mindthegap"
     ]
@@ -234,7 +284,7 @@
     "href": "capacity-network-design.html#greedy-algorithm-for-slot-allocation",
     "title": "Capacity Network Design",
     "section": "Greedy Algorithm for slot allocation",
-    "text": "Greedy Algorithm for slot allocation\n\nPseudocode\n\n\n\nSimplified Pseudocode for Greedy algorithm\n\n\n\n\nCode excerpts\n\nParametersCensus data and geographiesTransform raw dataTransform raw data contd.Objective functionExecute locally optimum stepVisualise\n\n\n\n\n\nSet parameters for algorithm\n\n\n\n\n\n\n\nLoad and pre-process population data and constituency boundaries\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCopmute objective function (much of which is collection targets per blood group)\n\n\n\n\n\n\n\nAssign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted\n\n\n\n\n\n\n\nRepresent optimal slot allocation as choropleth leaflet\n\n\n\n\n\n\n\noutputs\nBelow are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).\n\n£0/km (free/unconstrained)£1/km£10/km£100/km£1000/km\n\n\n\n\n\nWhen the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.\n\n\n\n\n\n\n\n\n\n\nAs the transport cost becomes constraining, the distribution dissipates.\n\n\n\n\n\n\n\nAs the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol",
+    "text": "Greedy Algorithm for slot allocation\n\nPseudocode\n\n\n\nSimplified Pseudocode for Greedy algorithm\n\n\n\n\nCode excerpts\n\nParametersCensus data and geographiesTransform raw dataTransform raw data contd.Objective functionExecute locally optimum stepVisualise\n\n\n\n\n\nSet parameters for algorithm\n\n\n\n\n\n\n\nLoad and pre-process population data and constituency boundaries\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCopmute objective function (much of which is collection targets per blood group)\n\n\n\n\n\n\n\nAssign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted\n\n\n\n\n\n\n\nRepresent optimal slot allocation as choropleth leaflet\n\n\n\n\n\n\n\nOutputs\nBelow are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).\n\n£0/km (free/unconstrained)£1/km£10/km£100/km£1000/km\n\n\n\n\n\nWhen the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.\n\n\n\n\n\n\n\n\n\n\nAs the transport cost becomes constraining, the distribution dissipates.\n\n\n\n\n\n\n\nAs the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol",
     "crumbs": [
       "Capacity Network Design"
     ]

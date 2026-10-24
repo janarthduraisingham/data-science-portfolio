@@ -156,19 +156,31 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a>
   <ul class="collapse">
   <li><a href="#themes-analytical-methods" id="toc-themes-analytical-methods" class="nav-link" data-scroll-target="#themes-analytical-methods">Themes / Analytical methods</a></li>
-  <li><a href="#business-problem" id="toc-business-problem" class="nav-link" data-scroll-target="#business-problem">Business Problem</a></li>
+  <li><a href="#business-problem" id="toc-business-problem" class="nav-link" data-scroll-target="#business-problem">Business Problem</a>
+  <ul class="collapse">
+  <li><a href="#academic-aim" id="toc-academic-aim" class="nav-link" data-scroll-target="#academic-aim">Academic aim</a></li>
+  </ul></li>
   <li><a href="#scoping-and-planning" id="toc-scoping-and-planning" class="nav-link" data-scroll-target="#scoping-and-planning">Scoping and planning</a></li>
+  <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#technical-choices" id="toc-technical-choices" class="nav-link" data-scroll-target="#technical-choices">Technical choices</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
   <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact">Impact</a></li>
   </ul></li>
   <li><a href="#project-code" id="toc-project-code" class="nav-link" data-scroll-target="#project-code">Project code</a>
   <ul class="collapse">
   <li><a href="#architecture" id="toc-architecture" class="nav-link" data-scroll-target="#architecture">Architecture</a></li>
-  <li><a href="#design-choices" id="toc-design-choices" class="nav-link" data-scroll-target="#design-choices">Design choices</a></li>
+  <li><a href="#pseudocode" id="toc-pseudocode" class="nav-link" data-scroll-target="#pseudocode">Pseudocode</a></li>
+  <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
+  <li><a href="#system-dynamics-for-modelling-iron-replenishment" id="toc-system-dynamics-for-modelling-iron-replenishment" class="nav-link" data-scroll-target="#system-dynamics-for-modelling-iron-replenishment">System Dynamics for modelling iron replenishment</a></li>
   </ul></li>
-  <li><a href="#output" id="toc-output" class="nav-link" data-scroll-target="#output">Output</a></li>
+  <li><a href="#output-results" id="toc-output-results" class="nav-link" data-scroll-target="#output-results">Output / Results</a>
+  <ul class="collapse">
+  <li><a href="#user-guide" id="toc-user-guide" class="nav-link" data-scroll-target="#user-guide">User guide</a></li>
+  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  </ul></li>
   <li><a href="#relevance-to-role" id="toc-relevance-to-role" class="nav-link" data-scroll-target="#relevance-to-role">relevance to role</a></li>
-  <li><a href="#what-i-learnt-would-improve" id="toc-what-i-learnt-would-improve" class="nav-link" data-scroll-target="#what-i-learnt-would-improve">what I learnt /would improve</a></li>
+  <li><a href="#what-i-learntwould-improve" id="toc-what-i-learntwould-improve" class="nav-link" data-scroll-target="#what-i-learntwould-improve">What I learnt/would improve</a></li>
   </ul>
 </nav>
     </div>
@@ -194,17 +206,85 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>An R package for Agent Based Modelling (ABM) of whole blood donors donating at stochastic intervals.</p>
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <section id="themes-analytical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="themes-analytical-methods">Themes / Analytical methods</h2>
+<p><em>R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods, Shiny app, composite metric, Multi-Criterion Decision Analysis</em></p>
 </section>
 <section id="business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
+<p>European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?</p>
+<section id="academic-aim" class="level3">
+<h3 class="anchored" data-anchor-id="academic-aim">Academic aim</h3>
+<p>On reducing the minimum allowed interval between successive blood donations, does any increase in blood supply significantly outweigh any deterioration of body iron health in donors?</p>
+</section>
 </section>
 <section id="scoping-and-planning" class="level2">
 <h2 class="anchored" data-anchor-id="scoping-and-planning">Scoping and planning</h2>
-<p>limitations ## Technical choices</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/abm_scope.png" class="img-fluid figure-img"></p>
+<figcaption>Extract from a presentation on the project</figcaption>
+</figure>
+</div>
+<p>After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of: * The minimum interval * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the Hb test</p>
+<p>A reduction in the minimum interval is expected to increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. The model should allow the practitioner to vary, as an input parameter, the minimum allowed donation interval, and should return a quantified set of donor outcomes, pertaining to blood supply and donor body iron health.</p>
+<p>Model methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff between blood supply and donor body iron health. Simultaneously, model outputs should be accessible and practical enough to lend themselves to a solving a cost-benefit analysis rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention or policy.</p>
+</section>
+<section id="assumptions" class="level2">
+<h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
+<p>Key assumptions relate to:</p>
+<ul>
+<li>A sequential process flow for a donor choosing to donate blood through to the physical donation</li>
+<li>Distributional assumptions governing how long after their last donation a donor will choose to donate</li>
+<li>The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test</li>
+</ul>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+</section>
+<section id="technical-choices" class="level2">
+<h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
+<ul>
+<li>I recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables.</li>
+</ul>
+<div class="panel_tabset">
+<section id="agent-based-model-overview" class="level3">
+<h3 class="anchored" data-anchor-id="agent-based-model-overview">Agent Based Model overview</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/abm_intro.png" class="img-fluid figure-img"></p>
+<figcaption>Overview of ABM paradigm</figcaption>
+</figure>
+</div>
+</section>
+<section id="abm-example" class="level3">
+<h3 class="anchored" data-anchor-id="abm-example">ABM example</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/abm_example_ecology.png" class="img-fluid figure-img"></p>
+<figcaption>Example application of ABM</figcaption>
+</figure>
+</div>
+</section>
+<section id="example-parameters-and-variables" class="level3">
+<h3 class="anchored" data-anchor-id="example-parameters-and-variables">Example parameters and variables</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/abm_example_parameters.png" class="img-fluid figure-img"></p>
+<figcaption>Extract from presentation on project</figcaption>
+</figure>
+</div>
+</section>
+</div>
+<ul>
+<li>I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.</li>
+<li>I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor’s donation activity.</li>
+<li>I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)</li>
+<li>I included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric</li>
+</ul>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
@@ -215,21 +295,115 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="project-code" class="level1">
 <h1>Project code</h1>
+<p>In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.</p>
 <section id="architecture" class="level2">
 <h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Package directory tree</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Package namespace</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">testthat</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/abm_architecture.png" class="img-fluid figure-img"></p>
+<figcaption>Directory for mindthegap package</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/namespace.png" class="img-fluid figure-img"></p>
+<figcaption>public methods for the Donor class</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/tests.png" class="img-fluid figure-img"></p>
+<figcaption>Tests for Donor class public methods</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="design-choices" class="level2">
-<h2 class="anchored" data-anchor-id="design-choices">Design choices</h2>
+<section id="pseudocode" class="level2">
+<h2 class="anchored" data-anchor-id="pseudocode">Pseudocode</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mathematical formulation of model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Algorithm for modelled process flow</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/mathematical_formulation.png" class="img-fluid figure-img"></p>
+<figcaption>Mathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><img src="images/mindthegap/model_vars_params_1.png" class="img-fluid" alt="Definitions"> <img src="images/mindthegap/model_vars_params_2.png" class="img-fluid" alt="Definitions continued"> <img src="images/mindthegap/pseudocode.png" class="img-fluid" alt="Pseudocode for algorithm"> ### Composite metric for scenario comparison <img src="images/mindthegap/composite_metric.png" class="img-fluid" alt="Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="code-excerpts" class="level2">
+<h2 class="anchored" data-anchor-id="code-excerpts">Code excerpts</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">The Donor R6 Class</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Example public methods</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">testthat tests</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p><img src="images/mindthegap/donor_class_initialisation.png" class="img-fluid" alt="Instantiating the Donor class with ROxygen"> <img src="images/mindthegap/donor_class_public_methods.png" class="img-fluid" alt="Donor class public methods"></p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><img src="images/mindthegap/burnout_public_method.png" class="img-fluid" alt="Public method for sampling for donor burnout following frequent donation"> <img src="images/mindthegap/draw_normal_hb.png" class="img-fluid" alt="Public method to sample for a donor’s normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors"></p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/earliest_donation_date_test.png" class="img-fluid figure-img"></p>
+<figcaption>Contrive a donor history that means the donor’s next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/iron_replenishment_test.png" class="img-fluid figure-img"></p>
+<figcaption>Contrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor’s normal value</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="system-dynamics-for-modelling-iron-replenishment" class="level2">
+<h2 class="anchored" data-anchor-id="system-dynamics-for-modelling-iron-replenishment">System Dynamics for modelling iron replenishment</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/hb_ferritin_ivp.png" class="img-fluid figure-img"></p>
+<figcaption>Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body</figcaption>
+</figure>
+</div>
 </section>
 </section>
-<section id="output" class="level1">
-<h1>Output</h1>
+<section id="output-results" class="level1">
+<h1>Output / Results</h1>
+<p>The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health <img src="images/mindthegap/inequalities.png" class="img-fluid" alt="While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male."> <img src="images/mindthegap/hb_replenishment_curve.png" class="img-fluid" alt="Donations can occur where Hb is normal, but ferritin has not fully replenished"> <img src="images/mindthegap/ferritin_testing.png" class="img-fluid" alt="The case for ferritin testing"></p>
+<p><img src="images/mindthegap/model_outputs.png" class="img-fluid" alt="Raw model outputs that lend themselves to different objective functions based on organisational objectives"> ::: {.panel-tabset}</p>
+<section id="user-guide" class="level3">
+<h3 class="anchored" data-anchor-id="user-guide">User guide</h3>
+<p><img src="images/mindthegap/readme_getting_started.png" class="img-fluid" alt="Getting started"> <img src="images/mindthegap/readme_donor_example.png" class="img-fluid" alt="Example: instantiating the Donor class"></p>
+</section>
+<section id="documentation" class="level3">
+<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
+<p><img src="images/mindthegap/simulate_method_documentation.png" class="img-fluid" alt="Excerpt from documentation for the simulate public method"> :::</p>
+</section>
 </section>
 <section id="relevance-to-role" class="level1">
 <h1>relevance to role</h1>
+<p>solving unstructured problems by combinig different technique.</p>
 </section>
-<section id="what-i-learnt-would-improve" class="level1">
-<h1>what I learnt /would improve</h1>
+<section id="what-i-learntwould-improve" class="level1">
+<h1>What I learnt/would improve</h1>
 
 
 </section>
