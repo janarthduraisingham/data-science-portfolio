@@ -6,7 +6,7 @@ An interactive Shiny app with dynamic visualisations to convey the intuition beh
 
 ## Themes / Analytical methods
 
-_R, Shiny, reactivity, widgets, presenting complex technical concepts accessibly, presenting to different audiences simultaneously_
+_R, Shiny, reactivity, widgets, presenting technical concepts to different audiences simultaneously_
 
 ## Business Problem
 

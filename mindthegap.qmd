@@ -145,6 +145,7 @@ The simulations demonstrated an effect discussed in the literature, that Hb leve
 ![The case for ferritin testing](images/mindthegap/ferritin_testing.png)
 
 ![Raw model outputs that lend themselves to different objective functions based on organisational objectives](images/mindthegap/model_outputs.png)
+
 ::: {.panel-tabset}
 
 ### User guide
