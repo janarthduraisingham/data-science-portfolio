@@ -6,7 +6,7 @@ A greedy algorithm to explore interactions between the competing operational obj
 
 ## Themes / Analytical methods
 
-_R, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers_
+_R, prescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers_
 
 ## Business Problem
 
@@ -21,6 +21,8 @@ A numerical method by way of a greedy algorithm that, given a set of organisatio
 * I decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.
 * I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites
 
+## Limitations
+* Numerical methods are liable to fail to converge or converge on a local optimum rather than a global optimum, but given their ability to approach otherwise untractable problems and compute in a reasonable time, the use is justified here, as detailed below.
 
 ## Technical choices
 
@@ -33,11 +35,11 @@ A numerical method by way of a greedy algorithm that, given a set of organisatio
 
 ## Validation
 
-hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.
+As the algorithm is a simulation, there is no operational or historical data to compare it with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because of the fine-tune control over the algorithm and its deterministic nature, it is possible to determine the effect of each parameter or iteration loop in the algorithm as necessary: It can be re-run and paused after each loop, or it can be run with a tweaked parameter.
 
 ## Impact  
 
-understood tradeoff and need for prioritisation.
+This work enabled senior decision-makers to fully grasp the reduction of the problem into a weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and the leaflet choropleths. They allowed me to convey that there was no objective correct answer to the problem, but instead the priorities that were input, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.
 
 # Project code & Output
 
@@ -108,7 +110,7 @@ The codebase of the project consists of:
 ![Represent optimal slot allocation as choropleth leaflet](images/capacity_network_design/algo_R_7.png)
 :::
 
-### Outputs
+### Outputs {#example}
 
 Below are a series of optimal allocation choropleth outputs from holding all parameters constant except "cost to transport blood to Manufacturing Centre, per kilometre". This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).
 
@@ -133,7 +135,8 @@ Below are a series of optimal allocation choropleth outputs from holding all par
 
 # Relevance to the Senior Data Scientist role
 
-MCDA
+The problem of weighing up inherently uncomparable or non-monetary objectives is one that all public sector organisations face. As such, the role of computational methods and MCDA in prescriptive analytics is highly transferrable. This could include distributing resources, care, workforce geographically, or allocating funding between them.  
 
 # What I learnt / would improve
-take a stance and push it. I presented an example sensible configuration - go further and present reasonable bounds for each relative weight. promote movement next step rather than analysis paralysis on udnerstanding that the prioritisation matters.
+
+A key source of non-progress surrounded the hesistance of stakeholders to commit to a weighting/ordering of priority of objectives. Next time, I would conduct a sensitivity analysis to understand the effect on the output (allocation) that a unit change in weightings would cause. This would at least prescribe a sensible precision for the weightings, which it occured to me might make the task less daunting for decision-makers e.g. if they knew the weightings only needed to be in 10% blocks rather than 1% blocks.
