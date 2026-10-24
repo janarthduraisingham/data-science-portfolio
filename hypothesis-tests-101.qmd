@@ -6,7 +6,7 @@ An interactive Shiny app with dynamic visualisations to convey the intuition beh
 
 ## Themes / Analytical methods
 
-_R, Shiny, reactivity, widgets, presenting complex technical concepts accessibly, presenting to different audiences simultaneously_
+_R, Shiny, reactivity, widgets, presenting technical concepts to different audiences simultaneously_
 
 ## Business Problem
 
@@ -22,6 +22,9 @@ I recognised that if this were to be effective:
 * it would need to take a very different approach to a textbook providing formulae for test statistics and tables for critical values. Also, the delivery and format would need to be engaging
 * it would need to draw on intuition and experience that people already have. This would serve to build confidence in the attendees as we explored technical material, and prevent the talk from feeling like an academic exercise or thought-experiment.
 * the scope of the product would need to be such that people could not only benefit from attending my talk, but also could benefit further from playing around with the app, if they chose to.
+
+## Limitations
+This is discussed retrospectively in @improve below
 
 ## Technical choices
 
@@ -54,7 +57,7 @@ Public Shiny app: https://janarthduraisingham.shinyapps.io/hamming-mutation-clas
 
 I recognise that the Senior Data Scientist role would involve engaging, influencing, and taking an interest in the development of a range of groups of people, including clinicians, senior decision-makers, the public, and junior analysts. As such, it's important to be able to convey complex and technical concepts in different ways to different people, sometimes in the same room at the same time. I'm on my own journey of learning and I love sharing what I learn and what clicks for me, which is why my passion for teaching and engaging would be well-placed in the role.
 
-# What I learnt / would improve
+# What I learnt / would improve {#improve}
 What went well:
 * The everyday/qualitative examples were effective in building people's confidence and engagement early on.
 * The public app meant that my work could benefit people after the Lunch and Learn had finished, and potentially could be used for attendees to teach other people.

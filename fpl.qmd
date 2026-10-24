@@ -6,7 +6,7 @@ A quarto book journalling my journey of playing Fantasy Premier League (FPL) usi
 
 ## Themes / Analytical methods
 
-_Effective and deliberate scoping and planning, project management "discipline", Python, Quarto, API endpoints, time series analysis, designing heuristic metrics_
+_Python, Quarto, API endpoints, time series analysis, designing heuristic metrics_
 
 ## Business Problem
 
@@ -19,6 +19,9 @@ The chapter of my Quarto book linked below explores the scope I set out for myse
 
 https://janarthduraisingham.github.io/fpl/intro.html
 
+## Limitations
+
+With the example of chips discussed in https://janarthduraisingham.github.io/fpl/intro.html#pitch-limits, there is a huge amount of information and insight that will fall out of scope of my strategy, but the scope has been carefully bounded so that the aim and expectations of the analysis is in line with the information and techniques that I am using i.e. my aim is to do significantly better than my initial squad would have, rather than to be in the top x% of all FPL players.
 
 ## Technical choices
 
@@ -47,7 +50,7 @@ For this reason I decided my main metric of evaluation would be to compare my fi
 
 More details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts
 
-##  What I learnt / would improve & Relevance to Senior Data Scientist role
+##  What I learnt / would improve & Relevance to the Senior Data Scientist role
 
 This a valuable and rare exercise in that it's otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I've gone into this knowing that with the scope of my strategy, there's probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably "Captain Haaland". Processing and acknowledging that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.
 

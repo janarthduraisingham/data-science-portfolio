@@ -49,7 +49,9 @@ Key assumptions relate to:
 * Distributional assumptions governing how long after their last donation a donor will choose to donate
 * The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test
 
-## Limitations
+## Limitations {#limitations}
+
+The main limitation of this work is that inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design with the aim that the complexity of the project would be sufficient to capture the significant drivers and effects in the real-world system, while allowing me to write, validate, and present a model in reasonable time that was accessible, reproducible, and not over-engineered. 
 
 ## Technical choices
 
@@ -75,8 +77,10 @@ Key assumptions relate to:
 * I included observables relating to "wasted slots" and donor burnout, for scope to extend the composite metric
 
 ## Validation
+Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were with a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals (Hb rejections on three successive attendances).
 
-## Impact  
+## Impact
+As discussed in @results, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation's Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.
 
 # Project code
 In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
@@ -137,7 +141,7 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ![Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body](images/mindthegap/hb_ferritin_ivp.png)
 
-# Output / Results
+# Output / Results {#results}
 
 The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health
 ![While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male.](images/mindthegap/inequalities.png)
@@ -145,20 +149,33 @@ The simulations demonstrated an effect discussed in the literature, that Hb leve
 ![The case for ferritin testing](images/mindthegap/ferritin_testing.png)
 
 ![Raw model outputs that lend themselves to different objective functions based on organisational objectives](images/mindthegap/model_outputs.png)
+
 ::: {.panel-tabset}
 
 ### User guide
 
 ![Getting started](images/mindthegap/readme_getting_started.png)
+
 ![Example: instantiating the _Donor_ class](images/mindthegap/readme_donor_example.png)
 
 
 ### Documentation
 ![Excerpt from documentation for the _simulate_ public method](images/mindthegap/simulate_method_documentation.png)
+
 :::
 
-# relevance to role
-solving unstructured problems by combinig different technique.
+# Relevance to the Senior Data Scientist role
+
+## Packages
+Packaging code allows for reproducibility and collaboration, both inside and outside the organisation. My experience in developing packages also makes we well positioned to contribute to the ICB's existing packages such as NCLRtemplates.
+
+## Agent Based Models
+As discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains requiring forecasting, comparison, and evaluation of different interventions and policies.
 
 
 # What I learnt/would improve
+* I would extend the objective function to allow for better quantification of outcomes, for example to include the cost of healthcare for people with iron deficiency
+
+![A more sophisticated objective function](images/mindthegap/objective_function.PNG)
+
+* I included a parameter to adjust for different population-level normal Hb levels. I would use this to explore inequalities affecting populations of people who have lower normal levels of Hb - this is directly applicable to the observation in the organisation that Black African and Black Caribbean attendees are more likely to experience Hb rejections than other people.
