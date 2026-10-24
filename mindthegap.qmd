@@ -1,27 +1,164 @@
 # mindthegap {.unnumbered}
 
+An R package for Agent Based Modelling (ABM) of whole blood donors donating at stochastic intervals.
+
 # Overview
 
 ## Themes / Analytical methods
 
+_R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods,  Shiny app, composite metric, Multi-Criterion Decision Analysis_
+
 ## Business Problem
 
+European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?
+
+### Academic aim
+
+On reducing the minimum allowed interval between successive blood donations, does any
+increase in blood supply significantly outweigh any deterioration of body iron health in
+donors?
+
 ## Scoping and planning
-limitations
+
+![Extract from a presentation on the project](images/mindthegap/abm_scope.png)
+
+After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of:
+* The minimum interval
+* The donor’s individual preferred interval between donations
+* The time required for the donor’s blood iron levels to replenish sufficiently to pass the
+Hb test
+
+A reduction in the minimum interval is expected to increase the total number of donations
+from donors over a fixed period of time, accompanied by an increase in the frequency and
+severity of adverse effects on donors’ body iron health. The model should allow the practitioner
+to vary, as an input parameter, the minimum allowed donation interval, and should
+return a quantified set of donor outcomes, pertaining to blood supply and donor body iron
+health.
+
+Model methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff
+between blood supply and donor body iron health. Simultaneously, model outputs should
+be accessible and practical enough to lend themselves to a solving a cost-benefit analysis
+rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention
+or policy.
+
+## Assumptions
+
+Key assumptions relate to:
+
+* A sequential process flow for a donor choosing to donate blood through to the physical donation
+* Distributional assumptions governing how long after their last donation a donor will choose to donate
+* The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test
+
+## Limitations
+
 ## Technical choices
+
+* I recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables. 
+
+::: {.panel_tabset}
+
+### Agent Based Model overview
+
+![Overview of ABM paradigm](images/mindthegap/abm_intro.png)
+
+### ABM example
+
+![Example application of ABM](images/mindthegap/abm_example_ecology.png)
+
+### Example parameters and variables
+![Extract from presentation on project](images/mindthegap/abm_example_parameters.png)
+:::
+
+* I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.
+* I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor's donation activity.
+* I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)
+* I included observables relating to "wasted slots" and donor burnout, for scope to extend the composite metric
 
 ## Validation
 
 ## Impact  
 
 # Project code
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
 
 ## Architecture
 
-## Design choices
+::: {.panel-tabset}
 
-# Output
+### Package directory tree
+![Directory for mindthegap package](images/mindthegap/abm_architecture.png)
+
+### Package namespace
+![public methods for the Donor class](images/mindthegap/namespace.png)
+
+### testthat
+![Tests for Donor class public methods](images/mindthegap/tests.png)
+
+:::
+
+## Pseudocode
+
+::: {.panel-tabset}
+
+### Mathematical formulation of model
+![Mathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate](images/mindthegap/mathematical_formulation.png)
+
+### Algorithm for modelled process flow
+![Definitions](images/mindthegap/model_vars_params_1.png)
+![Definitions continued](images/mindthegap/model_vars_params_2.png)
+![Pseudocode for algorithm](images/mindthegap/pseudocode.png)
+### Composite metric for scenario comparison
+![Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health](images/mindthegap/composite_metric.png)
+
+:::
+
+## Code excerpts
+
+::: {.panel-tabset}
+
+### The Donor R6 Class
+
+![Instantiating the _Donor_ class with ROxygen](images/mindthegap/donor_class_initialisation.png)
+![_Donor_ class public methods](images/mindthegap/donor_class_public_methods.png)
+
+### Example public methods
+
+![Public method for sampling for donor burnout following frequent donation](images/mindthegap/burnout_public_method.png)
+![Public method to sample for a donor's normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors](images/mindthegap/draw_normal_hb.png)
+
+### testthat tests
+![Contrive a donor history that means the donor's next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.](images/mindthegap/earliest_donation_date_test.png)
+
+![Contrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor's normal value](images/mindthegap/iron_replenishment_test.png)
+
+:::
+
+## System Dynamics for modelling iron replenishment
+
+![Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body](images/mindthegap/hb_ferritin_ivp.png)
+
+# Output / Results
+
+The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health
+![While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male.](images/mindthegap/inequalities.png)
+![Donations can occur where Hb is normal, but ferritin has not fully replenished](images/mindthegap/hb_replenishment_curve.png)
+![The case for ferritin testing](images/mindthegap/ferritin_testing.png)
+
+![Raw model outputs that lend themselves to different objective functions based on organisational objectives](images/mindthegap/model_outputs.png)
+::: {.panel-tabset}
+
+### User guide
+
+![Getting started](images/mindthegap/readme_getting_started.png)
+![Example: instantiating the _Donor_ class](images/mindthegap/readme_donor_example.png)
+
+
+### Documentation
+![Excerpt from documentation for the _simulate_ public method](images/mindthegap/simulate_method_documentation.png)
+:::
 
 # relevance to role
+solving unstructured problems by combinig different technique.
 
-# what I learnt /would improve
+
+# What I learnt/would improve
