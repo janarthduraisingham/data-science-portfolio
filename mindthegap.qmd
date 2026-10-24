@@ -2,22 +2,6 @@
 
 An R package for Agent Based Modelling (ABM) of whole blood donors donating at stochastic intervals.
 
-A Monte Carlo method is used to simulate the time between donors’ successive blood donations,
-with a view to quantify and understand the effects of reducing the minimum allowed
-interval between donations. The time to a donor’s next donation is modelled as a function
-of the donor’s preferred interval, the blood donation organisation’s (NHSBT) minimum allowed interval,
-and blood iron health at time of appointment. Hierarchical sampling structures are used
-to model donor behaviour at the population level and at the individual level. The initial
-value problem associated with a system of coupled differential equations is used to model
-iron replenishment in the body. Selected sampling distributions for donor outcomes are used
-to quantify the trade-off between enhanced blood supply and increased health risks, mediated
-by the minimum allowed interval. Reducing the minimum allowed interval yields more
-donations, but also a more than commensurate deterioration of donor iron health. Ferritin
-level at time of appointment proves a more effective marker for body iron health than the
-currently used haemoglobin level, which suffers from a lag in indicating body iron health due
-to immediate and continuous replenishment from ferritin stores. In particular, menstruating
-donors present significant additional challenge in faithfully capturing body iron dynamics.
-
 # Overview
 
 ## Themes / Analytical methods
@@ -26,7 +10,7 @@ _R package, OOP with R6 classes, coupled ordinary differential equations for Sys
 
 ## Business Problem
 
-European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to reduce the mini,um interval?
+European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?
 
 ### Academic aim
 
@@ -35,6 +19,8 @@ increase in blood supply significantly outweigh any deterioration of body iron h
 donors?
 
 ## Scoping and planning
+
+![Extract from a presentation on the project](images/mindthegap/abm_scope.png)
 
 After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of:
 * The minimum interval
@@ -67,7 +53,22 @@ Key assumptions relate to:
 
 ## Technical choices
 
-* I recognised the suitability of ABM, given the idiosyncratic and behavioural nature of donors choosing to donate.  
+* I recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables. 
+
+::: {.panel_tabset}
+
+### Agent Based Model overview
+
+![Overview of ABM paradigm](images/mindthegap/abm_intro.png)
+
+### ABM example
+
+![Example application of ABM](images/mindthegap/abm_example_ecology.png)
+
+### Example parameters and variables
+![Extract from presentation on project](images/mindthegap/abm_example_parameters.png)
+:::
+
 * I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.
 * I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor's donation activity.
 * I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)
@@ -104,6 +105,8 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ::: {.panel-tabset}
 
+### tests
+
 :::
 
 # Output
@@ -112,4 +115,4 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 solving unstructured problems by combinig different technique.
 
 
-# what I learnt /would improve
+# What I learnt/would improve
