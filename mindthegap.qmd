@@ -85,11 +85,14 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ::: {.panel-tabset}
 
-### Repo architecture
+### Package directory tree
+![Directory for mindthegap package](images/mindthegap/abm_architecture.png)
 
 ### Package namespace
+![public methods for the Donor class ](images/mindthegap/namespace.png)
 
 ### testthat
+![Tests for Donor class public methods](images/mindthegap/tests.png)
 
 :::
 
@@ -105,11 +108,36 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ::: {.panel-tabset}
 
-### tests
+### The Donor R6 Class
+
+![Instantiating the _Donor_ class with ROxygen](images/mindthegap/donor_class_initialisation.png)
+![_Donor_ class public methods](images/mindthegap/donor_class_public_methods.png)
+
+### Example public methods
+
+![Public method for sampling for donor burnout following frequent donation](images/mindthegap/burnout_public_method.png)
+![Public method to sample for a donor's normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors](images/mindthegap/draw_normal_hb.png)
+
+### testthat tests
+![Contrive a donor history that means the donor's next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.](images/mindthegap/earliest_donation_date_test.png)
+
+![Contrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor's normal value](images/mindthegap/iron_replenishment_test.png)
 
 :::
 
 # Output
+
+::: {.panel-tabset}
+
+### User guide
+
+![Getting started](images/mindthegap/readme_getting_started.png)
+![Example: instantiating the _Donor_ class](images/mindthegap/readme_donor_example.png)
+
+
+### Documentation
+![Excerpt from documentation for the _simulate_ public method](images/mindthegap/simulate_method_documentation.png)
+:::
 
 # relevance to role
 solving unstructured problems by combinig different technique.
