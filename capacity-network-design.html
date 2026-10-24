@@ -162,6 +162,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#academic-aim" id="toc-academic-aim" class="nav-link" data-scroll-target="#academic-aim">Academic Aim</a></li>
   </ul></li>
   <li><a href="#scoping-and-planning" id="toc-scoping-and-planning" class="nav-link" data-scroll-target="#scoping-and-planning">Scoping and planning</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#technical-choices" id="toc-technical-choices" class="nav-link" data-scroll-target="#technical-choices">Technical choices</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
   <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact">Impact</a></li>
@@ -174,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#pseudocode" id="toc-pseudocode" class="nav-link" data-scroll-target="#pseudocode">Pseudocode</a></li>
   <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
-  <li><a href="#outputs" id="toc-outputs" class="nav-link" data-scroll-target="#outputs">Outputs</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Outputs</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#relevance-to-the-senior-data-scientist-role" id="toc-relevance-to-the-senior-data-scientist-role" class="nav-link" data-scroll-target="#relevance-to-the-senior-data-scientist-role">Relevance to the Senior Data Scientist role</a></li>
@@ -209,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 <h1>Overview</h1>
 <section id="themes-analytical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="themes-analytical-methods">Themes / Analytical methods</h2>
-<p><em>R, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers</em></p>
+<p><em>R, prescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers</em></p>
 </section>
 <section id="business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
@@ -229,6 +230,12 @@ ul.task-list li input[type="checkbox"] {
 <li>I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g.&nbsp;collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites</li>
 </ul>
 </section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Numerical methods are liable to fail to converge or converge on a local optimum rather than a global optimum, but given their ability to approach otherwise untractable problems and compute in a reasonable time, the use is justified here, as detailed below.</li>
+</ul>
+</section>
 <section id="technical-choices" class="level2">
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
 <ul>
@@ -244,11 +251,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>hypothetical so want to make sure outputs make sense and that varying paramters in one direction cause sensible movemenets in output.</p>
+<p>As the algorithm is a simulation, there is no operational or historical data to compare it with. Instead, as demonstrated in <span class="citation" data-cites="example">@example</span>, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because of the fine-tune control over the algorithm and its deterministic nature, it is possible to determine the effect of each parameter or iteration loop in the algorithm as necessary: It can be re-run and paused after each loop, or it can be run with a tweaked parameter.</p>
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
-<p>understood tradeoff and need for prioritisation.</p>
+<p>This work enabled senior decision-makers to fully grasp the reduction of the problem into a weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and the leaflet choropleths. They allowed me to convey that there was no objective correct answer to the problem, but instead the priorities that were input, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.</p>
 </section>
 </section>
 <section id="project-code-output" class="level1">
@@ -394,8 +401,8 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="outputs" class="level3">
-<h3 class="anchored" data-anchor-id="outputs">Outputs</h3>
+<section id="example" class="level3">
+<h3 class="anchored" data-anchor-id="example">Outputs</h3>
 <p>Below are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">£0/km (free/unconstrained)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">£1/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-3" role="tab" aria-controls="tabset-4-3" aria-selected="false" href="">£10/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-4" role="tab" aria-controls="tabset-4-4" aria-selected="false" href="">£100/km</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-5" role="tab" aria-controls="tabset-4-5" aria-selected="false" href="">£1000/km</a></li></ul>
@@ -437,11 +444,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="relevance-to-the-senior-data-scientist-role" class="level1">
 <h1>Relevance to the Senior Data Scientist role</h1>
-<p>MCDA</p>
+<p>The problem of weighing up inherently uncomparable or non-monetary objectives is one that all public sector organisations face. As such, the role of computational methods and MCDA in prescriptive analytics is highly transferrable. This could include distributing resources, care, workforce geographically, or allocating funding between them.</p>
 </section>
 <section id="what-i-learnt-would-improve" class="level1">
 <h1>What I learnt / would improve</h1>
-<p>take a stance and push it. I presented an example sensible configuration - go further and present reasonable bounds for each relative weight. promote movement next step rather than analysis paralysis on udnerstanding that the prioritisation matters.</p>
+<p>A key source of non-progress surrounded the hesistance of stakeholders to commit to a weighting/ordering of priority of objectives. Next time, I would conduct a sensitivity analysis to understand the effect on the output (allocation) that a unit change in weightings would cause. This would at least prescribe a sensible precision for the weightings, which it occured to me might make the task less daunting for decision-makers e.g.&nbsp;if they knew the weightings only needed to be in 10% blocks rather than 1% blocks.</p>
 
 
 </section>

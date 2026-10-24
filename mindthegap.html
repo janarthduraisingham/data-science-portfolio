@@ -174,12 +174,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
   <li><a href="#system-dynamics-for-modelling-iron-replenishment" id="toc-system-dynamics-for-modelling-iron-replenishment" class="nav-link" data-scroll-target="#system-dynamics-for-modelling-iron-replenishment">System Dynamics for modelling iron replenishment</a></li>
   </ul></li>
-  <li><a href="#output-results" id="toc-output-results" class="nav-link" data-scroll-target="#output-results">Output / Results</a>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Output / Results</a></li>
+  <li><a href="#relevance-to-the-senior-data-scientist-role" id="toc-relevance-to-the-senior-data-scientist-role" class="nav-link" data-scroll-target="#relevance-to-the-senior-data-scientist-role">Relevance to the Senior Data Scientist role</a>
   <ul class="collapse">
-  <li><a href="#user-guide" id="toc-user-guide" class="nav-link" data-scroll-target="#user-guide">User guide</a></li>
-  <li><a href="#documentation" id="toc-documentation" class="nav-link" data-scroll-target="#documentation">Documentation</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#agent-based-models" id="toc-agent-based-models" class="nav-link" data-scroll-target="#agent-based-models">Agent Based Models</a></li>
   </ul></li>
-  <li><a href="#relevance-to-role" id="toc-relevance-to-role" class="nav-link" data-scroll-target="#relevance-to-role">relevance to role</a></li>
   <li><a href="#what-i-learntwould-improve" id="toc-what-i-learntwould-improve" class="nav-link" data-scroll-target="#what-i-learntwould-improve">What I learnt/would improve</a></li>
   </ul>
 </nav>
@@ -244,6 +244,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<p>The main limitation of this work is that inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design with the aim that the complexity of the project would be sufficient to capture the significant drivers and effects in the real-world system, while allowing me to write, validate, and present a model in reasonable time that was accessible, reproducible, and not over-engineered.</p>
 </section>
 <section id="technical-choices" class="level2">
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
@@ -288,9 +289,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
+<p>Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were with a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals (Hb rejections on three successive attendances).</p>
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
+<p>As discussed in <span class="citation" data-cites="results">@results</span>, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation’s Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.</p>
 </section>
 </section>
 <section id="project-code" class="level1">
@@ -385,25 +388,68 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="output-results" class="level1">
+<section id="results" class="level1">
 <h1>Output / Results</h1>
 <p>The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health <img src="images/mindthegap/inequalities.png" class="img-fluid" alt="While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male."> <img src="images/mindthegap/hb_replenishment_curve.png" class="img-fluid" alt="Donations can occur where Hb is normal, but ferritin has not fully replenished"> <img src="images/mindthegap/ferritin_testing.png" class="img-fluid" alt="The case for ferritin testing"></p>
-<p><img src="images/mindthegap/model_outputs.png" class="img-fluid" alt="Raw model outputs that lend themselves to different objective functions based on organisational objectives"> ::: {.panel-tabset}</p>
-<section id="user-guide" class="level3">
-<h3 class="anchored" data-anchor-id="user-guide">User guide</h3>
-<p><img src="images/mindthegap/readme_getting_started.png" class="img-fluid" alt="Getting started"> <img src="images/mindthegap/readme_donor_example.png" class="img-fluid" alt="Example: instantiating the Donor class"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/model_outputs.png" class="img-fluid figure-img"></p>
+<figcaption>Raw model outputs that lend themselves to different objective functions based on organisational objectives</figcaption>
+</figure>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">User guide</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">Documentation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/readme_getting_started.png" class="img-fluid figure-img"></p>
+<figcaption>Getting started</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/readme_donor_example.png" class="img-fluid figure-img"></p>
+<figcaption>Example: instantiating the <em>Donor</em> class</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/simulate_method_documentation.png" class="img-fluid figure-img"></p>
+<figcaption>Excerpt from documentation for the <em>simulate</em> public method</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="documentation" class="level3">
-<h3 class="anchored" data-anchor-id="documentation">Documentation</h3>
-<p><img src="images/mindthegap/simulate_method_documentation.png" class="img-fluid" alt="Excerpt from documentation for the simulate public method"> :::</p>
+<section id="relevance-to-the-senior-data-scientist-role" class="level1">
+<h1>Relevance to the Senior Data Scientist role</h1>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>Packaging code allows for reproducibility and collaboration, both inside and outside the organisation. My experience in developing packages also makes we well positioned to contribute to the ICB’s existing packages such as NCLRtemplates.</p>
 </section>
+<section id="agent-based-models" class="level2">
+<h2 class="anchored" data-anchor-id="agent-based-models">Agent Based Models</h2>
+<p>As discussed in <span class="citation" data-cites="limitations">@limitations</span>, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains requiring forecasting, comparison, and evaluation of different interventions and policies.</p>
 </section>
-<section id="relevance-to-role" class="level1">
-<h1>relevance to role</h1>
-<p>solving unstructured problems by combinig different technique.</p>
 </section>
 <section id="what-i-learntwould-improve" class="level1">
 <h1>What I learnt/would improve</h1>
+<ul>
+<li>I would extend the objective function to allow for better quantification of outcomes, for example to include the cost of healthcare for people with iron deficiency</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/objective_function.PNG" class="img-fluid figure-img"></p>
+<figcaption>A more sophisticated objective function</figcaption>
+</figure>
+</div>
+<ul>
+<li>I included a parameter to adjust for different population-level normal Hb levels. I would use this to explore inequalities affecting populations of people who have lower normal levels of Hb - this is directly applicable to the observation in the organisation that Black African and Black Caribbean attendees are more likely to experience Hb rejections than other people.</li>
+</ul>
 
 
 </section>
