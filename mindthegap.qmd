@@ -6,7 +6,7 @@ An R package for Agent Based Modelling (ABM) of whole blood donors donating at s
 
 ## Themes / Analytical methods
 
-_Packaging R code, OOP R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods, Shiny, composite metrics, Multi-Criterion Decision Analysis_
+_Packaging R code, OOP R6 classes, System Dynamics, Agent Based Modelling, Monte Carlo Methods, composite metrics, Multi-Criterion Decision Analysis_
 
 ## Business Problem
 

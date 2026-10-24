@@ -1,59 +1,60 @@
 # Capacity Network Design {.unnumbered}
 
-A greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.
+A greedy algorithm to prescribe an optimal geographic allocation of blood donation appointments (slots), given competing operational objectives
 
 # Overview
 
 ## Themes / Analytical methods
 
-_R, prescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers_
+_Prescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics / Numerical methods, leaflet choropleth geo-mapping, Shiny for making technical concepts accessible_
 
 ## Business Problem
 
-### Problem statement
-The organisation's current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network looked like if we rebuilt it from scratch in the optimal way?
+### Problem Statement
+The organisation's current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network look like if we rebuilt it from scratch in the optimal way?
 
 ### Academic Aim
-A numerical method by way of a greedy algorithm that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically so as to maximise the likelihood of meeting those objectives.
+A solution (likely a numerical method) that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically, so as to maximise the likelihood of meeting those objectives.
 
 ## Scoping and planning
 
-* I decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.
-* I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites
+* I decided to consider an optimisation problem with respect to only the spatial distribution of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas. As such, I established that the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one.
+* I recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance that donated blood needs to transported to manufacturing sites.
 
 ## Limitations
-* Numerical methods are liable to fail to converge or converge on a local optimum rather than a global optimum, but given their ability to approach otherwise untractable problems and compute in a reasonable time, the use is justified here, as detailed below.
+* Numerical methods are liable to fail to converge, or converge on a local optimum rather than a global optimum. Given their ability to approach otherwise untractable problems and compute a solution in a reasonable time, their use is justified here, as detailed below.
 
 ## Technical choices
 
-* I recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of "monetised" or otherwise quantified organisational objectives
-* I decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary "objective" optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.
+* I recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach - an algorithm that incrementally added capacity to the next best location at each step (greedy) by using an objective function that was a weighted average of "monetised" or otherwise quantified organisational objectives.
+* I decided that it was more important to be able to convey that the weighting/priority strongly determined the optimum, than it was to be able to guaranteed convergence on a contrived or otherwise arbitrary "objective" optimum. As such, I felt justified in using an approach that could sometimes miss the global optimum.
 * The computational approach with the weighted objective function also allowed me to
-  * demonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers
-  * compute and compare different scenarios side by side
-* As a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives
+  * demonstrate with fine control how varying the weights shifts the optimum in the direction of different extremes, to non-technical decision makers
+  * compute and compare different scenarios easily
+* As a proof of concept (POC), I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem to the relative weights of the competing objectives.
 
 ## Validation
 
-As the algorithm is a simulation, there is no operational or historical data to compare it with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because of the fine-tune control over the algorithm and its deterministic nature, it is possible to determine the effect of each parameter or iteration loop in the algorithm as necessary: It can be re-run and paused after each loop, or it can be run with a tweaked parameter.
+As the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and "paused" and examiend as desired.
 
 ## Impact  
 
-This work enabled senior decision-makers to fully grasp the reduction of the problem into a weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and the leaflet choropleths. They allowed me to convey that there was no objective correct answer to the problem, but instead the priorities that were input, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.
+This work enabled senior decision-makers to fully grasp the reduction of the problem into the relative weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and leaflet choropleths representing the optimal solution. They allowed me to convey that there was no objective, "correct" answer to the problem, but instead that the chosen priorities, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.
 
 # Project code & Output
 
-In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, and code excerpts from the repo.
 
 The codebase of the project consists of:
-* a POC Shiny app to demonstrate the greedy algorithm in this context
-* an R script with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.
+
+* a POC Shiny app to demonstrate the greedy algorithm
+* an algorithm written in R with a more sophisticated objective function, which outputs a choropleth leaflet map for the optimal slot distribution at a constituency granularity.
 
 ## Constructing a Proof of Concept (POC)
 ::: {.panel-tabset}
 
 ### Toy model
-![Constructing a over-simplified example](images/capacity_network_design/toy_model_1.png)
+![Constructing a over-simplification of the problem](images/capacity_network_design/toy_model_1.png)
 
 ### Composing an Objective function
 ![Introducing the concept of an Objective function](images/capacity_network_design/toy_model_2.png)
@@ -112,7 +113,7 @@ The codebase of the project consists of:
 
 ### Outputs {#example}
 
-Below are a series of optimal allocation choropleth outputs from holding all parameters constant except "cost to transport blood to Manufacturing Centre, per kilometre". This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).
+Below are a series of optimal allocation choropleth outputs varying "cost to transport blood to nearest Manufacturing Centre, per kilometre", holding all other parameters constant. This is intended to demonstrate the connection between the parameters and the optimal distribution, which is why extreme values are included (free transport, and transport costing £1000/km).
 
 ::: {.panel-tabset}
 
@@ -123,10 +124,10 @@ Below are a series of optimal allocation choropleth outputs from holding all par
 ![](images/capacity_network_design/algorithm_run_2.png)
 
 ### £10/km
-![As the transport cost becomes constraining, the distribution dissipates. ](images/capacity_network_design/algorithm_run_3.png)
+![As the transport cost becomes constraining, the distribution becomes more diffuse. ](images/capacity_network_design/algorithm_run_3.png)
 
 ### £100/km
-![As the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol](images/capacity_network_design/algorithm_run_4.png)
+![As the transport cost becomes extreme and limiting, the distribution is pulled towards the three existing Manufacturing Centres: Colindale, Manchester, and Bristol](images/capacity_network_design/algorithm_run_4.png)
 
 ### £1000/km
 ![](images/capacity_network_design/algorithm_run_5.png)
@@ -135,8 +136,8 @@ Below are a series of optimal allocation choropleth outputs from holding all par
 
 # Relevance to the Senior Data Scientist role
 
-The problem of weighing up inherently uncomparable or non-monetary objectives is one that all public sector organisations face. As such, the role of computational methods and MCDA in prescriptive analytics is highly transferrable. This could include distributing resources, care, workforce geographically, or allocating funding between them.  
+The problem of weighing up inherently incomparable or non-monetary objectives is one that all public sector organisations face. As such, the role of computational methods and MCDA in prescriptive analytics is highly transferrable. This could include distributing resources, services, and workforce geographically, or allocating funding between them.  
 
 # What I learnt / would improve
 
-A key source of non-progress surrounded the hesistance of stakeholders to commit to a weighting/ordering of priority of objectives. Next time, I would conduct a sensitivity analysis to understand the effect on the output (allocation) that a unit change in weightings would cause. This would at least prescribe a sensible precision for the weightings, which it occured to me might make the task less daunting for decision-makers e.g. if they knew the weightings only needed to be in 10% blocks rather than 1% blocks.
+A key hindrance to progress was the reluctance of stakeholders to commit to a weighting/ordering of objectives. Next time, I would conduct a sensitivity analysis to understand the effect on the output (optimal allocation) that a unit change in each weight would cause. This would at least prescribe a sensible precision for the weightings, which it occured to me might make the task less daunting for decision-makers e.g. if they knew the weightings only needed to be in 10% blocks rather than 1% blocks.
