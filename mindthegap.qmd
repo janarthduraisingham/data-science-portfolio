@@ -89,18 +89,26 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 ![Directory for mindthegap package](images/mindthegap/abm_architecture.png)
 
 ### Package namespace
-![public methods for the Donor class ](images/mindthegap/namespace.png)
+![public methods for the Donor class](images/mindthegap/namespace.png)
 
 ### testthat
 ![Tests for Donor class public methods](images/mindthegap/tests.png)
 
 :::
 
-## Design choices
-
 ## Pseudocode
 
 ::: {.panel-tabset}
+
+### Mathematical formulation of model
+![Mathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate](images/mindthegap/mathematical_formulation.png)
+
+### Algorithm for modelled process flow
+![Definitions](images/mindthegap/model_vars_params_1.png)
+![Definitions continued](images/mindthegap/model_vars_params_2.png)
+![Pseudocode for algorithm](images/mindthegap/pseudocode.png)
+### Composite metric for scenario comparison
+![Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health](images/mindthegap/composite_metric.png)
 
 :::
 
@@ -125,8 +133,18 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 :::
 
-# Output
+## System Dynamics for modelling iron replenishment
 
+![Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body](images/mindthegap/hb_ferritin_ivp.png)
+
+# Output / Results
+
+The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health
+![While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male.](images/mindthegap/inequalities.png)
+![Donations can occur where Hb is normal, but ferritin has not fully replenished](images/mindthegap/hb_replenishment_curve.png)
+![The case for ferritin testing](images/mindthegap/ferritin_testing.png)
+
+![Raw model outputs that lend themselves to different objective functions based on organisational objectives](images/mindthegap/model_outputs.png)
 ::: {.panel-tabset}
 
 ### User guide
