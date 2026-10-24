@@ -50,7 +50,7 @@ For this reason I decided my main metric of evaluation would be to compare my fi
 
 More details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts
 
-##  What I learnt / would improve & Relevance to Senior Data Scientist role
+##  What I learnt / would improve & Relevance to the Senior Data Scientist role
 
 This a valuable and rare exercise in that it's otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I've gone into this knowing that with the scope of my strategy, there's probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably "Captain Haaland". Processing and acknowledging that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.
 
