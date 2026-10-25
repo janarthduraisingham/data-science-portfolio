@@ -6,13 +6,13 @@ An R package for Agent Based Modelling (ABM) of whole blood donors donating at s
 
 ## Themes / Analytical methods
 
-_R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods,  Shiny app, composite metric, Multi-Criterion Decision Analysis_
+_Packaging R code, OOP R6 classes, System Dynamics, Agent Based Modelling, Monte Carlo Methods, composite metrics, Multi-Criterion Decision Analysis_
 
 ## Business Problem
 
 European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?
 
-### Academic aim
+### Academic Aim
 
 On reducing the minimum allowed interval between successive blood donations, does any
 increase in blood supply significantly outweigh any deterioration of body iron health in
@@ -22,36 +22,32 @@ donors?
 
 ![Extract from a presentation on the project](images/mindthegap/abm_scope.png)
 
-After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of:
-* The minimum interval
+After interviewing clinical stakeholders, I decided I needed model that simulated blood donor behaviour and their instances of successful donations over a fixed time horizon. I established that the distribution of the number of donations made by each simulated donor, and the intervals between them, should be a function of:
+* The minimum interval allowed by the organistion
 * The donor’s individual preferred interval between donations
-* The time required for the donor’s blood iron levels to replenish sufficiently to pass the
-Hb test
+* The time required for the donor’s blood iron levels to replenish sufficiently to pass the pre-donation Haemoglobin
+(Hb) test
 
-A reduction in the minimum interval is expected to increase the total number of donations
+A reduction in the minimum interval is should increase the total number of donations
 from donors over a fixed period of time, accompanied by an increase in the frequency and
-severity of adverse effects on donors’ body iron health. The model should allow the practitioner
-to vary, as an input parameter, the minimum allowed donation interval, and should
-return a quantified set of donor outcomes, pertaining to blood supply and donor body iron
-health.
+severity of adverse effects on donors’ body iron health. I established that the model should allow the user
+to observe the effect of varying the minimum allowed interval by returning a quantified set of outcomes, pertaining to blood supply and donor body iron health.
 
-Model methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff
-between blood supply and donor body iron health. Simultaneously, model outputs should
-be accessible and practical enough to lend themselves to a solving a cost-benefit analysis
-rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention
+I recognised that the model mechanics and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding this tradeoff. Model outputs should
+be accessible and practical enough to inform a recommendation for an operational intervention
 or policy.
 
 ## Assumptions
 
 Key assumptions relate to:
 
-* A sequential process flow for a donor choosing to donate blood through to the physical donation
-* Distributional assumptions governing how long after their last donation a donor will choose to donate
+* The sequence of steps that sufficiently capture the process of a donor choosing to donate blood, through to the physical donation
+* Distributions governing how long after their last donation a donor will next choose to donate
 * The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test
 
 ## Limitations {#limitations}
 
-The main limitation of this work is that inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design with the aim that the complexity of the project would be sufficient to capture the significant drivers and effects in the real-world system, while allowing me to write, validate, and present a model in reasonable time that was accessible, reproducible, and not over-engineered. 
+The main limitation of this work is one that is inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design so that the model faithfully captured the drivers and effects in the real-world system, while allowing me to write, validate, and communicate a model, in reasonable time, that was accessible, reproducible, and not over-parameterised. 
 
 ## Technical choices
 
@@ -71,32 +67,32 @@ The main limitation of this work is that inherent to modelling two extremely com
 ![Extract from presentation on project](images/mindthegap/abm_example_parameters.png)
 :::
 
-* I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.
-* I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor's donation activity.
-* I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)
-* I included observables relating to "wasted slots" and donor burnout, for scope to extend the composite metric
+* I decided to develop an R package to allow for reproducibility and to facilitate comparison of different customised scenarios. The donors, equipped with their preferences, variabiality, and complex iron dynamics, presented a good use case for an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics, behaviour, and iron replenishment mechanics.
+* I used a Monte Carlo Method (MCM) with hierarchical sampling to simulate a stochastic system of a population of such donors, observing the distribution of outcomes.
+* Following the MCM I computed a composite metric of a linear combination of donation volume and permanent deferral occurrences (after three failed pre-donation Haemoglobin tests, donors cannot return). This allowed reduction of competing objectives into a simple figure for ease of comparison between scenarios.
+* I included observables relating to "wasted slots" and donor burnout, for scope to extend the composite metric to include other priorities.
 
 ## Validation
-Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were with a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals (Hb rejections on three successive attendances).
+Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were within a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals.
 
 ## Impact
 As discussed in @results, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation's Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.
 
 # Project code
-In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.
+In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, and code excerpts, from the repo.
 
 ## Architecture
 
 ::: {.panel-tabset}
 
 ### Package directory tree
-![Directory for mindthegap package](images/mindthegap/abm_architecture.png)
+![Directory for the _mindthegap_ package](images/mindthegap/abm_architecture.png)
 
 ### Package namespace
-![public methods for the Donor class](images/mindthegap/namespace.png)
+![Public methods for the _Donor_ class](images/mindthegap/namespace.png)
 
-### testthat
-![Tests for Donor class public methods](images/mindthegap/tests.png)
+### Tests
+![Tests for _Donor_ class public methods using testthat](images/mindthegap/tests.png)
 
 :::
 
@@ -105,12 +101,15 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 ::: {.panel-tabset}
 
 ### Mathematical formulation of model
-![Mathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate](images/mindthegap/mathematical_formulation.png)
+![Mathematical formulation of the modelled process of donors deciding to (and then possibly being able to) donate](images/mindthegap/mathematical_formulation.png)
 
 ### Algorithm for modelled process flow
 ![Definitions](images/mindthegap/model_vars_params_1.png)
+
 ![Definitions continued](images/mindthegap/model_vars_params_2.png)
+
 ![Pseudocode for algorithm](images/mindthegap/pseudocode.png)
+
 ### Composite metric for scenario comparison
 ![Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health](images/mindthegap/composite_metric.png)
 
@@ -122,16 +121,18 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ### The Donor R6 Class
 
-![Instantiating the _Donor_ class with ROxygen](images/mindthegap/donor_class_initialisation.png)
+![Instantiating the _Donor_ class with roxygen](images/mindthegap/donor_class_initialisation.png)
+
 ![_Donor_ class public methods](images/mindthegap/donor_class_public_methods.png)
 
 ### Example public methods
 
 ![Public method for sampling for donor burnout following frequent donation](images/mindthegap/burnout_public_method.png)
+
 ![Public method to sample for a donor's normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors](images/mindthegap/draw_normal_hb.png)
 
-### testthat tests
-![Contrive a donor history that means the donor's next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.](images/mindthegap/earliest_donation_date_test.png)
+### Tests
+![Contrive a donor history that means the donor's next preferred donation date is sooner than they are allowed to. Test that the limit is enforced and they are made to wait.](images/mindthegap/earliest_donation_date_test.png)
 
 ![Contrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor's normal value](images/mindthegap/iron_replenishment_test.png)
 
@@ -139,14 +140,19 @@ In lieu of a link to the repo, which is not public, the below explores the archi
 
 ## System Dynamics for modelling iron replenishment
 
-![Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body](images/mindthegap/hb_ferritin_ivp.png)
+![Initial Value Problem (IVP) for the coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body](images/mindthegap/hb_ferritin_ivp.png)
 
-# Output / Results {#results}
+# Results {#results}
 
-The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health
+The simulations demonstrated an effect discussed in the literature, that Hb levels are not a complete marker for iron health. This is because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely based on good Hb levels risks allowing donations to occur while ferritin stores are depleted. The simulations also demonstrated an inequality in outcomes whereby donations from donors assigned at birth female are more likely to be given while in poor iron health compared with those from donors assigned at birth male.
+
 ![While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male.](images/mindthegap/inequalities.png)
+
 ![Donations can occur where Hb is normal, but ferritin has not fully replenished](images/mindthegap/hb_replenishment_curve.png)
+
 ![The case for ferritin testing](images/mindthegap/ferritin_testing.png)
+
+# Raw Outputs
 
 ![Raw model outputs that lend themselves to different objective functions based on organisational objectives](images/mindthegap/model_outputs.png)
 
@@ -154,7 +160,7 @@ The simulations demonstrated an effect discussed in the literature, that Hb leve
 
 ### User guide
 
-![Getting started](images/mindthegap/readme_getting_started.png)
+![Getting started with the _mindthegap_ package](images/mindthegap/readme_getting_started.png)
 
 ![Example: instantiating the _Donor_ class](images/mindthegap/readme_donor_example.png)
 
@@ -170,11 +176,11 @@ The simulations demonstrated an effect discussed in the literature, that Hb leve
 Packaging code allows for reproducibility and collaboration, both inside and outside the organisation. My experience in developing packages also makes we well positioned to contribute to the ICB's existing packages such as NCLRtemplates.
 
 ## Agent Based Models
-As discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains requiring forecasting, comparison, and evaluation of different interventions and policies.
+As discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.
 
 
-# What I learnt/would improve
-* I would extend the objective function to allow for better quantification of outcomes, for example to include the cost of healthcare for people with iron deficiency
+# What I learnt / would improve
+* I would extend the objective function to allow for better quantification of outcomes. Below is an example to include the cost of healthcare for people with iron deficiency. It is also partitioned to capture any differentials in the demand of blood from different groups of people and the cost of treating different groups of people.
 
 ![A more sophisticated objective function](images/mindthegap/objective_function.PNG)
 
