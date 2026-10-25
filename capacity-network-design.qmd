@@ -35,7 +35,7 @@ A solution (likely a numerical method) that, given a set of organisational objec
 
 ## Validation
 
-As the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and "paused" and examiend as desired.
+As the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in @sec-example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and "paused" and examiend as desired.
 
 ## Impact  
 
@@ -111,7 +111,7 @@ The codebase of the project consists of:
 ![Represent optimal slot allocation as choropleth leaflet](images/capacity_network_design/algo_R_7.png)
 :::
 
-### Outputs {#example}
+### Outputs {#sec-example}
 
 Below are a series of optimal allocation choropleth outputs varying "cost to transport blood to nearest Manufacturing Centre, per kilometre", holding all other parameters constant. This is intended to demonstrate the connection between the parameters and the optimal distribution, which is why extreme values are included (free transport, and transport costing £1000/km).
 
