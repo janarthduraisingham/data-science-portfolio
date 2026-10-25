@@ -24,7 +24,7 @@ I recognised that if this were to be effective:
 * the scope of the solution would need to allow people to benefit beyond attending my talk, by experimenting with the app themselves, if they chose to.
 
 ## Limitations
-This is discussed retrospectively in @improve below
+This is discussed retrospectively in @sec-improve below
 
 ## Technical choices
 
@@ -55,7 +55,7 @@ https://janarthduraisingham.shinyapps.io/hamming-mutation-classifier/
 
 I recognise that the Senior Data Scientist role would involve engaging, influencing, and taking an interest in the development of a range of groups of people, including clinicians, senior decision-makers, the public, and junior analysts. As such, it's important to be able to convey complex and technical concepts in different ways to different people, sometimes in the same room at the same time. I'm on my own journey of learning and I love sharing what I learn and what clicks for me, which is why my passion for teaching and sharing would be well-placed in the role.
 
-# What I learnt / would improve {#improve}
+# What I learnt / would improve {#sec-improve}
 What went well:
 
 * The everyday/qualitative examples were effective in building people's confidence and engagement early on.
