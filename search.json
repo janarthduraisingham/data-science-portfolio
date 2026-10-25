@@ -110,8 +110,8 @@
     ]
   },
   {
-    "objectID": "mindthegap.html#limitations",
-    "href": "mindthegap.html#limitations",
+    "objectID": "mindthegap.html#sec-limitations",
+    "href": "mindthegap.html#sec-limitations",
     "title": "mindthegap",
     "section": "Limitations",
     "text": "Limitations\nThe main limitation of this work is one that is inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design so that the model faithfully captured the drivers and effects in the real-world system, while allowing me to write, validate, and communicate a model, in reasonable time, that was accessible, reproducible, and not over-parameterised.",
@@ -144,7 +144,7 @@
     "href": "mindthegap.html#impact",
     "title": "mindthegap",
     "section": "Impact",
-    "text": "Impact\nAs discussed in @results, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation’s Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.",
+    "text": "Impact\nAs discussed in Results, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation’s Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.",
     "crumbs": [
       "mindthegap"
     ]
@@ -204,7 +204,7 @@
     "href": "mindthegap.html#agent-based-models",
     "title": "mindthegap",
     "section": "Agent Based Models",
-    "text": "Agent Based Models\nAs discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.",
+    "text": "Agent Based Models\nAs discussed in Limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.",
     "crumbs": [
       "mindthegap"
     ]
@@ -274,7 +274,7 @@
     "href": "capacity-network-design.html#validation",
     "title": "Capacity Network Design",
     "section": "Validation",
-    "text": "Validation\nAs the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and “paused” and examiend as desired.",
+    "text": "Validation\nAs the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in Outputs, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and “paused” and examiend as desired.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -364,7 +364,7 @@
     "href": "hypothesis-tests-101.html#limitations",
     "title": "Intuitive Hypothesis Tests",
     "section": "Limitations",
-    "text": "Limitations\nThis is discussed retrospectively in @improve below",
+    "text": "Limitations\nThis is discussed retrospectively in What I learnt / would improve below",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]

@@ -162,7 +162,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#scoping-and-planning" id="toc-scoping-and-planning" class="nav-link" data-scroll-target="#scoping-and-planning">Scoping and planning</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
-  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#sec-limitations" id="toc-sec-limitations" class="nav-link" data-scroll-target="#sec-limitations">Limitations</a></li>
   <li><a href="#technical-choices" id="toc-technical-choices" class="nav-link" data-scroll-target="#technical-choices">Technical choices</a></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
   <li><a href="#impact" id="toc-impact" class="nav-link" data-scroll-target="#impact">Impact</a></li>
@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
   <li><a href="#system-dynamics-for-modelling-iron-replenishment" id="toc-system-dynamics-for-modelling-iron-replenishment" class="nav-link" data-scroll-target="#system-dynamics-for-modelling-iron-replenishment">System Dynamics for modelling iron replenishment</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results">Results</a></li>
   <li><a href="#raw-outputs" id="toc-raw-outputs" class="nav-link" data-scroll-target="#raw-outputs">Raw Outputs</a></li>
   <li><a href="#relevance-to-the-senior-data-scientist-role" id="toc-relevance-to-the-senior-data-scientist-role" class="nav-link" data-scroll-target="#relevance-to-the-senior-data-scientist-role">Relevance to the Senior Data Scientist role</a>
   <ul class="collapse">
@@ -243,8 +243,8 @@ ul.task-list li input[type="checkbox"] {
 <li>The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test</li>
 </ul>
 </section>
-<section id="limitations" class="level2">
-<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<section id="sec-limitations" class="level2">
+<h2 class="anchored" data-anchor-id="sec-limitations">Limitations</h2>
 <p>The main limitation of this work is one that is inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design so that the model faithfully captured the drivers and effects in the real-world system, while allowing me to write, validate, and communicate a model, in reasonable time, that was accessible, reproducible, and not over-parameterised.</p>
 </section>
 <section id="technical-choices" class="level2">
@@ -294,7 +294,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
-<p>As discussed in <span class="citation" data-cites="results">@results</span>, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation’s Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.</p>
+<p>As discussed in <a href="#sec-results" class="quarto-xref"><span>Results</span></a>, the work allowed me to accessibly and tangibly demonstrate a finding in the literature (conducted by a different blood service), which had not been explored in the English blood service - that Hb testing alone is an insufficient marker for iron health and fitness to donate. On presenting and discussing the results with the organisation’s Associate Medical Director of Donor Medicine and Plasma for Medicines, plans to implement the shorter minumum intervals were suspended.</p>
 </section>
 </section>
 <section id="project-code" class="level1">
@@ -436,7 +436,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </section>
 </section>
-<section id="results" class="level1">
+<section id="sec-results" class="level1">
 <h1>Results</h1>
 <p>The simulations demonstrated an effect discussed in the literature, that Hb levels are not a complete marker for iron health. This is because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely based on good Hb levels risks allowing donations to occur while ferritin stores are depleted. The simulations also demonstrated an inequality in outcomes whereby donations from donors assigned at birth female are more likely to be given while in poor iron health compared with those from donors assigned at birth male.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -502,7 +502,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="agent-based-models" class="level2">
 <h2 class="anchored" data-anchor-id="agent-based-models">Agent Based Models</h2>
-<p>As discussed in <span class="citation" data-cites="limitations">@limitations</span>, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.</p>
+<p>As discussed in <a href="#sec-limitations" class="quarto-xref"><span>Limitations</span></a>, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.</p>
 </section>
 </section>
 <section id="what-i-learnt-would-improve" class="level1">
