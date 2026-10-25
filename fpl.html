@@ -160,7 +160,6 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
   <li><a href="#technical-choices" id="toc-technical-choices" class="nav-link" data-scroll-target="#technical-choices">Technical choices</a>
   <ul class="collapse">
-  <li><a href="#approaching-the-problem" id="toc-approaching-the-problem" class="nav-link" data-scroll-target="#approaching-the-problem">Approaching the problem</a></li>
   <li><a href="#statistical-methodology" id="toc-statistical-methodology" class="nav-link" data-scroll-target="#statistical-methodology">Statistical methodology</a></li>
   </ul></li>
   <li><a href="#validation" id="toc-validation" class="nav-link" data-scroll-target="#validation">Validation</a></li>
@@ -193,17 +192,23 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>A quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics and the FPL API and no football knowledge.</p>
+<p>A quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics, the FPL API, and no football knowledge.</p>
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <section id="themes-analytical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="themes-analytical-methods">Themes / Analytical methods</h2>
-<p><em>Python, Quarto, API endpoints, time series analysis, designing heuristic metrics</em></p>
+<p><em>Packaging Python code, Quarto, API endpoints, time series analysis, heuristic metrics</em></p>
 </section>
 <section id="business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
-<p>During data science or operational work, particularly more complex or unstructured work, I often notice the temptation or inclination to consider applying manual overrides to my methodology or scope - perhaps to account for an edge case or an extra variable that becomes apparent later. While this comes from a place of quality or rigour, and can be the best thing to do if done properly/iteratively, I recognise that actually if the override/overlay/correction that occurs to me is truly value-adding, then that means my original scoping and planning could have been better i.e.&nbsp;scoping and planning should at the outset aim to sufficiently but minimally capture all that is necessary and useful in designing a good solution to a problem.</p>
-<p>This project occurred to me as a useful exercise in discipline of devising a strategy to solve a problem (scoring as many points as possible in FPL) knowing that my domain knowledge is significantly limited, choosing a boundary of information to be “in scope” as a heuristic solution to that limitation, and then not intervening or overriding when I inevitably encounter information out of the scope. I envisaged, and experiencing, a huge amount of advice and suggestions from friends who do have a “football IQ”, and the idea is for me to have spent enough time prior to Gameweek 1 planning a strategy I am happy with and confident in, with the information I choose to use, so that I don’t then throughout the season succumb to the temptation to bolt on extra bits of strategy as I go along. How many points I score is actually do is in many ways less important to me than how well I managed the scope creep.</p>
+<p>Scope creep, whether from the practitioner’s side or the stakeholder’s side, is a significant blocker to progress and value. It’s always tempting to bolt on functionality to account for an edge case or an extra variable that becomes apparent later. While this comes from a place of quality or rigour, and can be appropriate if done properly/iteratively, I recognise that actually if the overlay is truly value-adding, then the original scoping and planning could have been better i.e.&nbsp;scoping and planning should at the outset aim to sufficiently but minimally capture all that is necessary and useful in designing a good solution to a problem.</p>
+<p>This project occurred to me as a useful exercise in discipline of:</p>
+<ul>
+<li>devising a strategy to solve a problem (scoring as many points as possible in FPL) knowing that my domain knowledge is significantly limited</li>
+<li>choosing a boundary of information to be “in scope” as a heuristic solution to that limitation</li>
+<li>not intervening or overriding when I inevitably encounter information out of the scope</li>
+</ul>
+<p>This project is a work in progress. I envisaged, and am experiencing, a huge amount of advice and suggestions from friends who do have a “football IQ”, and the idea is for me to have spent enough time prior to Gameweek 1 planning a strategy I am happy with and confident in, with the information I choose to use, so that I don’t then throughout the season succumb to the temptation to bolt on extra bits of strategy as I go along. How many points I score is actually do is in many ways less important to me than how well I managed the scope creep.</p>
 </section>
 <section id="scoping-and-planning" class="level2">
 <h2 class="anchored" data-anchor-id="scoping-and-planning">Scoping and planning</h2>
@@ -212,45 +217,42 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<p>With the example of chips discussed in https://janarthduraisingham.github.io/fpl/intro.html#pitch-limits, there is a huge amount of information and insight that will fall out of scope of my strategy, but the scope has been carefully bounded so that the aim and expectations of the analysis is in line with the information and techniques that I am using i.e.&nbsp;my aim is to do significantly better than my initial squad would have, rather than to be in the top x% of all FPL players.</p>
+<p>With the example of chips discussed in https://janarthduraisingham.github.io/fpl/intro.html#pitch-limits, there is a huge amount of information and insight that will fall out of scope of my strategy, but I chose my scope has so that the aim and expectations of the analysis is in line with the information and techniques that I am using i.e.&nbsp;my aim is to do significantly better than my initial squad would have, rather than to be in the top x% of all FPL players.</p>
 </section>
 <section id="technical-choices" class="level2">
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
-<section id="approaching-the-problem" class="level3">
-<h3 class="anchored" data-anchor-id="approaching-the-problem">Approaching the problem</h3>
 <p>I recognised that the problem could be reduced into two different, but interacting, sub-problems:</p>
 <ul>
 <li>Before Gameweek 1, I need to choose an initial squad that is likely to score well</li>
-<li>Each week, I need to use my transfers to sell players who are likely to score badly and buy players who are likely to score well</li>
+<li>Each week, I need to use my transfers to sell players who are less likely to score well, and buy players who are likely to score well</li>
 </ul>
-</section>
 <section id="statistical-methodology" class="level3">
 <h3 class="anchored" data-anchor-id="statistical-methodology">Statistical methodology</h3>
 <p>While the two sub-problems sound similar, I recognised that I would have significantly different data on which to solve them. I can make weekly transfers using data that was realised the prior weekend, but I had to choose my initial squad based on prior season data relating to months or years ago.</p>
 <ul>
 <li>I decided to select my initial squad based on the last two (aggregated) seasons of data
 <ul>
-<li>To leave myself with capital to make informed transfers on more current data later in the season, I would prioritise a cheap squad with a high historical points to current price ratio.</li>
+<li>To leave myself with capital to make informed transfers on more current data later in the season, I would prioritise selecting a cheap squad with a high ratio of historical points to current price.</li>
 <li>More details here: https://janarthduraisingham.github.io/fpl/gw1.html</li>
 </ul></li>
-<li>I decided to select weekly transfers based on recent current season data
+<li>I decided to select weekly transfers based exclusively on current season points data
 <ul>
 <li>I used a heuristic mix of a 4 week Simple Moving Average, and an Exponentially-Weighted Moving Average Crossover to rank and select candidiates to transfer in and out.</li>
-<li>More details here, including technical discussion and step-by-step computation: https://janarthduraisingham.github.io/fpl/gw7.html</li>
+<li>More details here: https://janarthduraisingham.github.io/fpl/gw7.html</li>
 </ul></li>
 </ul>
 </section>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>With 37 transfers over the season and 15 players in the squad, the average number of players holding any one position is less than 3. I recognised that this meant that if choose my initial squad badly, that puts a lot of pressure on the weekly transfers to make up the forgone value and add their own value. For this reason I didn’t want my measure of performance to reflect a combination of my performance of picking a good squad on old data (which was likely to be a worse predictor) and of my performance of making good decisions based on my transfers strategy.</p>
-<p>For this reason I decided my main metric of evaluation would be to compare my final points at the end of the season with the points my initial squad would have scored, had I made no transfers over the season. In this way, I’m able to deliberately and specifically evaluate how well my strategy identified good transfers, regardless of how well my initial squad was chosen.</p>
+<p>With 37 transfers over the season and 15 players in the squad, the average number of players holding any one position is less than 3. I recognised that this meant that if choose my initial squad badly, that puts a lot of pressure on the weekly transfers to make up the forgone value and add their own value. For this reason, I didn’t want my measure of performance to reflect a conflation of my performance of picking a good squad on old data (which was likely to be a worse predictor) and my performance of making good decisions based on my transfers strategy.</p>
+<p>I decided my main metric of evaluation would be to compare my final points at the end of the season with the points my initial squad would have scored, had I made no transfers over the season. In this way, I’m able to deliberately and specifically evaluate how well my strategy identified good transfers, regardless of how well my initial squad was chosen.</p>
 <p>More details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts</p>
 </section>
 <section id="what-i-learnt-would-improve-relevance-to-the-senior-data-scientist-role" class="level2">
 <h2 class="anchored" data-anchor-id="what-i-learnt-would-improve-relevance-to-the-senior-data-scientist-role">What I learnt / would improve &amp; Relevance to the Senior Data Scientist role</h2>
-<p>This a valuable and rare exercise in that it’s otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I’ve gone into this knowing that with the scope of my strategy, there’s probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably “Captain Haaland”. Processing and acknowledging that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.</p>
-<p>It also highlights the importance of including a range of stakeholders upstream and early on, when, as is usual, a low ceiling of performance is not acceptable. Ultimately, practising data science as a non-clinician means projects are likely to include a never-ending horizon of possible depth to explore. A key part of scoping and planning is deciding on a modelling/analytical scope, drawing on perspectives and experiences from a diverse range of colleague and stakeholders to fully explore that scope, and then respect it without succumbing to scope creep.</p>
+<p>This a valuable and rare exercise in that it’s otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I’ve gone into this knowing that with the scope of my strategy, there’s probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably, “Captain Haaland”. Processing that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.</p>
+<p>It also highlights the importance of including a range of stakeholders upstream and early on, when, as is usual, a low ceiling of performance would instead be unacceptable. Ultimately, practising data science as a non-clinician means projects are likely to include a never-ending horizon of possible depth to explore. A key part of scoping and planning is deciding on a modelling/analytical scope, drawing on perspectives and experiences from a diverse range of colleague and stakeholders to fully explore that scope, and then respect it without succumbing to scope creep.</p>
 </section>
 </section>
 <section id="project-code" class="level1">

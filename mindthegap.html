@@ -158,7 +158,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#themes-analytical-methods" id="toc-themes-analytical-methods" class="nav-link" data-scroll-target="#themes-analytical-methods">Themes / Analytical methods</a></li>
   <li><a href="#business-problem" id="toc-business-problem" class="nav-link" data-scroll-target="#business-problem">Business Problem</a>
   <ul class="collapse">
-  <li><a href="#academic-aim" id="toc-academic-aim" class="nav-link" data-scroll-target="#academic-aim">Academic aim</a></li>
+  <li><a href="#academic-aim" id="toc-academic-aim" class="nav-link" data-scroll-target="#academic-aim">Academic Aim</a></li>
   </ul></li>
   <li><a href="#scoping-and-planning" id="toc-scoping-and-planning" class="nav-link" data-scroll-target="#scoping-and-planning">Scoping and planning</a></li>
   <li><a href="#assumptions" id="toc-assumptions" class="nav-link" data-scroll-target="#assumptions">Assumptions</a></li>
@@ -174,13 +174,14 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#code-excerpts" id="toc-code-excerpts" class="nav-link" data-scroll-target="#code-excerpts">Code excerpts</a></li>
   <li><a href="#system-dynamics-for-modelling-iron-replenishment" id="toc-system-dynamics-for-modelling-iron-replenishment" class="nav-link" data-scroll-target="#system-dynamics-for-modelling-iron-replenishment">System Dynamics for modelling iron replenishment</a></li>
   </ul></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Output / Results</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
+  <li><a href="#raw-outputs" id="toc-raw-outputs" class="nav-link" data-scroll-target="#raw-outputs">Raw Outputs</a></li>
   <li><a href="#relevance-to-the-senior-data-scientist-role" id="toc-relevance-to-the-senior-data-scientist-role" class="nav-link" data-scroll-target="#relevance-to-the-senior-data-scientist-role">Relevance to the Senior Data Scientist role</a>
   <ul class="collapse">
   <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
   <li><a href="#agent-based-models" id="toc-agent-based-models" class="nav-link" data-scroll-target="#agent-based-models">Agent Based Models</a></li>
   </ul></li>
-  <li><a href="#what-i-learntwould-improve" id="toc-what-i-learntwould-improve" class="nav-link" data-scroll-target="#what-i-learntwould-improve">What I learnt/would improve</a></li>
+  <li><a href="#what-i-learnt-would-improve" id="toc-what-i-learnt-would-improve" class="nav-link" data-scroll-target="#what-i-learnt-would-improve">What I learnt / would improve</a></li>
   </ul>
 </nav>
     </div>
@@ -211,13 +212,13 @@ ul.task-list li input[type="checkbox"] {
 <h1>Overview</h1>
 <section id="themes-analytical-methods" class="level2">
 <h2 class="anchored" data-anchor-id="themes-analytical-methods">Themes / Analytical methods</h2>
-<p><em>R package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods, Shiny app, composite metric, Multi-Criterion Decision Analysis</em></p>
+<p><em>Packaging R code, OOP R6 classes, System Dynamics, Agent Based Modelling, Monte Carlo Methods, composite metrics, Multi-Criterion Decision Analysis</em></p>
 </section>
 <section id="business-problem" class="level2">
 <h2 class="anchored" data-anchor-id="business-problem">Business Problem</h2>
 <p>European law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?</p>
 <section id="academic-aim" class="level3">
-<h3 class="anchored" data-anchor-id="academic-aim">Academic aim</h3>
+<h3 class="anchored" data-anchor-id="academic-aim">Academic Aim</h3>
 <p>On reducing the minimum allowed interval between successive blood donations, does any increase in blood supply significantly outweigh any deterioration of body iron health in donors?</p>
 </section>
 </section>
@@ -229,22 +230,22 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>Extract from a presentation on the project</figcaption>
 </figure>
 </div>
-<p>After interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of: * The minimum interval * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the Hb test</p>
-<p>A reduction in the minimum interval is expected to increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. The model should allow the practitioner to vary, as an input parameter, the minimum allowed donation interval, and should return a quantified set of donor outcomes, pertaining to blood supply and donor body iron health.</p>
-<p>Model methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff between blood supply and donor body iron health. Simultaneously, model outputs should be accessible and practical enough to lend themselves to a solving a cost-benefit analysis rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention or policy.</p>
+<p>After interviewing clinical stakeholders, I decided I needed model that simulated blood donor behaviour and their instances of successful donations over a fixed time horizon. I established that the distribution of the number of donations made by each simulated donor, and the intervals between them, should be a function of: * The minimum interval allowed by the organistion * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the pre-donation Haemoglobin (Hb) test</p>
+<p>A reduction in the minimum interval is should increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. I established that the model should allow the user to observe the effect of varying the minimum allowed interval by returning a quantified set of outcomes, pertaining to blood supply and donor body iron health.</p>
+<p>I recognised that the model mechanics and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding this tradeoff. Model outputs should be accessible and practical enough to inform a recommendation for an operational intervention or policy.</p>
 </section>
 <section id="assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="assumptions">Assumptions</h2>
 <p>Key assumptions relate to:</p>
 <ul>
-<li>A sequential process flow for a donor choosing to donate blood through to the physical donation</li>
-<li>Distributional assumptions governing how long after their last donation a donor will choose to donate</li>
+<li>The sequence of steps that sufficiently capture the process of a donor choosing to donate blood, through to the physical donation</li>
+<li>Distributions governing how long after their last donation a donor will next choose to donate</li>
 <li>The dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test</li>
 </ul>
 </section>
 <section id="limitations" class="level2">
 <h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
-<p>The main limitation of this work is that inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design with the aim that the complexity of the project would be sufficient to capture the significant drivers and effects in the real-world system, while allowing me to write, validate, and present a model in reasonable time that was accessible, reproducible, and not over-engineered.</p>
+<p>The main limitation of this work is one that is inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design so that the model faithfully captured the drivers and effects in the real-world system, while allowing me to write, validate, and communicate a model, in reasonable time, that was accessible, reproducible, and not over-parameterised.</p>
 </section>
 <section id="technical-choices" class="level2">
 <h2 class="anchored" data-anchor-id="technical-choices">Technical choices</h2>
@@ -281,15 +282,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 </div>
 <ul>
-<li>I decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.</li>
-<li>I used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor’s donation activity.</li>
-<li>I used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)</li>
-<li>I included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric</li>
+<li>I decided to develop an R package to allow for reproducibility and to facilitate comparison of different customised scenarios. The donors, equipped with their preferences, variabiality, and complex iron dynamics, presented a good use case for an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics, behaviour, and iron replenishment mechanics.</li>
+<li>I used a Monte Carlo Method (MCM) with hierarchical sampling to simulate a stochastic system of a population of such donors, observing the distribution of outcomes.</li>
+<li>Following the MCM I computed a composite metric of a linear combination of donation volume and permanent deferral occurrences (after three failed pre-donation Haemoglobin tests, donors cannot return). This allowed reduction of competing objectives into a simple figure for ease of comparison between scenarios.</li>
+<li>I included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric to include other priorities.</li>
 </ul>
 </section>
 <section id="validation" class="level2">
 <h2 class="anchored" data-anchor-id="validation">Validation</h2>
-<p>Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were with a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals (Hb rejections on three successive attendances).</p>
+<p>Model outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were within a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals.</p>
 </section>
 <section id="impact" class="level2">
 <h2 class="anchored" data-anchor-id="impact">Impact</h2>
@@ -298,17 +299,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="project-code" class="level1">
 <h1>Project code</h1>
-<p>In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, excerpts, and outputs relating to the repo and project.</p>
+<p>In lieu of a link to the repo, which is not public, the below explores the architecture, pseudocode, and code excerpts, from the repo.</p>
 <section id="architecture" class="level2">
 <h2 class="anchored" data-anchor-id="architecture">Architecture</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Package directory tree</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Package namespace</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">testthat</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Package directory tree</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Package namespace</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Tests</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/abm_architecture.png" class="img-fluid figure-img"></p>
-<figcaption>Directory for mindthegap package</figcaption>
+<figcaption>Directory for the <em>mindthegap</em> package</figcaption>
 </figure>
 </div>
 </div>
@@ -316,7 +317,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/namespace.png" class="img-fluid figure-img"></p>
-<figcaption>public methods for the Donor class</figcaption>
+<figcaption>Public methods for the <em>Donor</em> class</figcaption>
 </figure>
 </div>
 </div>
@@ -324,7 +325,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/tests.png" class="img-fluid figure-img"></p>
-<figcaption>Tests for Donor class public methods</figcaption>
+<figcaption>Tests for <em>Donor</em> class public methods using testthat</figcaption>
 </figure>
 </div>
 </div>
@@ -334,18 +335,43 @@ ul.task-list li input[type="checkbox"] {
 <section id="pseudocode" class="level2">
 <h2 class="anchored" data-anchor-id="pseudocode">Pseudocode</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mathematical formulation of model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Algorithm for modelled process flow</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Mathematical formulation of model</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Algorithm for modelled process flow</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Composite metric for scenario comparison</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/mathematical_formulation.png" class="img-fluid figure-img"></p>
-<figcaption>Mathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate</figcaption>
+<figcaption>Mathematical formulation of the modelled process of donors deciding to (and then possibly being able to) donate</figcaption>
 </figure>
 </div>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<p><img src="images/mindthegap/model_vars_params_1.png" class="img-fluid" alt="Definitions"> <img src="images/mindthegap/model_vars_params_2.png" class="img-fluid" alt="Definitions continued"> <img src="images/mindthegap/pseudocode.png" class="img-fluid" alt="Pseudocode for algorithm"> ### Composite metric for scenario comparison <img src="images/mindthegap/composite_metric.png" class="img-fluid" alt="Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/model_vars_params_1.png" class="img-fluid figure-img"></p>
+<figcaption>Definitions</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/model_vars_params_2.png" class="img-fluid figure-img"></p>
+<figcaption>Definitions continued</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/pseudocode.png" class="img-fluid figure-img"></p>
+<figcaption>Pseudocode for algorithm</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/composite_metric.png" class="img-fluid figure-img"></p>
+<figcaption>Composite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health</figcaption>
+</figure>
+</div>
 </div>
 </div>
 </div>
@@ -353,19 +379,41 @@ ul.task-list li input[type="checkbox"] {
 <section id="code-excerpts" class="level2">
 <h2 class="anchored" data-anchor-id="code-excerpts">Code excerpts</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">The Donor R6 Class</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Example public methods</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">testthat tests</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">The Donor R6 Class</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">Example public methods</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">Tests</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
-<p><img src="images/mindthegap/donor_class_initialisation.png" class="img-fluid" alt="Instantiating the Donor class with ROxygen"> <img src="images/mindthegap/donor_class_public_methods.png" class="img-fluid" alt="Donor class public methods"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/donor_class_initialisation.png" class="img-fluid figure-img"></p>
+<figcaption>Instantiating the <em>Donor</em> class with roxygen</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/donor_class_public_methods.png" class="img-fluid figure-img"></p>
+<figcaption><em>Donor</em> class public methods</figcaption>
+</figure>
+</div>
 </div>
 <div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
-<p><img src="images/mindthegap/burnout_public_method.png" class="img-fluid" alt="Public method for sampling for donor burnout following frequent donation"> <img src="images/mindthegap/draw_normal_hb.png" class="img-fluid" alt="Public method to sample for a donor’s normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/burnout_public_method.png" class="img-fluid figure-img"></p>
+<figcaption>Public method for sampling for donor burnout following frequent donation</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/draw_normal_hb.png" class="img-fluid figure-img"></p>
+<figcaption>Public method to sample for a donor’s normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors</figcaption>
+</figure>
+</div>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/earliest_donation_date_test.png" class="img-fluid figure-img"></p>
-<figcaption>Contrive a donor history that means the donor’s next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.</figcaption>
+<figcaption>Contrive a donor history that means the donor’s next preferred donation date is sooner than they are allowed to. Test that the limit is enforced and they are made to wait.</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -383,14 +431,35 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/hb_ferritin_ivp.png" class="img-fluid figure-img"></p>
-<figcaption>Coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body</figcaption>
+<figcaption>Initial Value Problem (IVP) for the coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body</figcaption>
 </figure>
 </div>
 </section>
 </section>
 <section id="results" class="level1">
-<h1>Output / Results</h1>
-<p>The simulations demonstrated an effect discussed in the literature, that Hb levels are not a good marker for iron health, because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely on Hb levels risks allowing donations to occur while in poor iron health. The simulations also demonstrated that donations from donors assigned at birth female are more likely to be given while in poor iron health <img src="images/mindthegap/inequalities.png" class="img-fluid" alt="While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male."> <img src="images/mindthegap/hb_replenishment_curve.png" class="img-fluid" alt="Donations can occur where Hb is normal, but ferritin has not fully replenished"> <img src="images/mindthegap/ferritin_testing.png" class="img-fluid" alt="The case for ferritin testing"></p>
+<h1>Results</h1>
+<p>The simulations demonstrated an effect discussed in the literature, that Hb levels are not a complete marker for iron health. This is because iron is also stored in a buffer protein, ferritin. Allowing donors to donate purely based on good Hb levels risks allowing donations to occur while ferritin stores are depleted. The simulations also demonstrated an inequality in outcomes whereby donations from donors assigned at birth female are more likely to be given while in poor iron health compared with those from donors assigned at birth male.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/inequalities.png" class="img-fluid figure-img"></p>
+<figcaption>While donors assigned at birth female are allowed to donate less often, a donation from a donor assigned at birth female is more likely to be given while the donor was in poor iron health, compared with one from a donor assigned at birth male.</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/hb_replenishment_curve.png" class="img-fluid figure-img"></p>
+<figcaption>Donations can occur where Hb is normal, but ferritin has not fully replenished</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mindthegap/ferritin_testing.png" class="img-fluid figure-img"></p>
+<figcaption>The case for ferritin testing</figcaption>
+</figure>
+</div>
+</section>
+<section id="raw-outputs" class="level1">
+<h1>Raw Outputs</h1>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/model_outputs.png" class="img-fluid figure-img"></p>
@@ -404,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mindthegap/readme_getting_started.png" class="img-fluid figure-img"></p>
-<figcaption>Getting started</figcaption>
+<figcaption>Getting started with the <em>mindthegap</em> package</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
@@ -433,13 +502,13 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="agent-based-models" class="level2">
 <h2 class="anchored" data-anchor-id="agent-based-models">Agent Based Models</h2>
-<p>As discussed in <span class="citation" data-cites="limitations">@limitations</span>, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains requiring forecasting, comparison, and evaluation of different interventions and policies.</p>
+<p>As discussed in <span class="citation" data-cites="limitations">@limitations</span>, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.</p>
 </section>
 </section>
-<section id="what-i-learntwould-improve" class="level1">
-<h1>What I learnt/would improve</h1>
+<section id="what-i-learnt-would-improve" class="level1">
+<h1>What I learnt / would improve</h1>
 <ul>
-<li>I would extend the objective function to allow for better quantification of outcomes, for example to include the cost of healthcare for people with iron deficiency</li>
+<li>I would extend the objective function to allow for better quantification of outcomes. Below is an example to include the cost of healthcare for people with iron deficiency. It is also partitioned to capture any differentials in the demand of blood from different groups of people and the cost of treating different groups of people.</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

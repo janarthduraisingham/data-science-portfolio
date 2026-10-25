@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility">Reproducibility</a>
   <ul class="collapse">
-  <li><a href="#venv-uv-renv" id="toc-venv-uv-renv" class="nav-link" data-scroll-target="#venv-uv-renv">.venv (uv) &amp; renv</a></li>
+  <li><a href="#uv-renv" id="toc-uv-renv" class="nav-link" data-scroll-target="#uv-renv">uv &amp; renv</a></li>
   <li><a href="#license" id="toc-license" class="nav-link" data-scroll-target="#license">LICENSE</a></li>
   </ul></li>
   <li><a href="#cicd" id="toc-cicd" class="nav-link" data-scroll-target="#cicd">CI/CD</a>
@@ -208,18 +208,18 @@ ul.task-list li input[type="checkbox"] {
 <p>Components in my projects relating to principles of Data Security exist to ensure sensitive, personal, or otherwise voluminous data does not get committed or pushed to the remote repo.</p>
 <section id="gitignore" class="level2">
 <h2 class="anchored" data-anchor-id="gitignore">.gitignore</h2>
-<p>I used .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than regex expressions.</p>
+<p>I use .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than with regex expressions.</p>
 </section>
 <section id="githooks" class="level2">
 <h2 class="anchored" data-anchor-id="githooks">githooks/</h2>
-<p>I use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not excluded by the .gitignore.</p>
+<p>I use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not caught by the .gitignore.</p>
 </section>
 </section>
 <section id="reproducibility" class="level1">
 <h1>Reproducibility</h1>
-<p>Components in my projects relating to reproducibility exist to best enable people (including my future self) to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines.</p>
-<section id="venv-uv-renv" class="level2">
-<h2 class="anchored" data-anchor-id="venv-uv-renv">.venv (uv) &amp; renv</h2>
+<p>Components in my projects relating to reproducibility exist to best enable people to use and contribute to the work. Much of this is guided by the paradigm of Reproducible Analytical Pipelines (RAP).</p>
+<section id="uv-renv" class="level2">
+<h2 class="anchored" data-anchor-id="uv-renv">uv &amp; renv</h2>
 <p>To ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.</p>
 </section>
 <section id="license" class="level2">

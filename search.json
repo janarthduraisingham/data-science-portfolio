@@ -14,7 +14,7 @@
     "href": "index.html#gitignore",
     "title": "Data Science Portfolio",
     "section": ".gitignore",
-    "text": ".gitignore\nI used .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than regex expressions.",
+    "text": ".gitignore\nI use .gitignores tailored to the tech stack of the project (R, Python, Quarto etc.). Where possible, exceptions are indicated as full filepaths rather than with regex expressions.",
     "crumbs": [
       "Overview"
     ]
@@ -24,17 +24,17 @@
     "href": "index.html#githooks",
     "title": "Data Science Portfolio",
     "section": "githooks/",
-    "text": "githooks/\nI use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not excluded by the .gitignore.",
+    "text": "githooks/\nI use a pre-commit githook to prevent files likely to contain data (.csv, .xlsx, etc.) from being committed, if they are not caught by the .gitignore.",
     "crumbs": [
       "Overview"
     ]
   },
   {
-    "objectID": "index.html#venv-uv-renv",
-    "href": "index.html#venv-uv-renv",
+    "objectID": "index.html#uv-renv",
+    "href": "index.html#uv-renv",
     "title": "Data Science Portfolio",
-    "section": ".venv (uv) & renv",
-    "text": ".venv (uv) & renv\nTo ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.",
+    "section": "uv & renv",
+    "text": "uv & renv\nTo ensure my work is reproducible across different machines and different global configurations, I use virtual environments to manage packages - renv for R, and uv for Python.",
     "crumbs": [
       "Overview"
     ]
@@ -74,7 +74,7 @@
     "href": "mindthegap.html#themes-analytical-methods",
     "title": "mindthegap",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods\nR package, OOP with R6 classes, coupled ordinary differential equations for System Dynamics, Agent Based Modelling, Monte Carlo Methods, Shiny app, composite metric, Multi-Criterion Decision Analysis",
+    "text": "Themes / Analytical methods\nPackaging R code, OOP R6 classes, System Dynamics, Agent Based Modelling, Monte Carlo Methods, composite metrics, Multi-Criterion Decision Analysis",
     "crumbs": [
       "mindthegap"
     ]
@@ -84,7 +84,7 @@
     "href": "mindthegap.html#business-problem",
     "title": "mindthegap",
     "section": "Business Problem",
-    "text": "Business Problem\nEuropean law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?\n\nAcademic aim\nOn reducing the minimum allowed interval between successive blood donations, does any increase in blood supply significantly outweigh any deterioration of body iron health in donors?",
+    "text": "Business Problem\nEuropean law allows more frequent donation than NHSBT currently allows in England, so would it be a good idea to let people donate more frequently?\n\nAcademic Aim\nOn reducing the minimum allowed interval between successive blood donations, does any increase in blood supply significantly outweigh any deterioration of body iron health in donors?",
     "crumbs": [
       "mindthegap"
     ]
@@ -94,7 +94,7 @@
     "href": "mindthegap.html#scoping-and-planning",
     "title": "mindthegap",
     "section": "Scoping and planning",
-    "text": "Scoping and planning\n\n\n\nExtract from a presentation on the project\n\n\nAfter interviewing clinical stakeholders, I recognised the aim of the model should be to simulate a cohort of blood donors and their instances of successful blood donations over a fixed time period. The distribution of the number of donations made by each simulated donor, and the intervals between them, should be expected to be a function of: * The minimum interval * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the Hb test\nA reduction in the minimum interval is expected to increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. The model should allow the practitioner to vary, as an input parameter, the minimum allowed donation interval, and should return a quantified set of donor outcomes, pertaining to blood supply and donor body iron health.\nModel methodology and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding the tradeoff between blood supply and donor body iron health. Simultaneously, model outputs should be accessible and practical enough to lend themselves to a solving a cost-benefit analysis rooted in that trade-off, and to reasonably inform a recommendation for an operational intervention or policy.",
+    "text": "Scoping and planning\n\n\n\nExtract from a presentation on the project\n\n\nAfter interviewing clinical stakeholders, I decided I needed model that simulated blood donor behaviour and their instances of successful donations over a fixed time horizon. I established that the distribution of the number of donations made by each simulated donor, and the intervals between them, should be a function of: * The minimum interval allowed by the organistion * The donor’s individual preferred interval between donations * The time required for the donor’s blood iron levels to replenish sufficiently to pass the pre-donation Haemoglobin (Hb) test\nA reduction in the minimum interval is should increase the total number of donations from donors over a fixed period of time, accompanied by an increase in the frequency and severity of adverse effects on donors’ body iron health. I established that the model should allow the user to observe the effect of varying the minimum allowed interval by returning a quantified set of outcomes, pertaining to blood supply and donor body iron health.\nI recognised that the model mechanics and outputs should be transparent, explicit, and granular enough for a practitioner to draw quantitative, parameterised insights and statistical expectations surrounding this tradeoff. Model outputs should be accessible and practical enough to inform a recommendation for an operational intervention or policy.",
     "crumbs": [
       "mindthegap"
     ]
@@ -104,7 +104,7 @@
     "href": "mindthegap.html#assumptions",
     "title": "mindthegap",
     "section": "Assumptions",
-    "text": "Assumptions\nKey assumptions relate to:\n\nA sequential process flow for a donor choosing to donate blood through to the physical donation\nDistributional assumptions governing how long after their last donation a donor will choose to donate\nThe dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test",
+    "text": "Assumptions\nKey assumptions relate to:\n\nThe sequence of steps that sufficiently capture the process of a donor choosing to donate blood, through to the physical donation\nDistributions governing how long after their last donation a donor will next choose to donate\nThe dynamics of iron in the human body (especially replenishment) that govern whether a donor passes the pre-donation Haemoglobin test",
     "crumbs": [
       "mindthegap"
     ]
@@ -114,7 +114,7 @@
     "href": "mindthegap.html#limitations",
     "title": "mindthegap",
     "section": "Limitations",
-    "text": "Limitations\nThe main limitation of this work is that inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design with the aim that the complexity of the project would be sufficient to capture the significant drivers and effects in the real-world system, while allowing me to write, validate, and present a model in reasonable time that was accessible, reproducible, and not over-engineered.",
+    "text": "Limitations\nThe main limitation of this work is one that is inherent to modelling two extremely complex domains - human altruistic behaviour and biology. As such, I conducted the literature review and model design so that the model faithfully captured the drivers and effects in the real-world system, while allowing me to write, validate, and communicate a model, in reasonable time, that was accessible, reproducible, and not over-parameterised.",
     "crumbs": [
       "mindthegap"
     ]
@@ -124,7 +124,7 @@
     "href": "mindthegap.html#technical-choices",
     "title": "mindthegap",
     "section": "Technical choices",
-    "text": "Technical choices\n\nI recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables.\n\n\n\nAgent Based Model overview\n\n\n\nOverview of ABM paradigm\n\n\n\n\nABM example\n\n\n\nExample application of ABM\n\n\n\n\nExample parameters and variables\n\n\n\nExtract from presentation on project\n\n\n\n\n\nI decided to develop an R package to allow for fine control over testing different scenarios under different parameters. The donors, with their preferences, variabiality, and complex iron dynamics, warranted the use of an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics and behaviour, and iron replenishment mechanics.\nI used a Monte Carlo Method with hierarchical sampling to effectively and efficiently simulate a highly stochastic system of a donor’s donation activity.\nI used a composite metric of a linear combination of donations and permanent deferrals (after three failed pre-donation Haemoglobin tests, donors cannot return)\nI included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric",
+    "text": "Technical choices\n\nI recognised the suitability of Agent-Based Modelling (ABM), given the idiosyncratic and behavioural nature of donors choosing to donate. A good model would require fine control over a range of different parameters and variables.\n\n\n\nAgent Based Model overview\n\n\n\nOverview of ABM paradigm\n\n\n\n\nABM example\n\n\n\nExample application of ABM\n\n\n\n\nExample parameters and variables\n\n\n\nExtract from presentation on project\n\n\n\n\n\nI decided to develop an R package to allow for reproducibility and to facilitate comparison of different customised scenarios. The donors, equipped with their preferences, variabiality, and complex iron dynamics, presented a good use case for an Object Oriented Programming approach using R6 Classes. Donor objects are instantiated, equipped with their own stochastic characteristics, behaviour, and iron replenishment mechanics.\nI used a Monte Carlo Method (MCM) with hierarchical sampling to simulate a stochastic system of a population of such donors, observing the distribution of outcomes.\nFollowing the MCM I computed a composite metric of a linear combination of donation volume and permanent deferral occurrences (after three failed pre-donation Haemoglobin tests, donors cannot return). This allowed reduction of competing objectives into a simple figure for ease of comparison between scenarios.\nI included observables relating to “wasted slots” and donor burnout, for scope to extend the composite metric to include other priorities.",
     "crumbs": [
       "mindthegap"
     ]
@@ -134,7 +134,7 @@
     "href": "mindthegap.html#validation",
     "title": "mindthegap",
     "section": "Validation",
-    "text": "Validation\nModel outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were with a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals (Hb rejections on three successive attendances).",
+    "text": "Validation\nModel outputs from the baseline scenario (current minimum interval rules) were compared with operational data to ensure they were within a reasonable variance. The observables tested included rates of donation given attendance, rates of Hb rejections, and rates of permanent deferrals.",
     "crumbs": [
       "mindthegap"
     ]
@@ -154,7 +154,7 @@
     "href": "mindthegap.html#architecture",
     "title": "mindthegap",
     "section": "Architecture",
-    "text": "Architecture\n\nPackage directory treePackage namespacetestthat\n\n\n\n\n\nDirectory for mindthegap package\n\n\n\n\n\n\n\npublic methods for the Donor class\n\n\n\n\n\n\n\nTests for Donor class public methods",
+    "text": "Architecture\n\nPackage directory treePackage namespaceTests\n\n\n\n\n\nDirectory for the mindthegap package\n\n\n\n\n\n\n\nPublic methods for the Donor class\n\n\n\n\n\n\n\nTests for Donor class public methods using testthat",
     "crumbs": [
       "mindthegap"
     ]
@@ -164,7 +164,7 @@
     "href": "mindthegap.html#pseudocode",
     "title": "mindthegap",
     "section": "Pseudocode",
-    "text": "Pseudocode\n\nMathematical formulation of modelAlgorithm for modelled process flow\n\n\n\n\n\nMathematical formulation of the modelled process of donors deciding to, and possibly being able to, donate\n\n\n\n\n   ### Composite metric for scenario comparison",
+    "text": "Pseudocode\n\nMathematical formulation of modelAlgorithm for modelled process flowComposite metric for scenario comparison\n\n\n\n\n\nMathematical formulation of the modelled process of donors deciding to (and then possibly being able to) donate\n\n\n\n\n\n\n\nDefinitions\n\n\n\n\n\nDefinitions continued\n\n\n\n\n\nPseudocode for algorithm\n\n\n\n\n\n\n\nComposite metric weighing up the competing objectives to maximise donations while minimising adverse effects on donor iron health",
     "crumbs": [
       "mindthegap"
     ]
@@ -174,7 +174,7 @@
     "href": "mindthegap.html#code-excerpts",
     "title": "mindthegap",
     "section": "Code excerpts",
-    "text": "Code excerpts\n\nThe Donor R6 ClassExample public methodstestthat tests\n\n\n \n\n\n \n\n\n\n\n\nContrive a donor history that means the donor’s next preferred donation date is sooner that they are allowed to. Test that the limit is enforced and they are made to wait.\n\n\n\n\n\nContrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor’s normal value",
+    "text": "Code excerpts\n\nThe Donor R6 ClassExample public methodsTests\n\n\n\n\n\nInstantiating the Donor class with roxygen\n\n\n\n\n\nDonor class public methods\n\n\n\n\n\n\n\nPublic method for sampling for donor burnout following frequent donation\n\n\n\n\n\nPublic method to sample for a donor’s normal Haemoglobin from a truncated normal distribution, to represent people who are likely to be able to regular donors\n\n\n\n\n\n\n\nContrive a donor history that means the donor’s next preferred donation date is sooner than they are allowed to. Test that the limit is enforced and they are made to wait.\n\n\n\n\n\nContrive Haemoglobin-ferritin starting conditions where one of the quantities is below normal. Test that in the long term, that quantity replenishes to 95-100% of the donor’s normal value",
     "crumbs": [
       "mindthegap"
     ]
@@ -184,7 +184,7 @@
     "href": "mindthegap.html#system-dynamics-for-modelling-iron-replenishment",
     "title": "mindthegap",
     "section": "System Dynamics for modelling iron replenishment",
-    "text": "System Dynamics for modelling iron replenishment\n\n\n\nCoupled ordinary differential equations representing the stock and flow model for iron dynamics in the body",
+    "text": "System Dynamics for modelling iron replenishment\n\n\n\nInitial Value Problem (IVP) for the coupled ordinary differential equations representing the stock and flow model for iron dynamics in the body",
     "crumbs": [
       "mindthegap"
     ]
@@ -204,7 +204,7 @@
     "href": "mindthegap.html#agent-based-models",
     "title": "mindthegap",
     "section": "Agent Based Models",
-    "text": "Agent Based Models\nAs discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains requiring forecasting, comparison, and evaluation of different interventions and policies.",
+    "text": "Agent Based Models\nAs discussed in @limitations, modelling behaviour and outcomes of people in a healthcare context is complex and stochastic. People are individualistic intersections of demographics, motivations, and biology. As such, my work in ABM and Monte Carlo Methods is directly transferrable to a range of domains concerning the ICB requiring forecasting, comparison, and evaluation of different interventions and policies.",
     "crumbs": [
       "mindthegap"
     ]
@@ -214,7 +214,7 @@
     "href": "capacity-network-design.html",
     "title": "Capacity Network Design",
     "section": "",
-    "text": "Overview\nA greedy algorithm to explore interactions between the competing operational objectives in deciding how blood donation collection appointments (slots) should be distributed geographically.",
+    "text": "Overview\nA greedy algorithm to prescribe an optimal geographic allocation of blood donation appointments (slots), given competing operational objectives",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -224,7 +224,7 @@
     "href": "capacity-network-design.html#themes-analytical-methods",
     "title": "Capacity Network Design",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods\nR, prescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics/Numerical methods, leaflet choropleth geo-mapping, conveying abstract concepts to decision-makers",
+    "text": "Themes / Analytical methods\nPrescriptive analytics, Multi-Criterion Decision Analysis, Computational statistics / Numerical methods, leaflet choropleth geo-mapping, Shiny for making technical concepts accessible",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -234,7 +234,7 @@
     "href": "capacity-network-design.html#business-problem",
     "title": "Capacity Network Design",
     "section": "Business Problem",
-    "text": "Business Problem\n\nProblem statement\nThe organisation’s current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network looked like if we rebuilt it from scratch in the optimal way?\n\n\nAcademic Aim\nA numerical method by way of a greedy algorithm that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically so as to maximise the likelihood of meeting those objectives.",
+    "text": "Business Problem\n\nProblem Statement\nThe organisation’s current operational setup for blood donation collection is not optimised. Appointments (slots) are not optimally distributed in either a spatial or temporal sense i.e. people who are willing and able to donate blood cannot always find a slot near them, at a suitable time. What would the collection capacity network look like if we rebuilt it from scratch in the optimal way?\n\n\nAcademic Aim\nA solution (likely a numerical method) that, given a set of organisational objectives along with relative weights or priorities, allocates a given number of appointments geographically, so as to maximise the likelihood of meeting those objectives.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -244,7 +244,7 @@
     "href": "capacity-network-design.html#scoping-and-planning",
     "title": "Capacity Network Design",
     "section": "Scoping and planning",
-    "text": "Scoping and planning\n\nI decided to consider an optimisation problem with respect to only the spatial distributiion of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas - as such the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one in the first instance.\nI recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance collected blood needs to travel to manufacturing sites",
+    "text": "Scoping and planning\n\nI decided to consider an optimisation problem with respect to only the spatial distribution of slots, as a first step. I recognised that the temporal aspect could be dealt with independently, because I had no reason to believe that the optimal temporal distribution should be significantly different between geographical areas. As such, I established that the problem could be reduced to two independent optimisation problems, of which I would tackle the spatial one.\nI recognised this as an application for Multi-Criterion Decision Analysis (MCDA), especially considering the difficulty of expressing different organisational objectives in comparable terms e.g. collecting enough blood from Black African and Black Caribbean donors, and minimising the distance that donated blood needs to transported to manufacturing sites.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -254,7 +254,7 @@
     "href": "capacity-network-design.html#limitations",
     "title": "Capacity Network Design",
     "section": "Limitations",
-    "text": "Limitations\n\nNumerical methods are liable to fail to converge or converge on a local optimum rather than a global optimum, but given their ability to approach otherwise untractable problems and compute in a reasonable time, the use is justified here, as detailed below.",
+    "text": "Limitations\n\nNumerical methods are liable to fail to converge, or converge on a local optimum rather than a global optimum. Given their ability to approach otherwise untractable problems and compute a solution in a reasonable time, their use is justified here, as detailed below.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -264,7 +264,7 @@
     "href": "capacity-network-design.html#technical-choices",
     "title": "Capacity Network Design",
     "section": "Technical choices",
-    "text": "Technical choices\n\nI recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach of an algorithm that incrementally added capacity to the next-best location at each step (greedy) by using an objective function that was a weighted average of “monetised” or otherwise quantified organisational objectives\nI decided that a solution that conveyed the above mechanic, that the weighting/priority strongly determined the optimum, was more important to convey to decision-makers than converging on a contrived or otherwise arbitrary “objective” optimum. As such, I felt justified in using an approach that can sometimes miss the global optimum.\nThe computational approach with the weighted objective function also allowed me to\n\ndemonstrate with fine control how tweaking or varying the weighted shifted the optimum in the direction of different extremes, to non-technical decision makers\ncompute and compare different scenarios side by side\n\nAs a proof of concept (POC) I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem down to the weighted objectives",
+    "text": "Technical choices\n\nI recognised that the optimal solution would be a function of the ordering or weighting of the competing orgnisational objectives, and so chose to use a computational approach - an algorithm that incrementally added capacity to the next best location at each step (greedy) by using an objective function that was a weighted average of “monetised” or otherwise quantified organisational objectives.\nI decided that it was more important to be able to convey that the weighting/priority strongly determined the optimum, than it was to be able to guaranteed convergence on a contrived or otherwise arbitrary “objective” optimum. As such, I felt justified in using an approach that could sometimes miss the global optimum.\nThe computational approach with the weighted objective function also allowed me to\n\ndemonstrate with fine control how varying the weights shifts the optimum in the direction of different extremes, to non-technical decision makers\ncompute and compare different scenarios easily\n\nAs a proof of concept (POC), I developed a Shiny app with inputs for parameters to demonstrate the reduction of the problem to the relative weights of the competing objectives.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -274,7 +274,7 @@
     "href": "capacity-network-design.html#validation",
     "title": "Capacity Network Design",
     "section": "Validation",
-    "text": "Validation\nAs the algorithm is a simulation, there is no operational or historical data to compare it with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because of the fine-tune control over the algorithm and its deterministic nature, it is possible to determine the effect of each parameter or iteration loop in the algorithm as necessary: It can be re-run and paused after each loop, or it can be run with a tweaked parameter.",
+    "text": "Validation\nAs the algorithm is a simulation, there is no operational or historical data to compare its outputs with. Instead, as demonstrated in @example, a key step of the evaluation of results is to sense-check and rationalise the observations as parameters are varied and scenarios are compared. Because I wrote algorithm from first principles, and because it is deterministic, it is easy to determine evolution of the solution at iteration loop in the algorithm as necessary. It can be re-run and “paused” and examiend as desired.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -284,7 +284,7 @@
     "href": "capacity-network-design.html#impact",
     "title": "Capacity Network Design",
     "section": "Impact",
-    "text": "Impact\nThis work enabled senior decision-makers to fully grasp the reduction of the problem into a weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and the leaflet choropleths. They allowed me to convey that there was no objective correct answer to the problem, but instead the priorities that were input, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.",
+    "text": "Impact\nThis work enabled senior decision-makers to fully grasp the reduction of the problem into the relative weighting/ordering of organisational objectives. This was facilitated by the proof of concept Shiny app and leaflet choropleths representing the optimal solution. They allowed me to convey that there was no objective, “correct” answer to the problem, but instead that the chosen priorities, via the objective function, would allow the algorithm to prescribe a capacity allocation that would best fulfil them.",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -294,7 +294,7 @@
     "href": "capacity-network-design.html#constructing-a-proof-of-concept-poc",
     "title": "Capacity Network Design",
     "section": "Constructing a Proof of Concept (POC)",
-    "text": "Constructing a Proof of Concept (POC)\n\nToy modelComposing an Objective functionDemonstrate the reduction of the problem\n\n\n\n\n\nConstructing a over-simplified example\n\n\n\n\n\n\n\nIntroducing the concept of an Objective function\n\n\n\n\n\n\n\nTranslating priorities into parameters",
+    "text": "Constructing a Proof of Concept (POC)\n\nToy modelComposing an Objective functionDemonstrate the reduction of the problem\n\n\n\n\n\nConstructing a over-simplification of the problem\n\n\n\n\n\n\n\nIntroducing the concept of an Objective function\n\n\n\n\n\n\n\nTranslating priorities into parameters",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -314,7 +314,7 @@
     "href": "capacity-network-design.html#greedy-algorithm-for-slot-allocation",
     "title": "Capacity Network Design",
     "section": "Greedy Algorithm for slot allocation",
-    "text": "Greedy Algorithm for slot allocation\n\nPseudocode\n\n\n\nSimplified Pseudocode for Greedy algorithm\n\n\n\n\nCode excerpts\n\nParametersCensus data and geographiesTransform raw dataTransform raw data contd.Objective functionExecute locally optimum stepVisualise\n\n\n\n\n\nSet parameters for algorithm\n\n\n\n\n\n\n\nLoad and pre-process population data and constituency boundaries\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCopmute objective function (much of which is collection targets per blood group)\n\n\n\n\n\n\n\nAssign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted\n\n\n\n\n\n\n\nRepresent optimal slot allocation as choropleth leaflet\n\n\n\n\n\n\n\nOutputs\nBelow are a series of optimal allocation choropleth outputs from holding all parameters constant except “cost to transport blood to Manufacturing Centre, per kilometre”. This is intended to demonstrate the intuitive connection between the parameters and the optimal distribution, which is why extreme values are included (free transport and £1000/km).\n\n£0/km (free/unconstrained)£1/km£10/km£100/km£1000/km\n\n\n\n\n\nWhen the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.\n\n\n\n\n\n\n\n\n\n\nAs the transport cost becomes constraining, the distribution dissipates.\n\n\n\n\n\n\n\nAs the transport cost becomes extreme and limiting, the distribution is pulled towards the Manufacturing Centres in Colindale, Manchester, and Bristol",
+    "text": "Greedy Algorithm for slot allocation\n\nPseudocode\n\n\n\nSimplified Pseudocode for Greedy algorithm\n\n\n\n\nCode excerpts\n\nParametersCensus data and geographiesTransform raw dataTransform raw data contd.Objective functionExecute locally optimum stepVisualise\n\n\n\n\n\nSet parameters for algorithm\n\n\n\n\n\n\n\nLoad and pre-process population data and constituency boundaries\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCompute constituency-level variables that algorithm will use\n\n\n\n\n\n\n\nCopmute objective function (much of which is collection targets per blood group)\n\n\n\n\n\n\n\nAssign slots to the chosen constituency, and remove a proportion of the nearby population as “served”/exhausted\n\n\n\n\n\n\n\nRepresent optimal slot allocation as choropleth leaflet\n\n\n\n\n\n\n\nOutputs\nBelow are a series of optimal allocation choropleth outputs varying “cost to transport blood to nearest Manufacturing Centre, per kilometre”, holding all other parameters constant. This is intended to demonstrate the connection between the parameters and the optimal distribution, which is why extreme values are included (free transport, and transport costing £1000/km).\n\n£0/km (free/unconstrained)£1/km£10/km£100/km£1000/km\n\n\n\n\n\nWhen the algorithm is unconstrained by transport costs, the slots are concentrated in the most populous areas: London, Birmingham, and Manchester.\n\n\n\n\n\n\n\n\n\n\nAs the transport cost becomes constraining, the distribution becomes more diffuse.\n\n\n\n\n\n\n\nAs the transport cost becomes extreme and limiting, the distribution is pulled towards the three existing Manufacturing Centres: Colindale, Manchester, and Bristol",
     "crumbs": [
       "Capacity Network Design"
     ]
@@ -334,7 +334,7 @@
     "href": "hypothesis-tests-101.html#themes-analytical-methods",
     "title": "Intuitive Hypothesis Tests",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods\nR, Shiny, reactivity, widgets, presenting technical concepts to different audiences simultaneously",
+    "text": "Themes / Analytical methods\nShiny, reactivity, widgets, presenting technical concepts to different audiences simultaneously",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -344,7 +344,7 @@
     "href": "hypothesis-tests-101.html#business-problem",
     "title": "Intuitive Hypothesis Tests",
     "section": "Business Problem",
-    "text": "Business Problem\nI’m passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal “Lunch and Learn” talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:\n\nunlocked the intuition behind hypothesis testing, that non-technical people didn’t know they already had\nfor people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with independently, to make the principles “click”",
+    "text": "Business Problem\nI’m passionate about promoting data literacy and empowering the stakeholders I work with to understand the methods in the analysis I provide, rather than just the recommendation. This was an informal “Lunch and Learn” talk I delivered to a mix of technical and non-technical people. I wanted to deliver a session that:\n\nunlocked the intuition behind hypothesis testing, that non-technical people didn’t know they already had.\nfor people who were familiar with hypothesis testing in a syntactical/“textbook” way, provide and showcase a sandbox of mechanics that they could play with independently, to make the principles “click”.",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -354,7 +354,7 @@
     "href": "hypothesis-tests-101.html#scoping-and-planning",
     "title": "Intuitive Hypothesis Tests",
     "section": "Scoping and planning",
-    "text": "Scoping and planning\nI recognised that if this were to be effective:\n\nit would need to take a very different approach to a textbook providing formulae for test statistics and tables for critical values. Also, the delivery and format would need to be engaging\nit would need to draw on intuition and experience that people already have. This would serve to build confidence in the attendees as we explored technical material, and prevent the talk from feeling like an academic exercise or thought-experiment.\nthe scope of the product would need to be such that people could not only benefit from attending my talk, but also could benefit further from playing around with the app, if they chose to.",
+    "text": "Scoping and planning\nI recognised that if this were to be effective:\n\nit would need to take a very different approach to a textbook providing formulae for test statistics and tables for critical values. Also, the delivery and format would need to be engaging.\nit would need to draw on intuition and experience that people already have. This would serve to build confidence in the attendees as we explored technical material, and prevent the talk from feeling like an academic exercise or thought-experiment.\nthe scope of the solution would need to allow people to benefit beyond attending my talk, by experimenting with the app themselves, if they chose to.",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -374,7 +374,7 @@
     "href": "hypothesis-tests-101.html#technical-choices",
     "title": "Intuitive Hypothesis Tests",
     "section": "Technical choices",
-    "text": "Technical choices\nBased on my Scoping and Planning reflections:\n\nI decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time\nI decided to start my presentation with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life e.g. Wondering whether you’ve been incorrectly served a Diet Coke (Alternative hypothesis) means you had an expectation of a certain taste from a regular Coke (Null hypothesis), and the taste is so different to that expectation (test statistic) that it feels too unlikely (p value) that it is a regular Coke. This also provided a good opportunity to make technical terms stick, and showing that people already understand the concept even if they didn’t know the jargon.\nI transitioned from qualitative examples to the classic example of a series of fair coin tosses. Next, to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely, based on an independent probability of mutation (the bias of the coin). This provided a seamless but significant transition from the qualitative Coke example to a good setting for a quantitative treatment of the subject matter: If there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string - if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation that my organisation is concerned with.\nFrom here, I continued in an incremental fashion to keep people confident and engaged:\n\nUsing a dynamic graph, I talked through the Probabilty Mass Function (PMF) for the Hamming Distance, and demonstrating how it smoothly and intuitively changed as you vary the length of the string (n) and the independent probability of mutation (p).\nFrom here it was simple to explain that we add the bars to get the cumulative PMF.\nThe next graph added an (arbitrary) line at the 95% mark to define “extreme” outcomes in that that pobserving an outcome at least as extreme was only 5% if they Null were true.\n\nI explained that the app was publicly available and provided the URL and suggested playing around by varying (n, p) and observing the “wave” that moved and changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while suggesting further avenues to explore for the keener attendees.\nFrom experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I did wonder whether the discreteness PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but actually I concluded that not needing to go into probability density was an advantage.",
+    "text": "Technical choices\n\nI decided to create and publish an open-source interactive Shiny app, which would allow me to talk through instructive examples, and allow keener attendees to play with the app in their own time.\nI decided to start my presentation and app with some examples of hypothesis tests that people are likely to have conducted “qualitatively” in their day to day life. This provided a good opportunity to make technical terms stick, and to show that people already understood the concept even if they didn’t know the jargon for it.\nI transitioned from qualitative examples, first to the classic example of a series of fair coin tosses, then to a biased coin, and then with some relabelling of the biased coin, to a toy example from genomics - testing whether a “test” string of bases is a mutation of a reference string or a different string entirely. This was based on an independent probability of mutation (the bias of the coin). This provided a seamless but important transition from the qualitative examples to a quantitative treatment - if there were “few” positions different between the test and reference strings (the Hamming Distance), we wouldn’t believe the test string is anything other than a mutation of the reference string, but if there were a large Hamming Distance, we would be led to stop believing the test string is simply a mutation of the reference string. Genomics felt like a good level of “close to home”, given the donor-recipient matching necessary for blood donation that my organisation is concerned with.\nFrom here, I continued in an incremental fashion to keep people confident and engaged:\n\nUsing a dynamic graph, I talked through the Probabilty Mass Function (PMF) for the Hamming Distance, and demonstrating how it smoothly and intuitively changed as you vary the length of the string (n) and the independent probability of mutation (p).\nFrom here it was simple to explain that we add the bars to get the cumulative PMF.\nThe next graph added an (arbitrary) line at the 95% mark to define “extreme” outcomes. Observing an outcome at least as extreme was only 5% likely, if the Null Hypothesis were true.\n\nI encouraged playing around by varying (n, p) and observing the “wave” of probability mass on the graph that moved and hence changed which outcomes started to become “significant”, explaining this is the essence of critical values. This kept the Lunch and Learn to a manageable length while prompting further avenues to explore for the keener attendees.\nFrom experience, hypothesis testing in an academic usually starts from the Normal distribution. I chose instead to use the Binomial distribution (for number of Heads / Hamming Distance) because this felt like the distribution that people already have the most intuition for. I considered whether the discreteness of PMFs might be less digestible (at least for some more “jagged” combinations of (n, p)) than a continuous Probability Distribution Function, but I concluded that not needing to go into probability density was an advantage.",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -384,7 +384,7 @@
     "href": "hypothesis-tests-101.html#validation-and-impact",
     "title": "Intuitive Hypothesis Tests",
     "section": "Validation and Impact",
-    "text": "Validation and Impact\nThese kinds of presentations can be harder to get constructive feedback from, because people are usually grateful for the effort that went into it. As such, I try to monitor from the nature of and depth questions and remarks whether the material has hit home. Again, fairly qualitatively, I try to see whether ideas I discuss then present in stakeholders’ thoughts when we plan work together. While I can’t directly attribute it to the Lunch and Leanr, I was pleased to hear an attendee later remark, in a meeting to discuss a campaign evaluation, that we would need a control group because we would need to know what would have happened without the marketing intervention to form the initial expectation in the first place.",
+    "text": "Validation and Impact\nThese kinds of presentations can be harder to get constructive feedback from, because people are usually grateful for the effort that went into it. As such, I try to monitor from the nature of and depth questions and remarks whether the material has hit home. Again, fairly qualitatively, I try to see whether ideas I discuss then present in stakeholders’ thoughts when we plan work together. While I can’t directly attribute it to the Lunch and Learn, I was pleased to hear an attendee later remark, in a meeting to discuss a campaign evaluation, that we would need a control group because we would need to know what would have happened without the marketing intervention to form the initial expectation in the first place.",
     "crumbs": [
       "Intuitive Hypothesis Tests"
     ]
@@ -394,7 +394,7 @@
     "href": "fpl.html",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "",
-    "text": "Overview\nA quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics and the FPL API and no football knowledge.",
+    "text": "Overview\nA quarto book journalling my journey of playing Fantasy Premier League (FPL) using statistics, the FPL API, and no football knowledge.",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -404,7 +404,7 @@
     "href": "fpl.html#themes-analytical-methods",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Themes / Analytical methods",
-    "text": "Themes / Analytical methods\nPython, Quarto, API endpoints, time series analysis, designing heuristic metrics",
+    "text": "Themes / Analytical methods\nPackaging Python code, Quarto, API endpoints, time series analysis, heuristic metrics",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -414,7 +414,7 @@
     "href": "fpl.html#business-problem",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Business Problem",
-    "text": "Business Problem\nDuring data science or operational work, particularly more complex or unstructured work, I often notice the temptation or inclination to consider applying manual overrides to my methodology or scope - perhaps to account for an edge case or an extra variable that becomes apparent later. While this comes from a place of quality or rigour, and can be the best thing to do if done properly/iteratively, I recognise that actually if the override/overlay/correction that occurs to me is truly value-adding, then that means my original scoping and planning could have been better i.e. scoping and planning should at the outset aim to sufficiently but minimally capture all that is necessary and useful in designing a good solution to a problem.\nThis project occurred to me as a useful exercise in discipline of devising a strategy to solve a problem (scoring as many points as possible in FPL) knowing that my domain knowledge is significantly limited, choosing a boundary of information to be “in scope” as a heuristic solution to that limitation, and then not intervening or overriding when I inevitably encounter information out of the scope. I envisaged, and experiencing, a huge amount of advice and suggestions from friends who do have a “football IQ”, and the idea is for me to have spent enough time prior to Gameweek 1 planning a strategy I am happy with and confident in, with the information I choose to use, so that I don’t then throughout the season succumb to the temptation to bolt on extra bits of strategy as I go along. How many points I score is actually do is in many ways less important to me than how well I managed the scope creep.",
+    "text": "Business Problem\nScope creep, whether from the practitioner’s side or the stakeholder’s side, is a significant blocker to progress and value. It’s always tempting to bolt on functionality to account for an edge case or an extra variable that becomes apparent later. While this comes from a place of quality or rigour, and can be appropriate if done properly/iteratively, I recognise that actually if the overlay is truly value-adding, then the original scoping and planning could have been better i.e. scoping and planning should at the outset aim to sufficiently but minimally capture all that is necessary and useful in designing a good solution to a problem.\nThis project occurred to me as a useful exercise in discipline of:\n\ndevising a strategy to solve a problem (scoring as many points as possible in FPL) knowing that my domain knowledge is significantly limited\nchoosing a boundary of information to be “in scope” as a heuristic solution to that limitation\nnot intervening or overriding when I inevitably encounter information out of the scope\n\nThis project is a work in progress. I envisaged, and am experiencing, a huge amount of advice and suggestions from friends who do have a “football IQ”, and the idea is for me to have spent enough time prior to Gameweek 1 planning a strategy I am happy with and confident in, with the information I choose to use, so that I don’t then throughout the season succumb to the temptation to bolt on extra bits of strategy as I go along. How many points I score is actually do is in many ways less important to me than how well I managed the scope creep.",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -434,7 +434,7 @@
     "href": "fpl.html#limitations",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Limitations",
-    "text": "Limitations\nWith the example of chips discussed in https://janarthduraisingham.github.io/fpl/intro.html#pitch-limits, there is a huge amount of information and insight that will fall out of scope of my strategy, but the scope has been carefully bounded so that the aim and expectations of the analysis is in line with the information and techniques that I am using i.e. my aim is to do significantly better than my initial squad would have, rather than to be in the top x% of all FPL players.",
+    "text": "Limitations\nWith the example of chips discussed in https://janarthduraisingham.github.io/fpl/intro.html#pitch-limits, there is a huge amount of information and insight that will fall out of scope of my strategy, but I chose my scope has so that the aim and expectations of the analysis is in line with the information and techniques that I am using i.e. my aim is to do significantly better than my initial squad would have, rather than to be in the top x% of all FPL players.",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -444,7 +444,7 @@
     "href": "fpl.html#technical-choices",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Technical choices",
-    "text": "Technical choices\n\nApproaching the problem\nI recognised that the problem could be reduced into two different, but interacting, sub-problems:\n\nBefore Gameweek 1, I need to choose an initial squad that is likely to score well\nEach week, I need to use my transfers to sell players who are likely to score badly and buy players who are likely to score well\n\n\n\nStatistical methodology\nWhile the two sub-problems sound similar, I recognised that I would have significantly different data on which to solve them. I can make weekly transfers using data that was realised the prior weekend, but I had to choose my initial squad based on prior season data relating to months or years ago.\n\nI decided to select my initial squad based on the last two (aggregated) seasons of data\n\nTo leave myself with capital to make informed transfers on more current data later in the season, I would prioritise a cheap squad with a high historical points to current price ratio.\nMore details here: https://janarthduraisingham.github.io/fpl/gw1.html\n\nI decided to select weekly transfers based on recent current season data\n\nI used a heuristic mix of a 4 week Simple Moving Average, and an Exponentially-Weighted Moving Average Crossover to rank and select candidiates to transfer in and out.\nMore details here, including technical discussion and step-by-step computation: https://janarthduraisingham.github.io/fpl/gw7.html",
+    "text": "Technical choices\nI recognised that the problem could be reduced into two different, but interacting, sub-problems:\n\nBefore Gameweek 1, I need to choose an initial squad that is likely to score well\nEach week, I need to use my transfers to sell players who are less likely to score well, and buy players who are likely to score well\n\n\nStatistical methodology\nWhile the two sub-problems sound similar, I recognised that I would have significantly different data on which to solve them. I can make weekly transfers using data that was realised the prior weekend, but I had to choose my initial squad based on prior season data relating to months or years ago.\n\nI decided to select my initial squad based on the last two (aggregated) seasons of data\n\nTo leave myself with capital to make informed transfers on more current data later in the season, I would prioritise selecting a cheap squad with a high ratio of historical points to current price.\nMore details here: https://janarthduraisingham.github.io/fpl/gw1.html\n\nI decided to select weekly transfers based exclusively on current season points data\n\nI used a heuristic mix of a 4 week Simple Moving Average, and an Exponentially-Weighted Moving Average Crossover to rank and select candidiates to transfer in and out.\nMore details here: https://janarthduraisingham.github.io/fpl/gw7.html",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -454,7 +454,7 @@
     "href": "fpl.html#validation",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "Validation",
-    "text": "Validation\nWith 37 transfers over the season and 15 players in the squad, the average number of players holding any one position is less than 3. I recognised that this meant that if choose my initial squad badly, that puts a lot of pressure on the weekly transfers to make up the forgone value and add their own value. For this reason I didn’t want my measure of performance to reflect a combination of my performance of picking a good squad on old data (which was likely to be a worse predictor) and of my performance of making good decisions based on my transfers strategy.\nFor this reason I decided my main metric of evaluation would be to compare my final points at the end of the season with the points my initial squad would have scored, had I made no transfers over the season. In this way, I’m able to deliberately and specifically evaluate how well my strategy identified good transfers, regardless of how well my initial squad was chosen.\nMore details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts",
+    "text": "Validation\nWith 37 transfers over the season and 15 players in the squad, the average number of players holding any one position is less than 3. I recognised that this meant that if choose my initial squad badly, that puts a lot of pressure on the weekly transfers to make up the forgone value and add their own value. For this reason, I didn’t want my measure of performance to reflect a conflation of my performance of picking a good squad on old data (which was likely to be a worse predictor) and my performance of making good decisions based on my transfers strategy.\nI decided my main metric of evaluation would be to compare my final points at the end of the season with the points my initial squad would have scored, had I made no transfers over the season. In this way, I’m able to deliberately and specifically evaluate how well my strategy identified good transfers, regardless of how well my initial squad was chosen.\nMore details here: https://janarthduraisingham.github.io/fpl/intro.html#the-goalposts",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
@@ -464,7 +464,7 @@
     "href": "fpl.html#what-i-learnt-would-improve-relevance-to-the-senior-data-scientist-role",
     "title": "Fantasy Premier League [Personal, WIP]",
     "section": "What I learnt / would improve & Relevance to the Senior Data Scientist role",
-    "text": "What I learnt / would improve & Relevance to the Senior Data Scientist role\nThis a valuable and rare exercise in that it’s otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I’ve gone into this knowing that with the scope of my strategy, there’s probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably “Captain Haaland”. Processing and acknowledging that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.\nIt also highlights the importance of including a range of stakeholders upstream and early on, when, as is usual, a low ceiling of performance is not acceptable. Ultimately, practising data science as a non-clinician means projects are likely to include a never-ending horizon of possible depth to explore. A key part of scoping and planning is deciding on a modelling/analytical scope, drawing on perspectives and experiences from a diverse range of colleague and stakeholders to fully explore that scope, and then respect it without succumbing to scope creep.",
+    "text": "What I learnt / would improve & Relevance to the Senior Data Scientist role\nThis a valuable and rare exercise in that it’s otherwise quite uncommon to undertake a technical task having almost no domain knowledge. I’ve gone into this knowing that with the scope of my strategy, there’s probably quite a low ceiling of performance, which makes implementing the tips and advice I hear from knowledgeable friends more tempting to quietly include - most notably, “Captain Haaland”. Processing that temptation and choosing to respect the scope and plan has been a valuable exercise in discipline for me.\nIt also highlights the importance of including a range of stakeholders upstream and early on, when, as is usual, a low ceiling of performance would instead be unacceptable. Ultimately, practising data science as a non-clinician means projects are likely to include a never-ending horizon of possible depth to explore. A key part of scoping and planning is deciding on a modelling/analytical scope, drawing on perspectives and experiences from a diverse range of colleague and stakeholders to fully explore that scope, and then respect it without succumbing to scope creep.",
     "crumbs": [
       "Fantasy Premier League [Personal, WIP]"
     ]
